@@ -12,6 +12,8 @@
     list-style: none;
     display: flex;
     padding: 0;
+    flex-flow: row wrap;
+justify-content: space-around;
   }
   h1{
     font-family: 'Playfair Display', serif;
@@ -20,6 +22,7 @@
   .top_header h1{
     color: tomato;
 font-size: 2.5em;
+min-width: 250px;
   }
 
   h2 {
@@ -49,7 +52,7 @@ font-size: 2.5em;
   }
 
   .nav_item {
-    margin: 0 9%;
+    margin: 3% 5%;
     cursor: pointer;
   }
   .nav_item:hover{
@@ -84,6 +87,7 @@ font-size: 2.5em;
     width: 70%;
     margin: auto;
     font-family: 'Roboto', sans-serif;
+    
   }
   .main_search {
     width: 85%;
@@ -91,12 +95,21 @@ font-size: 2.5em;
     font-size: 1.2em;
     padding-left: 0.5em;
     font-family: 'Roboto', sans-serif;
+    border-radius: 10px;
   }
   .search_button {
     height: 65px;
     font-size: 1.2em;
     padding: 0 1em;
     font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 106, 255);
+color: #2f2f2f;
+  }
+  .search_button:hover{
+    color: white;
+    background-color: rgb(0, 106, 255);
   }
 
   #main_quote{
@@ -113,21 +126,23 @@ font-size: 2.5em;
   }
 
   .art_div {
-    height: 70vh;
+    min-height: 70vh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    flex-flow: row wrap;
   }
 
   .art_box {
     width: 35%;
     max-width: 400px;
     height: 59vh;
-    margin: 0 11px;
+    margin: 10px 11px;
     padding: 22px;
     text-align: center;
     background: white;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px;
+    min-width: 300px;
   }
 
   .art_box:hover{
@@ -146,7 +161,7 @@ transition: all 300ms ease-in-out 0s;
     font-family: 'Roboto', sans-serif;
   }
 
-  button:hover{
+  button:hover {
     color: white;
     background-color: rgb(0, 106, 255);
   }
@@ -170,6 +185,7 @@ transition: all 300ms ease-in-out 0s;
 
   .footer_nav_item{
     cursor: pointer;
+    margin: 1em 1em;
   }
 
   .footer_nav_item:hover {
@@ -191,4 +207,61 @@ transition: all 300ms ease-in-out 0s;
   }
   .socials a:hover {
     transform: scale(1.1);
+  }
+
+  #toggle{
+    display: none;
+  }
+
+  @media (min-width: 750px){
+    .nav_toggle{
+      display: none;
+    }
+  }
+
+  @media (max-width: 750px){
+    .nav_side{
+      display:inline-block;
+      margin-top: 220px;
+      background: white;
+      width: 100%;
+      left:0;
+    }
+    .nav_item{
+      padding: 15px 15px;
+    }
+    .top_header h1{
+      position: absolute;
+    }
+    .nav_toggle{
+      margin-right: 15px;
+      width: 40px;
+      position: absolute;
+      text-decoration: none;
+      right: 0;
+      cursor: pointer;
+      z-index: 5;
+    }
+    input:checked ~ .nav_side{
+      display: none;
+    }
+
+    #search_toptext{
+      font-size: 2em;
+    }
+  
+    .search_input {
+      width: 100%;
+    }
+    .main_search {
+      width: 95%;
+      height: 60px;
+      font-size: 1em;
+      padding-left: 0.5em;
+    }
+    .search_button {
+      height: 50px;
+      font-size: 1em;
+      padding: 0 1em;
+    }
   }
