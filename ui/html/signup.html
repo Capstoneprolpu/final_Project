@@ -9,24 +9,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+
 </head>
 <body>
+
     <div id="main_body">
    <div class="top_header">
     <h1>Space Rental</h1>
    </div>
    <div class="form_a">
-       <h2>Create an account</h2>
+       <h2 id="main_sign">Sign in</h2>
        <form class="main_form">
-           <input type="text" class="form_input" placeholder="E-mail address">
-           <input type="text" class="form_input" placeholder="First name">
-           <input type="text" class="form_input" placeholder="Last name">
+           <input type="email" class="form_input" placeholder="E-mail address">
+           <input type="text" style="display: none;" class="form_input" placeholder="First name">
+           <input type="text" style="display: none;" class="form_input" placeholder="Last name">
            <input type="password" class="form_input" placeholder="Password">
-           <p>By creating an account, I agree to the Space rental Terms and Conditions and Privacy Statement.</p>
-           <input type="submit" class="form_btn" value="Submit">
+           <p id="t_c">By signing in, I agree to the Space rental <a>Terms and Conditions</a> and <a>Privacy Statement</a>.</p>
+           <input type="submit" class="form_btn" value="Continue">
        </form>
-       <span>Already have an account?</span>
-       <a href="#">Sign in</a>
+       <span id="sign_ask">Don't have an account?</span>
+       <a id="toggle_page" >Create one</a>
   
 </div>
 
@@ -48,5 +50,7 @@
       </div>
    </footer>
 </div>
+<script src="../js/sign.js">
+</script>
 </body>
 </html>

@@ -238,6 +238,7 @@ transition: all 300ms ease-in-out 0s;
     font-size: 1.1em;
     border-radius: 3px;
     border: 1px solid grey;
+    display: block;
   }
   .form_btn {
     height: 50px;
@@ -252,6 +253,14 @@ transition: all 300ms ease-in-out 0s;
   }
   .form_btn:hover {
     background: rgb(15, 67, 140);
+  }
+  #toggle_page, #t_c a{
+    cursor: pointer;
+    color: rgb(0, 106, 255);
+  }
+  #toggle_page:hover, #t_c a:hover{
+    color: rgb(15, 67, 140);
+    text-decoration: underline;
   }
 
   .form_a p{
