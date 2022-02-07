@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search page</title>
+    <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top_header">
+        <input type="checkbox" id="toggle"><label for="toggle" class="nav_toggle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+       </svg></label>
+     <ul class="nav_side">
+         <li class="nav_item"><a>Buy</a></li>
+         <li class="nav_item"><a>Sell</a></li>
+         <li class="nav_item"><a>Manage Rental</a></li>
+     </ul>
+     <h1>Space Rental</h1>
+     <ul  class="nav_side">
+         <li class="nav_item"><a>Advertise</a></li>
+         <li class="nav_item"><a>Help</a></li>
+         <li class="nav_item"><a>Sign in</a></li>
+     </ul>
+    </div>
+    <nav>
+        <ul class="filters">
+            <li class="city_in"><form id="city_input" ><input type="text" placeholder="Lucknow, IN"><button class="searchBtn" type="submit"><svg viewBox="0 0 32 32" class="iconSearch" aria-hidden="true" focusable="false" role="img"><title>Search</title><path stroke="none" d="M29.41,26.59,23.77,21A12,12,0,0,0,14,2c-.17,0-.33,0-.5,0s-.33,0-.5,0A11,11,0,0,0,2,13c0,.17,0,.33,0,.5s0,.33,0,.5a12,12,0,0,0,19,9.77l5.64,5.64a2,2,0,0,0,2.82-2.82ZM14,22a8,8,0,1,1,8-8A8,8,0,0,1,14,22Z"></path></svg></button></form></li>
+            <li><button class="filter_btn">rent</button></li>
+            <li><button class="filter_btn">Beds and baths</button></li>
+            <li><button class="filter_btn">Price</button></li>
+            <li><button class="filter_btn">Home type</button></li>
+            <li><button class="filter_btn">More</button></li>
+            <li><button class="filter_btn">Save search</button></li>
+        </ul>
+    </nav>
+    <div id="main_dis">
+    <div id="map"></div>
+
+    <div id="homelist">
+        <h2>Rental Listings</h2>
+        <div class="home_item">
+            <img src="../media/home1.jpg" class="home_img">
+            <article>
+            <h2 id="price_r">Rs2000/mo</h2>
+            <p>5Bds 1Ba 4200sqft- Apartment for rent</p>
+            <p>Near some place, somewhere</p>
+        </article>
+        </div>
+        <div class="home_item">
+            <img src="../media/home2.jpg" class="home_img">
+            <article>
+            <h2 id="price_r">Rs1500/mo</h2>
+            <p>8Bds 5Ba 500sqft- Apartment for rent</p>
+            <p>Near some place, somewhere</p>
+        </article>
+        </div>
+        <div class="home_item">
+            <img src="../media/home3.jpg" class="home_img">
+            <article>
+            <h2 id="price_r">Rs3500/mo</h2>
+            <p>4Bds 2Ba 4100sqft- Apartment for rent</p>
+            <p>Near some place, somewhere</p>
+        </article>
+        </div>
+        <div class="home_item">
+            <img src="../media/home4.jpg" class="home_img">
+            <article>
+            <h2 id="price_r">Rs900/mo</h2>
+            <p>6Bds 4Ba 2400sqft- Apartment for rent</p>
+            <p>Near some place, somewhere</p>
+        </article>
+        </div>
+        <div class="home_item">
+            <img src="../media/home1.jpg" class="home_img">
+        <article>
+            <h2 id="price_r">Rs4000/mo</h2>
+            <p>3Bds 2Ba 4200sqft- Apartment for rent</p>
+            <p>Near some place, somewhere</p>
+        </article>
+        </div>
+        <div class="home_item">
+        
+            <img src="../media/home2.jpg" class="home_img">
+            <article>
+            <h2 id="price_r">Rs9000/mo</h2>
+            <p>5Bds 5Ba 4400sqft- Apartment for rent</p>
+            <p>Near some place, somewhere</p>
+        </article>
+        </div>
+    </div>
+
+</div>
+
+    <script src="../js/main.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0roVlX7F2OFWaOm7INNVt2DBlhYP8uiY&libraries=places&callback=initMap"></script>
+
+    
+</body>
+</html>

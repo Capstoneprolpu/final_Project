@@ -152,15 +152,19 @@ color: #2f2f2f;
     transform: scale(1.02) translate(0px, -8px);
 transition: all 300ms ease-in-out 0s;
   }
-
+.btn{
+  padding: 10px 15px;
+  margin: 20px;
+  border-radius: 5px;
+  min-height: 40px;
+}
   button {
-    min-height: 40px;
-    padding: 10px 15px;
-    margin: 20px;
+    
+
     font-size: 1em;
     border: 1px solid rgb(0, 106, 255);
     color: rgb(0, 106, 255);
-    border-radius: 5px;
+
     font-family: 'Roboto', sans-serif;
   }
 
@@ -177,9 +181,12 @@ transition: all 300ms ease-in-out 0s;
   footer{
     background-color: white;
     font-family: 'Roboto', sans-serif;
+
+    width: 100%;
+  }
+  .footer_img{
     position: absolute;
     bottom: 0;
-    width: 100%;
   }
 
   .footer_nav {
