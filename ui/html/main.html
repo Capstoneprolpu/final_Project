@@ -31,11 +31,106 @@
     <nav>
         <ul class="filters">
             <li class="city_in"><form id="city_input" ><input type="text" placeholder="Lucknow, IN"><button class="searchBtn" type="submit"><svg viewBox="0 0 32 32" class="iconSearch" aria-hidden="true" focusable="false" role="img"><title>Search</title><path stroke="none" d="M29.41,26.59,23.77,21A12,12,0,0,0,14,2c-.17,0-.33,0-.5,0s-.33,0-.5,0A11,11,0,0,0,2,13c0,.17,0,.33,0,.5s0,.33,0,.5a12,12,0,0,0,19,9.77l5.64,5.64a2,2,0,0,0,2.82-2.82ZM14,22a8,8,0,1,1,8-8A8,8,0,0,1,14,22Z"></path></svg></button></form></li>
-            <li><button class="filter_btn">rent</button></li>
-            <li><button class="filter_btn">Beds and baths</button></li>
-            <li><button class="filter_btn">Price</button></li>
-            <li><button class="filter_btn">Home type</button></li>
-            <li><button class="filter_btn">More</button></li>
+            <li><button id="r_s" class="filter_btn">Rent</button>
+                <span class="arrow_filter"></span>
+                <div class="filter_ext">
+                    <form>
+                        <label for="rentradio"><input class="radio_circles" id="rentradio" type="radio" name="hometype" value="Rent">For rent</label>
+                        <label for="saleradio"><input class="radio_circles" type="radio" id="saleradio" name="hometype" value="Sale">For Sale</label>
+                        <div class="filter_div"><button class="filter_done" type="submit">Done</button></div>
+                    </form>
+                </div>
+            </li>
+            <li><button id="b_b" class="filter_btn">Beds and baths</button>
+                <span class="arrow_filter"></span>
+                <div class="filter_ext">
+                    <form >
+                        <fieldset id="fi1" >
+                            <legend>Bedrooms:</legend>
+                            <button pressed="true" class="formbtn f1" value="0+ Bd">Any</button>
+                            <button pressed="false" class="formbtn f1" value="1+ Bd">1+</button>
+                            <button pressed="false" class="formbtn f1" value="2+ Bd">2+</button>
+                            <button pressed="false" class="formbtn f1" value="3+ Bd">3+</button>
+                            <button pressed="false" class="formbtn f1" value="4+ Bd">4+</button>
+                            <button pressed="false" class="formbtn f1" value="5+ Bd">5+</button>
+                           
+                          </fieldset>
+                          <fieldset  id="fi2" >
+                            <legend>Bathrooms:</legend>
+                            <button pressed="true" class="formbtn1 f1" value="0+ Ba">Any</button>
+                            <button pressed="false" class="formbtn1 f1" value="1+ Ba">1+</button>
+                            <button pressed="false" class="formbtn1 f1" value="2+ Ba">2+</button>
+                            <button pressed="false" class="formbtn1 f1" value="3+ Ba">3+</button>
+                            <button pressed="false" class="formbtn1 f1" value="4+ Ba">4+</button>
+                            <button pressed="false" class="formbtn1 f1" value="5+ Ba">5+</button>
+                           
+                          </fieldset>
+                        <div class="filter_div"><button class="filter_done" type="submit">Done</button></div>
+                    </form>                    
+                </div>
+            </li>
+            <li><button id="pricebtn" class="filter_btn">Price</button>
+                <span class="arrow_filter"></span>
+                <div class="filter_ext">
+                    <form id="price_form">
+                        <fieldset class="price_field">
+                            <legend>Min. Price</legend>
+                            <input id="mins" type="text" placeholder="0+" autocomplete="off">
+                            <select class="price_dd" >
+                              <option value="" selected>0</option>
+                              <option value="1000">1000</option>
+                              <option value="2000">2000</option>
+                              <option value="3000">3000</option>
+                              <option value="4000">4000</option>
+                            </select>
+                          </fieldset>
+                          <span>__</span>
+                          <fieldset class="price_field">
+                              <legend>Max. price</legend>
+                            <input id="maxs" type="text" placeholder="Any" autocomplete="off">
+                               <select class="price_dd" >
+                              <option class="op2" value="" selected>Any</option>   
+                              <option class="op2" value="1000">1000</option>
+                              <option class="op2" value="2000">2000</option>
+                              <option class="op2" value="3000">3000</option>
+                              <option class="op2" value="4000">4000</option>
+                              
+                            </select>
+                          </fieldset>
+                        <div class="filter_div"><button id="price_sub" class="filter_done" type="submit">Done</button></div>
+                    </form>                      
+                </div>
+            </li>
+            <li><button id="space_type_btn" class="filter_btn">Home type</button>
+                <span class="arrow_filter"></span>
+                <div class="filter_ext">
+                    <form>
+                        <legend>Space Type</legend>
+                        <label><input class="space_type" type="checkbox" checked value="Home" autocomplete="off">Home</label>
+                        <label><input class="space_type" type="checkbox" checked value="Apartment" autocomplete="off">Apartment</label>
+                        <label><input class="space_type" type="checkbox" checked value="Room" autocomplete="off">Room</label>
+                        <div class="filter_div"><button id="roomtype" class="filter_done" type="submit">Done</button>
+                    </form>                     
+                </div>
+            </li>
+            <li><button class="filter_btn">More</button>
+                <span class="arrow_filter"></span>
+                <div class="filter_ext">
+                    <form>
+                        <fieldset id="fi3" >
+                           
+                            <button pressed="true" class="formbtn" value="0">Any</button>
+                            <button pressed="false" class="formbtn" value="1">1+</button>
+                            <button pressed="false" class="formbtn" value="2">2+</button>
+                            <button pressed="false" class="formbtn" value="3">3+</button>
+                            <button pressed="false" class="formbtn" value="4">4+</button>
+                            <button pressed="false" class="formbtn" value="5">5+</button>
+                           
+                          </fieldset>
+                        <div class="filter_div"><button class="filter_done" type="submit">Done</button></div>
+                    </form>                      
+                </div>
+            </li>
             <li><button class="filter_btn">Save search</button></li>
         </ul>
     </nav>
