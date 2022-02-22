@@ -13,7 +13,7 @@ function initMap() {
   }
 
 
-
+  const data = fetch()
 
 
 

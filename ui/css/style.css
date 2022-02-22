@@ -5,9 +5,7 @@
   img{
     width: 100%;
   }
-  body{
-    background-color: #fff4e5;
-  }
+
   ul {
     list-style: none;
     display: flex;

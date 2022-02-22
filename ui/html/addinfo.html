@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add rental info</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/add.css"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="top_header">
+        <input type="checkbox" id="toggle"><label for="toggle" class="nav_toggle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+       </svg></label>
+     <ul class="nav_side">
+         <li class="nav_item"><a>Buy</a></li>
+         <li class="nav_item"><a>Sell</a></li>
+         <li class="nav_item"><a>Manage Rental</a></li>
+     </ul>
+     <h1>Space Rental</h1>
+     <ul  class="nav_side">
+         <li class="nav_item"><a>Advertise</a></li>
+         <li class="nav_item"><a>Help</a></li>
+         <li class="nav_item"><a>Sign in</a></li>
+     </ul>
+    </div>
+    <div>
+        <div class="form_a">
+            <h2 >Enter Rental Info</h2>
+            <form><div class="add_form">
+                <label>Select rental type</label>
+                <select class="select_input">
+                    <option>Home</option>
+                    <option>Apartment</option>
+                    <option>Room</option>
+                </select>
+                <div class="baths_beds">
+                    <div class="flex_col">
+                    <label>Number of bedrooms</label>
+                <select class="select_input">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>5+</option>
+                </select>
+            </div>
+            <div class="flex_col">
+                <label>Number of bathrooms</label>
+                <select class="select_input">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>5+</option>
+                </select>
+            </div>
+                </div>
+                <label>Area of the space</label>
+                <input type="text" class="" placeholder="Area in sqft">
+                <label>More Information about the rental</label>
+                <textarea type="text" class="" placeholder="More Info"></textarea>
+                <label>Rent Price estimate</label>
+                <input type="text" class="" placeholder="Rent price in Rupees">
+                <button class="form_for" value="Continue">Continue</button>
+                </div>
+                <div class="add_form" style="visibility: hidden;">
+                    <h2>Enter address</h2>
+                    <input type="text" class="" placeholder="Enter City Name">
+                    <input type="text" class="" placeholder="locality">
+                    <input type="text" class="" placeholder="street Name">
+                    <input type="text" class="" placeholder="House/Building No.">
+                    <input type="text" class="" placeholder="Pin-Code">
+                    
+                    <button class="form_for" value="Continue">Continue</button>
+                    <button class="form_bac"><i><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                      </svg></i>back</button>
+                </div>
+                <div class="add_form" style="visibility: hidden;">
+                    <div id="previews">
+                     <h2 id="add_img_txt">Add images here</h2>
+                    </div>
+                    <input id="pic_files" type="file" multiple accept="image/*" class="" hidden>
+                    <label id="add_btn" for="pic_files"><i><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                      </svg></i>Add images</label>
+                    
+                    <button class="form_btn" type="submit" value="Submit">Submit</button>
+                    <button class="form_bac"><i><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                      </svg></i>back</button>
+                </div>
+            </form>
+       
+     </div>
+    </div>
+<script src="../js/addinfo.js"></script>
+</body>
+</html>

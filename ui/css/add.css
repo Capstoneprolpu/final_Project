@@ -1,0 +1,125 @@
+.add_form {
+    display: flex;
+    flex-flow: column nowrap;
+    position:absolute;
+    width: 100%;
+  }
+
+.select_input {
+    padding: 8px 5px;
+    color: #333;
+    margin-bottom: 15px;
+    background: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+.baths_beds {
+    display: flex;
+    justify-content: space-between;
+  }
+  .flex_col {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .add_form input {
+    font-size: 0.8rem;
+    border: solid 1px grey;
+    border-radius: 5px;
+    padding: 10px 6px;
+    margin-bottom: 15px;
+  }
+  .add_form textarea {
+    font-size: 0.9rem;
+    border: solid 1px gray;
+    border-radius: 5px;
+    padding: 10px 5px;
+    margin-bottom: 15px;
+    resize: none;
+    font-family: inherit;
+  }
+
+  .add_form h2{
+    font-size: 1.1rem;
+    color: rgb(0,106,255);
+  }
+
+  label {
+    color: rgb(0, 106, 255);
+    margin: 5px 4px;
+    font-family: "Roboto","sans-serif";
+    font-weight: bold;
+  }
+
+  .form_for {
+    padding: 10px 5px;
+    border: 2px solid rgb(0, 106, 255);
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    margin-top: 35px;
+  }
+
+  .form_bac {
+    border: none;
+    background: inherit;
+    color: #585656;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    max-height: 52px;
+    max-width: 80px;
+    margin: auto;
+      margin-top: auto;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  .form_bac:hover{
+      background-color: white;
+      color: black;
+      transform: scale(1.1);
+  }
+
+  #previews {
+    height: 400px;
+    background: #e1dfdf;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+  }
+
+  .preview_item {
+    width: 45%;
+    height: 45%;
+  }
+
+  #add_img_txt {
+    font-size: 2rem;
+    color: gray;
+    margin: 32% 20%;
+  }
+
+  #add_btn{
+    background: rgb(0,106,255);
+    color: white;
+    width: 31%;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-weight: lighter;
+    text-align: center;
+    max-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  #add_btn:hover{
+      background: rgb(1, 81, 192);
+  }
+
+  #add_btn i{
+    height: 25px;
+  }
