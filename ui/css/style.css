@@ -2,6 +2,17 @@
     margin: 0;
     box-sizing: border-box;
   }
+
+:root {
+--blueM: rgb(0,106,255);
+--blueD: rgb(15, 67, 140);
+--brandOrange: rgb(255, 75, 30);
+--greyBorder: rgb(117, 117, 117);
+--lightBorder:rgb(177, 177, 177);
+--textMedium: rgb(41, 41, 41);
+--textLight:rgb(82, 82, 82);
+}
+
   img{
     width: 100%;
   }
@@ -17,10 +28,11 @@ justify-content: space-around;
     font-family: 'Playfair Display', serif;
     font-weight: 700;
   }
-  .top_header h1{
-    color: tomato;
-font-size: 2.5em;
-min-width: 250px;
+  .top_header div h1{
+    color: var(--brandOrange);
+    font-size: 2em;
+    min-width: 250px;
+    margin: auto;
   }
 
   h2 {
@@ -33,6 +45,11 @@ min-width: 250px;
    width: 100%;
 
  }
+
+.dis_flex{
+  display: flex;
+}
+
 #main_body{
   background-color: white;
 }
@@ -42,22 +59,29 @@ min-width: 250px;
     justify-content: space-around;
     height: 11vh;
     background-color: white;
-    border-bottom: 1px solid #cfcccc;
+    border-bottom: 1px solid var(--lightBorder);
   }
+
+#logo{
+  width: 50px;
+margin: 0 12px;
+color: var(--brandOrange);
+}
 
   .nav_side {
     width: 35%;
     font-size: 1.1em;
-    color: #323131;
+    color: var(--textMedium);
     font-family: 'Roboto', sans-serif;
   }
 
   .nav_item {
-    margin: 3% 5%;
+  
     cursor: pointer;
+    align-self: center;
   }
   .nav_item:hover{
-    color:rgb(0, 106, 255) ;
+    color:var(--blueM) ;
   }
 
   .main_b {
@@ -84,6 +108,20 @@ min-width: 250px;
     font-weight: 400;
   }
 
+  #sign_btn{
+    border: 2px solid var(--blueM);
+padding: 10px 10px;
+border-radius: 5px;
+color: var(--blueM);
+  }
+  
+  #sign_btn:hover{
+    
+      color: white;
+      background: var(--blueM);
+ 
+  }
+
   .search_input {
     width: 70%;
     margin: auto;
@@ -105,12 +143,12 @@ min-width: 250px;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     border-radius: 10px;
-    border: 1px solid rgb(0, 106, 255);
-color: #2f2f2f;
+    border: 1px solid var(--blueM);
+color: var(--textMedium);
   }
   .search_button:hover{
     color: white;
-    background-color: rgb(0, 106, 255);
+    background-color: var(--blueM);
   }
 
   #main_quote{
@@ -121,7 +159,7 @@ color: #2f2f2f;
     line-height: 27px;
     padding: 81px 0;
     font-weight: 700;
-    color: #282727;
+    color: var(--textMedium);
     font-family: 'Playfair Display', serif;
     font-weight: 400;
   }
@@ -160,15 +198,15 @@ transition: all 300ms ease-in-out 0s;
     
 
     font-size: 1em;
-    border: 1px solid rgb(0, 106, 255);
-    color: rgb(0, 106, 255);
+    border: 1px solid var(--blueM);
+    color: var(--blueM);
 
     font-family: 'Roboto', sans-serif;
   }
 
   button:hover {
     color: white;
-    background-color: rgb(0, 106, 255);
+    background-color: var(--blueM);
   }
   
   .art_p {
@@ -191,7 +229,7 @@ transition: all 300ms ease-in-out 0s;
     justify-content: space-around;
     padding: 40px;
     font-size: 1.2em;
-    color: #464545;
+    color: var(--textLight);
   }
 
   .footer_nav_item{
@@ -200,7 +238,7 @@ transition: all 300ms ease-in-out 0s;
   }
 
   .footer_nav_item:hover {
-    color: black;
+    color: var(--textMedium);
     text-decoration: underline;
   }
 
@@ -242,14 +280,14 @@ transition: all 300ms ease-in-out 0s;
     margin: 15px 0;
     font-size: 1.1em;
     border-radius: 3px;
-    border: 1px solid grey;
+    border: 1px solid var(--greyBorder);
     display: block;
   }
   .form_btn {
     height: 50px;
     border-radius: 25px;
-    border: 1px solid rgb(0,106,255);
-    background: rgb(21, 93, 193);
+    border: 1px solid var(--blueM);
+    background: var(--blueM);
     font-size: 1.2em;
     font-weight: 100;
     color: white;
@@ -257,14 +295,14 @@ transition: all 300ms ease-in-out 0s;
     cursor: pointer;
   }
   .form_btn:hover {
-    background: rgb(15, 67, 140);
+    background: var(--blueD);
   }
   #toggle_page, #t_c a{
     cursor: pointer;
-    color: rgb(0, 106, 255);
+    color: var(--blueM);
   }
   #toggle_page:hover, #t_c a:hover{
-    color: rgb(15, 67, 140);
+    color: var(--blueD);
     text-decoration: underline;
   }
 
@@ -284,19 +322,28 @@ transition: all 300ms ease-in-out 0s;
   }
 
   @media (max-width: 750px){
+
+.top_header div{
+  position: absolute;
+}
+
     .nav_side{
-      display:inline-block;
-      margin-top: 220px;
+      display: flex;
+      margin-top: 244px;
       background: white;
       width: 100%;
-      left:0;
+      left: 0;
+      height: 33vh;
+      z-index: 20;
+      position: relative;
+      top: 28px;
+      flex-flow: column nowrap;
+      justify-content: center;
     }
     .nav_item{
       padding: 15px 15px;
     }
-    .top_header h1{
-      position: absolute;
-    }
+
     .nav_toggle{
       margin-right: 15px;
       width: 40px;

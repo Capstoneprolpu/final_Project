@@ -7,10 +7,10 @@
 
 .select_input {
     padding: 8px 5px;
-    color: #333;
+    color: var(--textMedium);
     margin-bottom: 15px;
     background: white;
-    border: 1px solid gray;
+    border: 1px solid var(--lightBorder);
     border-radius: 5px;
   }
 
@@ -24,14 +24,14 @@
   }
   .add_form input {
     font-size: 0.8rem;
-    border: solid 1px grey;
+    border: solid 1px var(--lightBorder);
     border-radius: 5px;
     padding: 10px 6px;
     margin-bottom: 15px;
   }
   .add_form textarea {
     font-size: 0.9rem;
-    border: solid 1px gray;
+    border: solid 1px var(--lightBorder);
     border-radius: 5px;
     padding: 10px 5px;
     margin-bottom: 15px;
@@ -41,11 +41,11 @@
 
   .add_form h2{
     font-size: 1.1rem;
-    color: rgb(0,106,255);
+    color: var(--blueM);
   }
 
   label {
-    color: rgb(0, 106, 255);
+    color: var(--blueM);
     margin: 5px 4px;
     font-family: "Roboto","sans-serif";
     font-weight: bold;
@@ -53,7 +53,7 @@
 
   .form_for {
     padding: 10px 5px;
-    border: 2px solid rgb(0, 106, 255);
+    border: 2px solid var(--blueM);
     border-radius: 5px;
     font-weight: bolder;
     font-size: 1.3rem;
@@ -63,7 +63,7 @@
   .form_bac {
     border: none;
     background: inherit;
-    color: #585656;
+    color: var(--textLight);
     font-size: 1.3rem;
     font-weight: bolder;
     max-height: 52px;
@@ -77,13 +77,13 @@
 
   .form_bac:hover{
       background-color: white;
-      color: black;
+      color: var(--textMedium);
       transform: scale(1.1);
   }
 
   #previews {
     height: 400px;
-    background: #e1dfdf;
+    background: var(--lightBorder);
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -97,12 +97,12 @@
 
   #add_img_txt {
     font-size: 2rem;
-    color: gray;
+    color: var(--textLight);
     margin: 32% 20%;
   }
 
   #add_btn{
-    background: rgb(0,106,255);
+    background: var(--blueM);
     color: white;
     width: 31%;
     padding: 10px 10px;
@@ -117,7 +117,7 @@
   }
 
   #add_btn:hover{
-      background: rgb(1, 81, 192);
+      background: var(--blueD);
   }
 
   #add_btn i{
