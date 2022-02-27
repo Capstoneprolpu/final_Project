@@ -21,7 +21,7 @@ legend {
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
-    background-color: white;
+    background-color: var(--modeColor);
     margin-left: 20px;
   }
 
@@ -35,7 +35,7 @@ legend {
     padding: 0 20px;
     font-size: 0.8em;
     border: solid var(--lightBorder) 1px;
-    background: white;
+    background: var(--modeColor);
     border-radius: 3px;
   }
 
@@ -47,7 +47,7 @@ legend {
     position: absolute;
     top: 51px;
     left: 0;
-    background: white;
+    background: var(--modeColor);
     z-index: 20;
     min-width: 200px;
     min-height: 200px;
@@ -90,14 +90,14 @@ background: var(--blueM);
 
   .filter_done:hover{
     color: var(--blueD);
-    background-color: white;
+    background-color: var(--modeColor);
   }
 
   .f1{
     font-size: 0.75em;
 padding: 10px 15px;
-border: 1px solid gray;
-color: #2c2c2c;
+border: 1px solid var(--lightBorder);
+color: var(--textMedium);
 border-radius: 2px;
   }
   .f1[pressed="true"]{
@@ -148,7 +148,7 @@ border-radius: 2px;
     right: 3px;
     top: 4px;
     border: none;
-    background: white;
+    background:var(--modeColor);
   }
 
   #city_input{
@@ -228,7 +228,7 @@ margin-right: 15px;
 top: 44px;
 right: 31px;
 border-style: solid;
-border-color: transparent transparent white;
+border-color: transparent transparent var(--modeColor);
 border-width: 0 7px 7px 7px;
 z-index: 33;
 visibility: hidden;

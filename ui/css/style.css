@@ -11,6 +11,8 @@
 --lightBorder:rgb(177, 177, 177);
 --textMedium: rgb(41, 41, 41);
 --textLight:rgb(82, 82, 82);
+--modeColor:white;
+--lightBg:rgb(228, 228, 228);
 }
 
   img{
@@ -28,6 +30,12 @@ justify-content: space-around;
     font-family: 'Playfair Display', serif;
     font-weight: 700;
   }
+
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+
   .top_header div h1{
     color: var(--brandOrange);
     font-size: 2em;
@@ -51,14 +59,14 @@ justify-content: space-around;
 }
 
 #main_body{
-  background-color: white;
+  background-color: var(--modeColor);
 }
   .top_header {
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 11vh;
-    background-color: white;
+    background-color: var(--modeColor);
     border-bottom: 1px solid var(--lightBorder);
   }
 
@@ -79,6 +87,7 @@ color: var(--brandOrange);
   
     cursor: pointer;
     align-self: center;
+    position: relative;
   }
   .nav_item:hover{
     color:var(--blueM) ;
@@ -103,7 +112,7 @@ color: var(--brandOrange);
   #search_toptext{
     font-size: 2.5em;
     padding-bottom: 0.5em;
-    color: white;
+    color: var(--modeColor);
     font-family: 'Playfair Display', serif;
     font-weight: 400;
   }
@@ -117,7 +126,7 @@ color: var(--blueM);
   
   #sign_btn:hover{
     
-      color: white;
+      color: var(--modeColor);
       background: var(--blueM);
  
   }
@@ -147,7 +156,7 @@ color: var(--blueM);
 color: var(--textMedium);
   }
   .search_button:hover{
-    color: white;
+    color: var(--modeColor);
     background-color: var(--blueM);
   }
 
@@ -179,7 +188,7 @@ color: var(--textMedium);
     margin: 10px 11px;
     padding: 22px;
     text-align: center;
-    background: white;
+    background: var(--modeColor);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px;
     min-width: 300px;
   }
@@ -205,7 +214,7 @@ transition: all 300ms ease-in-out 0s;
   }
 
   button:hover {
-    color: white;
+    color: var(--modeColor);
     background-color: var(--blueM);
   }
   
@@ -215,7 +224,7 @@ transition: all 300ms ease-in-out 0s;
   }
 
   footer{
-    background-color: white;
+    background-color: var(--modeColor);
     font-family: 'Roboto', sans-serif;
 
     width: 100%;
@@ -290,7 +299,7 @@ transition: all 300ms ease-in-out 0s;
     background: var(--blueM);
     font-size: 1.2em;
     font-weight: 100;
-    color: white;
+    color: var(--modeColor);
     margin-bottom: 10px;
     cursor: pointer;
   }
@@ -315,6 +324,37 @@ transition: all 300ms ease-in-out 0s;
     margin-left: 26%;
   }
 
+  .nav_dd {
+    visibility: hidden;
+    position: absolute;
+    background: var(--modeColor);
+    top: 40px;
+    left: -10px;
+    width: 200px;
+    min-height: 100px;
+    cursor:default;
+    color: var(--textMedium);
+  }
+  .nav_dd:hover{
+  color: var(--textMedium);
+  }
+  .nav_dd ul{
+
+  flex-flow: column nowrap;
+align-items: flex-start;
+min-height: 100px;
+
+  }
+
+  .nav_dd ul li{
+    padding: 10px 10px;
+  }
+  .nav_dd ul li:hover{
+    color: var(--blueM);
+    cursor: pointer;
+  }
+
+
   @media (min-width: 750px){
     .nav_toggle{
       display: none;
@@ -330,7 +370,7 @@ transition: all 300ms ease-in-out 0s;
     .nav_side{
       display: flex;
       margin-top: 244px;
-      background: white;
+      background: var(--modeColor);
       width: 100%;
       left: 0;
       height: 33vh;

@@ -1,0 +1,156 @@
+#main_div{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+  background: var(--lightBg);
+}
+#profile_box {
+    min-height: 100px;
+    border: 1px solid var(--lightBorder);
+    margin: 30px 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 10px 20px;
+  }
+  #option_box ul {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    height: 250px;
+  }
+  #option_box {
+    min-width: 200px;
+    min-height: 300px;
+  }
+  #rentals_infos {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  #user_rentals {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 600px;
+    width: 53%;
+    background: var(--modeColor);
+    margin-right: 3%;
+  }
+  .user_rentals_item {
+    margin: 0 auto;
+    padding: 10px 10px;
+    display: flex;
+    flex-flow: row wrap;
+    width: 85%;
+  }
+
+  .user_ren_info {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+  }
+  .user_ren_info div {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+#info_side {
+  width: 74%;
+}
+#user_homes {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 600px;
+  width: 45%;
+  background: var(--modeColor);
+}
+
+#info_side h1 {
+  color: var(--textMedium);
+  margin: 20px auto;
+  text-align: center;
+  font-weight: lighter;
+}
+#profile_box img {
+  border: solid 1px var(--greyBorder);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+#profile_box div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#profile_box h3 {
+  font-family: "Roboto","Arial","sans-serif";
+  font-weight: lighter;
+  color: var(--textMedium);
+}
+#option_box ul li {
+  font-family: "roboto","arial","sans-serif";
+  font-weight: bold;
+  color: var(--textLight);
+  text-align: center;
+  cursor: pointer;
+}
+#option_box ul li:hover{
+  color: var(--blueM);
+  text-decoration: underline;
+}
+
+#profile_side {
+  background: var(--modeColor);
+  width: 24%;
+}
+
+.user_rent_pics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 5px;
+  grid-column-gap: 5px;
+}
+.user_ren_info ul {
+  flex-flow: column nowrap;
+}
+#user_rentals h3 {
+  text-align: center;
+  font-family: "roboto","arial";
+  margin: 12px auto;
+}
+@media (max-width:1050px){
+  #main_div{
+    flex-flow: row wrap;
+  }
+  #option_box ul li{
+    margin:0 20px;
+  }
+  #profile_side {
+  flex-flow: row wrap;
+  display: flex;
+  width: 100%;
+}
+  #profile_box {
+  min-height: 75px;
+  border: 1px solid var(--lightBorder);
+  margin: 30px 10px;
+  min-width: 200px;
+}
+  #option_box {
+  margin: auto;
+  min-height: 50px;
+}
+  #option_box ul {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px;
+  height: 50px;
+}
+  
+  #info_side{
+    min-width: 95%;
+  }
+}

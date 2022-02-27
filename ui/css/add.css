@@ -9,7 +9,7 @@
     padding: 8px 5px;
     color: var(--textMedium);
     margin-bottom: 15px;
-    background: white;
+    background: var(--modeColor);
     border: 1px solid var(--lightBorder);
     border-radius: 5px;
   }
@@ -76,7 +76,7 @@
   }
 
   .form_bac:hover{
-      background-color: white;
+      background-color: var(--modeColor);
       color: var(--textMedium);
       transform: scale(1.1);
   }
@@ -103,7 +103,7 @@
 
   #add_btn{
     background: var(--blueM);
-    color: white;
+    color: var(--modeColor);
     width: 31%;
     padding: 10px 10px;
     cursor: pointer;
