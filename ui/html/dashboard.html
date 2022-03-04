@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="top_header">
+    <div class="top_header side_margin30" >
         <div class="dis_flex">
             <i id="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.64 102.89" fill="currentColor">
                 <polygon points="11.11 29.75 42 11.23 66.89 25.53 66.89 19.66 41.87 4.98 8.04 25.02 11.11 29.75"/>
@@ -26,54 +26,104 @@
                 </svg></i>
         <h1>Space Rental</h1>
         </div>
+        <ul  class="nav_side">
+            <li class="nav_item"><a>Home</a></li>
+            <li class="nav_item"><a>Statistics</a></li>
+            <li class="nav_item"><a>About us</a></li>
+            <li  class="nav_item"><a id="sign_btn" href="../html/signup.html">Sign Out</a></li>
+        </ul>
        </div>
        <div id="main_div">
            <div id="profile_side">
+               <button class="btn">Add New<span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+              </svg></span></button>
                <div id="profile_box">
-               <div> <img src="../media/0.jpg">
-                <h3>username temp</h3></div>
-                <h3>emailofuser@some.com</h3>
-               </div>
-               <div id="option_box">
-                   <ul>
-                       <li>Add new Listing</li>
-                       <li>Edit your profile</li>
-                       <li>Transactions</li>
-                       <li>Your Subscription</li>
-                   </ul>
+                <img src="../media/0.jpg">
+                <div><h3>username temp</h3>
+                <h3>emailofuser@some.com</h3></div>
                </div>
            </div>
            <div id="info_side">
-               <h1>WELCOME to your DashBoard</h1>
-               <div id="rentals_infos">
-               <div id="user_rentals" class="info_items">
-                   <h3>Your Listings</h3>
+               <div id="greet">
+                   <h1>Welcome user, </br> to your DashBoard</h1>
+                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quam nobis. Laboriosam hic nemo officiis iure 
+                       reprehenderit autem animi consequuntur magnam! Vel excepturi maxime quis tenetur earum laboriosam 
+                       architecto perferendis?</p>
+            </div>
+               
+              
+               <div>
+                   <h3 class="header_rent_list">Your Listings<span class="arrow_down"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                  </svg></span></h3>
+                  <div id="user_rentals" class="info_items">
                    <div class="user_rentals_item">
                        <div class="user_rent_pics">
                         <img src="../media/home1.jpg">
                         <img src="../media/home2.jpg">
-                        <img src="../media/home3.jpg">
-                        <img src="../media/home4.jpg">
                        </div>
                        
                        <div class="user_ren_info">
                            <h2>Room 500sqft 4 beds</h2>
-                           <ul>
-                               <li >Rs2000/month</li>
-                               <li >Some street somewhere</li>
-                               <li >Some city, StateName</li>
-                           </ul>
+                           <p>
+                               Rs2000/month
+                               Some street somewhere
+                               Some city, StateName
+                           </p>
+                           <div><p>Booked Until:</p><h3>20 April 2022</h3></div>
                            <div>
                                <button class="btn">Delete</button>
                                <button class="btn">Edit</button>
                             </div>
                        </div>
                    </div>
+                   <div class="user_rentals_item">
+                    <div class="user_rent_pics">
+                     <img src="../media/home1.jpg">
+                     <img src="../media/home2.jpg">
+                    </div>
+                    
+                    <div class="user_ren_info">
+                        <h2>Room 500sqft 4 beds</h2>
+                        <p>
+                            Rs2000/month
+                            Some street somewhere
+                            Some city, StateName
+                        </p>
+                        <div><p>Booked Until:</p><h3>20 April 2022</h3></div>
+                        <div>
+                            <button class="btn">Delete</button>
+                            <button class="btn">Edit</button>
+                         </div>
+                    </div>
+                </div>
+            </div>
                </div>
                <div id="user_homes" class="info_items">
-                   <h1>No items here</h1>
+                   <h3>Your rented space<span class="arrow_down"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                  </svg></span></h3>
+                   <div>                  
+                <div class="user_rented_item">
+                    <div class="user_space_pics">
+                     <img src="../media/home3.jpg">
+                     
+                    </div>
+                    
+                    <div class="user_rented_info">
+                        <h2>Apartment 800sqft 4 beds</h2>
+                        <p>
+                            Rs1000/month
+                            This street somewhere
+                            That city, StateName
+                        </p>
+                        <div><p>Booked Until:</p><h3>10 July 2022</h3></div>
+                       
+                    </div>
+                </div></div>
                </div>
-            </div>
+            
            </div>
        </div>
 </body>

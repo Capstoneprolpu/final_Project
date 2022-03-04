@@ -65,7 +65,7 @@ justify-content: space-around;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 11vh;
+    height: 10vh;
     background-color: var(--modeColor);
     border-bottom: 1px solid var(--lightBorder);
   }
@@ -78,7 +78,7 @@ color: var(--brandOrange);
 
   .nav_side {
     width: 35%;
-    font-size: 1.1em;
+    font-size: 1em;
     color: var(--textMedium);
     font-family: 'Roboto', sans-serif;
   }

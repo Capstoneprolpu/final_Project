@@ -1,156 +1,155 @@
-#main_div{
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row nowrap;
-  background: var(--lightBg);
+.side_margin30 {
+  margin: 0px 30px;
 }
-#profile_box {
-    min-height: 100px;
-    border: 1px solid var(--lightBorder);
-    margin: 30px 10px;
-    display: flex;
-    flex-flow: column nowrap;
-    padding: 10px 20px;
-  }
-  #option_box ul {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-    height: 250px;
-  }
-  #option_box {
-    min-width: 200px;
-    min-height: 300px;
-  }
-  #rentals_infos {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
-  }
-
-  #user_rentals {
-    display: flex;
-    flex-flow: column nowrap;
-    min-height: 600px;
-    width: 53%;
-    background: var(--modeColor);
-    margin-right: 3%;
-  }
-  .user_rentals_item {
-    margin: 0 auto;
-    padding: 10px 10px;
-    display: flex;
-    flex-flow: row wrap;
-    width: 85%;
-  }
-
-  .user_ren_info {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 100%;
-  }
-  .user_ren_info div {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-#info_side {
-  width: 74%;
-}
-#user_homes {
+#profile_side {
+  max-height: 86px;
   display: flex;
-  flex-flow: column nowrap;
-  min-height: 600px;
-  width: 45%;
-  background: var(--modeColor);
-}
-
-#info_side h1 {
-  color: var(--textMedium);
-  margin: 20px auto;
-  text-align: center;
-  font-weight: lighter;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 30px;
 }
 #profile_box img {
-  border: solid 1px var(--greyBorder);
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   margin-right: 10px;
 }
-
-#profile_box div {
+#profile_box {
   display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-#profile_box h3 {
-  font-family: "Roboto","Arial","sans-serif";
+  font-family: 'roboto','arial';
   font-weight: lighter;
-  color: var(--textMedium);
+  box-shadow: rgb(125, 176, 247) 0px 0px 4px;
+  padding: 5px;
+  border-radius: 5px;
 }
-#option_box ul li {
-  font-family: "roboto","arial","sans-serif";
-  font-weight: bold;
-  color: var(--textLight);
-  text-align: center;
-  cursor: pointer;
+#info_side {
+  display: grid;
+  grid-template-columns: 3fr 3fr 2fr;
 }
-#option_box ul li:hover{
-  color: var(--blueM);
-  text-decoration: underline;
+#user_rentals {
+  height: 500px;
+  overflow-y: auto;
+  margin: -20px 20px 0px 0px;
 }
-
-#profile_side {
-  background: var(--modeColor);
-  width: 24%;
+#user_homes {
+  margin: 70px 25px 0px auto;
+}
+.user_rentals_item {
+  margin: 20px 10px;
+  box-shadow: rgb(0,0,0) 0px 0px 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#greet {
+  margin: 20px 20px 0px 30px;
 }
 
 .user_rent_pics {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-row-gap: 5px;
-  grid-column-gap: 5px;
 }
-.user_ren_info ul {
-  flex-flow: column nowrap;
+#greet h1 {
+  font-size: 3rem;
+  color: var(--textMedium);
 }
-#user_rentals h3 {
-  text-align: center;
+#greet p {
   font-family: "roboto","arial";
-  margin: 12px auto;
+  font-weight: bold;
+  color: var(--textLight);
+  margin-top: 50px;
+  margin-right: 50px;
 }
-@media (max-width:1050px){
-  #main_div{
-    flex-flow: row wrap;
-  }
-  #option_box ul li{
-    margin:0 20px;
-  }
-  #profile_side {
-  flex-flow: row wrap;
+.user_ren_info h2 {
+  font-family: 'roboto','arial';
+  font-weight: bold;
+  color: var(--textMedium);
+}
+.user_ren_info p {
+  width: 80%;
+}
+.user_ren_info div {
+  margin-top: 10px;
+  min-width: 130px;
+}
+.user_ren_info {
   display: flex;
-  width: 100%;
+  flex-flow: column nowrap;
+  padding-left: 5%;
 }
-  #profile_box {
-  min-height: 75px;
-  border: 1px solid var(--lightBorder);
-  margin: 30px 10px;
-  min-width: 200px;
+
+#profile_box h3 {
+  font-weight: lighter;
+  font-size: 0.8rem;
 }
-  #option_box {
-  margin: auto;
-  min-height: 50px;
+#profile_box div {
+  align-self: center;
 }
-  #option_box ul {
+#user_rentals .user_ren_info div h3 {
+  margin: 0px;
+  margin-top: 10px;
+  color: var(--blueD);
+  font-size: 1rem;
+}
+.arrow_down {
+  width: 30px;
+  align-self: center;
+}
+#user_homes h3 {
+  color: var(--blueM);
+  font-family: 'roboto','arial';
+  margin-left: 10px;
+  max-height: 30px;
   display: flex;
-  flex-flow: row wrap;
-  padding: 20px;
-  height: 50px;
 }
-  
-  #info_side{
-    min-width: 95%;
-  }
+#profile_side button {
+  display: flex;
+  color: white;
+  background: var(--blueM);
+  cursor: pointer;
+  margin-right: 50px;
+}
+#profile_side button:hover{
+  background: var(--blueD);
+}
+
+
+.user_space_pics {
+}
+.user_rented_item {
+  margin: 5px;
+  box-shadow: rgb(0,0,0) 0px 0px 5px;
+  overflow: hidden;
+  border-radius: 5px;
+  max-width: 250px;
+}
+.user_rented_info h2 {
+  font-size: 1rem;
+  font-family: 'roboto','arial';
+  font-weight: bold;
+  color: var(--textMedium);
+}
+.user_rented_info {
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+.user_rented_info p {
+  font-size: 0.9rem;
+  width: 90%;
+}
+.user_rented_info div {
+  margin-top: 15px;
+}
+#user_homes .user_rented_info h3 {
+  margin-left: 0;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: var(--blueD);
+}
+.header_rent_list{
+  color: var(--blueM);
+  font-family: 'roboto','arial';
+  margin-left: 10px;
+  max-height: 30px;
+  display: flex;
+  margin-bottom: 15px;
 }
