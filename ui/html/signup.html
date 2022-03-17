@@ -29,19 +29,31 @@
     <h1>Space Rental</h1>
     </div>
    </div>
-   <div class="form_a">
+   <div class="form_a" id="form1">
        <h2 id="main_sign">Sign in</h2>
-       <form class="main_form">
+       <form class="main_form" action="/login" method="post">
            <input type="email" class="form_input" placeholder="E-mail address">
-           <input type="text" style="display: none;" class="form_input" placeholder="First name">
-           <input type="text" style="display: none;" class="form_input" placeholder="Last name">
            <input type="password" class="form_input" placeholder="Password">
            <p id="t_c">By signing in, I agree to the Space rental <a>Terms and Conditions</a> and <a>Privacy Statement</a>.</p>
            <input type="submit" class="form_btn" value="Continue">
        </form>
        <span id="sign_ask">Don't have an account?</span>
-       <a id="toggle_page" >Create one</a>
+       <a class="toggle_page" id="toggle_page" >Create one</a>
   
+</div>
+<div class="form_a" id="form2" style="display:none;">
+    <h2 id="main_sign">Create an account</h2>
+    <form class="main_form" action="/signup" method="post">
+        <input type="email" class="form_input" placeholder="E-mail address">
+        <input type="text" class="form_input" placeholder="First name">
+        <input type="text" class="form_input" placeholder="Last name">
+        <input type="password" class="form_input" placeholder="Password">
+        <p id="t_c">By creating an account, I agree to the Space rental <a>Terms and Conditions</a> and <a>Privacy Statement</a>.</p>
+        <input type="submit" class="form_btn" value="Continue">
+    </form>
+    <span id="sign_ask">Already have an account?</span>
+    <a class="toggle_page" id="toggle_page1" >Sign in</a>
+
 </div>
 
    <footer class="footer_img">

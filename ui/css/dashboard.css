@@ -2,11 +2,11 @@
   margin: 0px 30px;
 }
 #profile_side {
-  max-height: 86px;
+  max-height: 100px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  margin-right: 30px;
+  border-bottom: 1px solid var(--lightBg);
 }
 #profile_box img {
   height: 40px;
@@ -21,55 +21,52 @@
   box-shadow: rgb(125, 176, 247) 0px 0px 4px;
   padding: 5px;
   border-radius: 5px;
+  margin: 20px 0px;
+  border: 2px solid var(--blueM);
 }
 #info_side {
   display: grid;
-  grid-template-columns: 3fr 3fr 2fr;
+  grid-template-columns: 1fr 4fr;
 }
 #user_rentals {
-  height: 500px;
+  height: 80vh;
   overflow-y: auto;
-  margin: -20px 20px 0px 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 #user_homes {
-  margin: 70px 25px 0px auto;
+    height: 80vh;
+  overflow-y: auto;
 }
 .user_rentals_item {
   margin: 20px 10px;
-  box-shadow: rgb(0,0,0) 0px 0px 10px;
-  border-radius: 5px;
+  box-shadow: rgba(0,0,0,0.3) 0px 5px 10px;
+  border-radius: 25px;
   overflow: hidden;
+  max-width: 400px;
+  max-height: 288px;
+  border: 2px solid var(--lightBg);
 }
-#greet {
-  margin: 20px 20px 0px 30px;
-}
-
 .user_rent_pics {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-#greet h1 {
-  font-size: 3rem;
-  color: var(--textMedium);
-}
-#greet p {
-  font-family: "roboto","arial";
-  font-weight: bold;
-  color: var(--textLight);
-  margin-top: 50px;
-  margin-right: 50px;
-}
 .user_ren_info h2 {
-  font-family: 'roboto','arial';
-  font-weight: bold;
+  font-family: 'times new roman', serif;
   color: var(--textMedium);
+  font-size: 1.3rem;
+  padding: 10px 0px;
 }
 .user_ren_info p {
-  width: 80%;
+  font-size: 0.8rem;
+  font-family: 'roboto','sans-serif';
+  color: var(--textLight);
 }
 .user_ren_info div {
-  margin-top: 10px;
+  margin-top: 20px;
   min-width: 130px;
+  display: flex;
+  align-items: baseline;
 }
 .user_ren_info {
   display: flex;
@@ -85,13 +82,12 @@
   align-self: center;
 }
 #user_rentals .user_ren_info div h3 {
-  margin: 0px;
-  margin-top: 10px;
   color: var(--blueD);
   font-size: 1rem;
+  margin: 0px 10px;
 }
 .arrow_down {
-  width: 30px;
+  width: 36px;
   align-self: center;
 }
 #user_homes h3 {
@@ -100,27 +96,16 @@
   margin-left: 10px;
   max-height: 30px;
   display: flex;
-}
-#profile_side button {
-  display: flex;
-  color: white;
-  background: var(--blueM);
-  cursor: pointer;
-  margin-right: 50px;
-}
-#profile_side button:hover{
-  background: var(--blueD);
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-
-.user_space_pics {
-}
 .user_rented_item {
   margin: 5px;
   box-shadow: rgb(0,0,0) 0px 0px 5px;
   overflow: hidden;
   border-radius: 5px;
-  max-width: 250px;
+  max-width: 300px;
 }
 .user_rented_info h2 {
   font-size: 1rem;
@@ -129,21 +114,25 @@
   color: var(--textMedium);
 }
 .user_rented_info {
-  margin-left: 10px;
-  margin-bottom: 20px;
+  margin: -10px 20px 30px;
 }
 .user_rented_info p {
-  font-size: 0.9rem;
-  width: 90%;
+  font-family: 'roboto','arial';
+  font-size: 0.8rem;
+  font-weight: bolder;
+  color: var(--textLight);
 }
 .user_rented_info div {
   margin-top: 15px;
+  display: flex;
+  align-items: center;
 }
 #user_homes .user_rented_info h3 {
   margin-left: 0;
   font-size: 0.9rem;
   margin-top: 5px;
   color: var(--blueD);
+  margin-bottom: 5px;
 }
 .header_rent_list{
   color: var(--blueM);
@@ -152,4 +141,169 @@
   max-height: 30px;
   display: flex;
   margin-bottom: 15px;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+#left_nav_men ul {
+  flex-flow: column nowrap;
+  margin: 20px 0px;
+}
+#left_nav_men ul li {
+  padding: 10px 12px;
+  font-family: 'roboto','arial';
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 0px 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--textMedium);
+}
+#left_nav_men ul li:hover {
+  color: var(--blueM);
+  border: 2px solid var(--blueD);
+}
+.selected_nav{
+ border: 1px solid var(--lightBorder);
+}
+#left_s {
+  border-right: 1px solid var(--lightBg);
+}
+.right_s_item {
+  position: absolute;
+  visibility: hidden;
+  margin: 20px 20px;
+  width: calc(100% - 40px);
+}
+#right_s {
+  position: relative;
+}
+.user_ren_in {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.btn.card_btn {
+  height: 30px;
+  padding: 5px 15px;
+  margin: 15px 10px;
+  width: 86px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  min-height: 30px;
+}
+.top_block_space {
+  height: 20vh;
+  background-color: var(--lightBorder);
+  width: 100%;
+}
+#profile_main_left {
+  width: 50%;
+  display: flex;
+  margin: -25px 0px 20px 60px;
+  height: 100px;
+}
+#profile_top_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+#profile_main_left img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+#profile_main_left div {
+  margin: 36px 0px 0px 20px;
+}
+#change_pass_btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  background-color: var(--modeColor);
+}
+#pfbtn_left {
+  margin-right: 5px;
+  border-radius: 5px;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  border: 2px solid var(--blueM);
+  background-color: var(--modeColor);
+  cursor: pointer;
+}
+#pfbtn_right {
+  margin-right: 5px;
+  border-radius: 5px;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  border: 2px solid var(--blueM);
+  color: var(--modeColor);
+  background-color: var(--blueM);
+  cursor: pointer;
+}
+#change_pass_btn:hover {
+  background: var(--blueM);
+}
+#pfbtn_right:hover {
+  background: var(--blueD);
+  border: 2px solid var(--blueD);
+}
+#pfbtn_left:hover {
+  background: var(--blueM);
+}
+#main_form_profile {
+  display: grid;
+  margin-left: 30px;
+  width: 65%;
+}
+#main_form_profile label {
+  color: var(--textMedium);
+  font-family: 'roboto','arial';
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.main_form_profile_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  border-bottom: 1px solid var(--lightBorder);
+}
+
+.main_form_profile_item input {
+  width: 50%;
+  height: 60%;
+}
+#profile_pic_div {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+#preview_pp_btns {
+  margin-top: -25px;
+}
+#preview_pp_btns button {
+  border: none;
+  background: var(--modeColor);
+  font-size: 0.8rem;
+  color: var(--blueD);
+  font-weight: bolder;
+  cursor: pointer;
+}
+#preview_pp_btns button:hover {
+  text-decoration: underline;
+  color: var(--textMedium);
+}
+
+@media(max-width:1200px){
+  #user_rentals{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width:850px){
+
+}
+@media (max-width:500px){
+
 }

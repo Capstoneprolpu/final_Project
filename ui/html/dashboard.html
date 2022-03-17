@@ -26,34 +26,87 @@
                 </svg></i>
         <h1>Space Rental</h1>
         </div>
+        <input type="checkbox" id="toggle" checked><label for="toggle" class="nav_toggle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg></label>
         <ul  class="nav_side">
+            
             <li class="nav_item"><a>Home</a></li>
             <li class="nav_item"><a>Statistics</a></li>
             <li class="nav_item"><a>About us</a></li>
             <li  class="nav_item"><a id="sign_btn" href="../html/signup.html">Sign Out</a></li>
+           
         </ul>
        </div>
        <div id="main_div">
-           <div id="profile_side">
-               <button class="btn">Add New<span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-              </svg></span></button>
-               <div id="profile_box">
-                <img src="../media/0.jpg">
-                <div><h3>username temp</h3>
-                <h3>emailofuser@some.com</h3></div>
-               </div>
-           </div>
-           <div id="info_side">
-               <div id="greet">
-                   <h1>Welcome user, </br> to your DashBoard</h1>
-                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quam nobis. Laboriosam hic nemo officiis iure 
-                       reprehenderit autem animi consequuntur magnam! Vel excepturi maxime quis tenetur earum laboriosam 
-                       architecto perferendis?</p>
+
+           <div id="info_side"><div id="left_s">
+            <div id="profile_side">
+                <div id="profile_box">
+                 <img src="../media/0.jpg">
+                 <div><h3>username temp</h3>
+                 <h3>emailofuser@some.com</h3></div>
+                </div>
             </div>
-               
-              
-               <div>
+            <div id="left_nav_men"><ul>
+                <li class="toggle_right">Edit Profile</li>
+                <li class="toggle_right selected_nav">Listings</li>
+                <li class="toggle_right">Rented Spaces</li>
+                <li class="toggle_right">Transactions</li>
+                <li class="toggle_right">Statistics</li>
+                <li class="toggle_right">Settings</li>
+            </ul></div>
+        </div><div id="right_s">
+            <div class="right_s_item">
+                <div class="top_block_space"></div>
+                <div id="profile_form_edit">
+                    <form>
+                        <div id="profile_top_info">
+                            <div id="profile_main_left">
+                                <img src="../media/0.jpg">
+                                <div>
+                                    <p id="profile_username_main">username</p>
+                                    <button id="change_pass_btn">Change Password</button>
+                                </div>
+                            </div>
+                            <div id="profile_form_btns">
+                                <button id="pfbtn_left" type="reset">Cancel</button>
+                                <button id="pfbtn_right" type="submit">Save</button>
+                            </div>
+                        </div>
+                        <div id="main_form_profile">
+                            <div class="main_form_profile_item">
+                                <label for="form_username">Username</label>
+                                <input type="text" placeholder="Username" id="form_username">
+                            </div>
+                            <div class="main_form_profile_item">
+                                <label for="form_profile_pic">Profile Photo</label>
+                                <input type="file" id="form_profile_pic" hidden>
+                                <div id="profile_pic_div">
+                                    <div id="preview_pp"></div>
+                                    <div id="preview_pp_btns">
+                                        <button>Delete</button>
+                                        <button>Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main_form_profile_item">
+                                <label for="form_firstname">First Name</label>
+                                <input type="text" placeholder="firstname" id="form_firstname">
+                            </div>
+                            <div class="main_form_profile_item">
+                                <label for="form_lastname">Last Name</label>
+                                <input type="text" placeholder="lastname" id="form_lastname">
+                            </div>
+                            <div class="main_form_profile_item">
+                                <label for="form_email">E-mail</label>
+                                <input type="text" placeholder="emailofuser@user.com" id="form_email">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+               <div class="right_s_item" style="visibility:visible">
                    <h3 class="header_rent_list">Your Listings<span class="arrow_down"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
                   </svg></span></h3>
@@ -63,7 +116,7 @@
                         <img src="../media/home1.jpg">
                         <img src="../media/home2.jpg">
                        </div>
-                       
+                       <div class="user_ren_in">
                        <div class="user_ren_info">
                            <h2>Room 500sqft 4 beds</h2>
                            <p>
@@ -72,18 +125,20 @@
                                Some city, StateName
                            </p>
                            <div><p>Booked Until:</p><h3>20 April 2022</h3></div>
-                           <div>
-                               <button class="btn">Delete</button>
-                               <button class="btn">Edit</button>
-                            </div>
+                          
                        </div>
+                       <div>
+                        <button class="btn card_btn">Delete</button>
+                        <button class="btn card_btn">Edit</button>
+                     </div>
+                    </div>
                    </div>
                    <div class="user_rentals_item">
                     <div class="user_rent_pics">
                      <img src="../media/home1.jpg">
                      <img src="../media/home2.jpg">
                     </div>
-                    
+                    <div class="user_ren_in">
                     <div class="user_ren_info">
                         <h2>Room 500sqft 4 beds</h2>
                         <p>
@@ -92,14 +147,17 @@
                             Some city, StateName
                         </p>
                         <div><p>Booked Until:</p><h3>20 April 2022</h3></div>
-                        <div>
-                            <button class="btn">Delete</button>
-                            <button class="btn">Edit</button>
-                         </div>
+                       
                     </div>
+                    <div>
+                     <button class="btn card_btn">Delete</button>
+                     <button class="btn card_btn">Edit</button>
+                  </div>
+                 </div>
                 </div>
             </div>
                </div>
+               <div class="right_s_item">
                <div id="user_homes" class="info_items">
                    <h3>Your rented space<span class="arrow_down"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
@@ -121,10 +179,17 @@
                         <div><p>Booked Until:</p><h3>10 July 2022</h3></div>
                        
                     </div>
-                </div></div>
+                </div>
+            </div>
+        </div>
                </div>
-            
+               <div class="right_s_item"><h1>Transactions will visible here</h1></div>
+               <div class="right_s_item"><h1>Statistics</h1></div>
+               <div class="right_s_item"><h1>Settings</h1></div>
+
+            </div>
            </div>
        </div>
-</body>
+    <script src="../js/dashboard.js"></script>
+    </body>
 </html>

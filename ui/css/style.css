@@ -38,7 +38,7 @@ justify-content: space-around;
 
   .top_header div h1{
     color: var(--brandOrange);
-    font-size: 2em;
+    font-size: 1.5em;
     min-width: 250px;
     margin: auto;
   }
@@ -56,6 +56,7 @@ justify-content: space-around;
 
 .dis_flex{
   display: flex;
+  height: 70%;
 }
 
 #main_body{
@@ -64,7 +65,7 @@ justify-content: space-around;
   .top_header {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 10vh;
     background-color: var(--modeColor);
     border-bottom: 1px solid var(--lightBorder);
@@ -306,11 +307,11 @@ transition: all 300ms ease-in-out 0s;
   .form_btn:hover {
     background: var(--blueD);
   }
-  #toggle_page, #t_c a{
+  .toggle_page, #t_c a{
     cursor: pointer;
     color: var(--blueM);
   }
-  #toggle_page:hover, #t_c a:hover{
+  .toggle_page:hover, #t_c a:hover{
     color: var(--blueD);
     text-decoration: underline;
   }
@@ -355,13 +356,13 @@ min-height: 100px;
   }
 
 
-  @media (min-width: 750px){
+  @media (min-width: 850px){
     .nav_toggle{
       display: none;
     }
   }
 
-  @media (max-width: 750px){
+  @media (max-width: 850px){
 
 .top_header div{
   position: absolute;
