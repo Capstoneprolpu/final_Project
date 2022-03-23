@@ -52,7 +52,7 @@ legend {
     min-width: 200px;
     min-height: 200px;
     visibility: hidden;
-    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    box-shadow: 0 0px 20px rgba(0,0,0,0.3);
   }
 
   .filter_ext form {
@@ -223,16 +223,7 @@ margin-right: 15px;
   }
 
 
-  .arrow_filter{
-    position: absolute;
-top: 44px;
-right: 31px;
-border-style: solid;
-border-color: transparent transparent var(--modeColor);
-border-width: 0 7px 7px 7px;
-z-index: 33;
-visibility: hidden;
-  }
+
 
 
   @media (max-width: 800px){

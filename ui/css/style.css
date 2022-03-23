@@ -29,6 +29,7 @@ justify-content: space-around;
   }
   h1{
     font-family: 'Playfair Display', serif;
+    /*! font-family: futura; */
     font-weight: 700;
   }
 
@@ -117,6 +118,7 @@ color: var(--brandOrange);
     color: var(--modeColor);
     font-family: 'Playfair Display', serif;
     font-weight: 400;
+    text-shadow: rgb(0, 0, 0) 0px 0px 20px;
   }
 
   #sign_btn{
@@ -152,10 +154,12 @@ color: var(--blueM);
     font-size: 1.2em;
     padding: 0 1em;
     font-family: 'Roboto', sans-serif;
-    font-weight: 600;
+    font-weight: bold;
     border-radius: 10px;
-    border: 1px solid var(--blueM);
+    border: 2px solid var(--blueM)\);
 color: var(--textMedium);
+    background-color: var(--modeColor);
+    cursor: pointer;
   }
   .search_button:hover{
     color: var(--modeColor);
@@ -269,6 +273,17 @@ transition: all 300ms ease-in-out 0s;
     transform: scale(1.1);
   }
 
+  .arrow_filter{
+    position: absolute;
+top: 41px;
+right: 31px;
+border-style: solid;
+border-color: transparent transparent var(--modeColor);
+border-width: 0 10px 10px 10px;
+z-index: 33;
+visibility: hidden;
+  }
+
   #toggle{
     display: none;
   }
@@ -330,12 +345,13 @@ transition: all 300ms ease-in-out 0s;
     visibility: hidden;
     position: absolute;
     background: var(--modeColor);
-    top: 40px;
+    top: 50px;
     left: -10px;
     width: 200px;
     min-height: 100px;
     cursor:default;
     color: var(--textMedium);
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 30px;
   }
   .nav_dd:hover{
   color: var(--textMedium);
@@ -344,8 +360,9 @@ transition: all 300ms ease-in-out 0s;
 
   flex-flow: column nowrap;
 align-items: flex-start;
-min-height: 100px;
+min-height: 110px;
 
+  margin: 10px;
   }
 
   .nav_dd ul li{
@@ -354,6 +371,7 @@ min-height: 100px;
   .nav_dd ul li:hover{
     color: var(--blueM);
     cursor: pointer;
+    background: var(--lightBg);
   }
 
 
@@ -371,7 +389,7 @@ min-height: 100px;
 
     .nav_side{
       display: flex;
-      margin-top: 244px;
+      margin-top: 260px;
       background: var(--modeColor);
       width: 100%;
       left: 0;
@@ -408,13 +426,14 @@ min-height: 100px;
     }
     .main_search {
       width: 95%;
-      height: 60px;
+      height: 45px;
       font-size: 1em;
       padding-left: 0.5em;
     }
     .search_button {
-      height: 50px;
+      height: 44px;
       font-size: 1em;
       padding: 0 1em;
+      margin-top: 25px;
     }
   }

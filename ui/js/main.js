@@ -22,14 +22,30 @@ function initMap() {
   var filters = document.getElementsByClassName("filter_btn");
   var filext = document.getElementsByClassName("filter_ext");
   var arrowfil = document.getElementsByClassName("arrow_filter")
-  var filternumber=0;
+  var filternumber = 0;
+  var filterone = false;
   for(let i=0; i<filters.length; i++){
     filters[i].addEventListener('click',(e)=>{handlefilter(e , i);});
   }
   function handlefilter(e, i){
+    if(filternumber!=i){
+    filext[filternumber].style.visibility="hidden";
+    arrowfil[filternumber].style.visibility="hidden";  
     filext[i].style.visibility="visible";
     arrowfil[i].style.visibility="visible";
     filternumber=i;
+    }
+    else if(i==0 && filterone == false ){
+      filext[i].style.visibility="visible";
+      arrowfil[i].style.visibility="visible";
+      filterone=true;
+    }
+    else{
+      filext[i].style.visibility="hidden";
+      arrowfil[i].style.visibility="hidden";
+      filternumber=0;
+      filterone=false;
+    }
   }
  
   //Code to disappear filters menu
@@ -46,14 +62,15 @@ function initMap() {
 
   document.body.addEventListener('click',(event)=>{
     
-    if(!document.getElementsByClassName("filter_ext")[filternumber].contains(event.target)){
+    if(!document.getElementsByClassName("filter_ext")[filternumber].contains(event.target)&&!filters[filternumber].contains(event.target)){
     var boxs = document.getElementsByClassName("filter_ext");
-    for(let i=0; i<boxs.length; i++){
-      boxs[i].style.visibility="hidden";
-      arrowfil[i].style.visibility="hidden";
+    
+      boxs[filternumber].style.visibility="hidden";
+      arrowfil[filternumber].style.visibility="hidden";
+      filternumber=0;
+      filterone=false;
     }
-    }
-  },true)
+  })
 
 
   //Code for rent and sale filter
