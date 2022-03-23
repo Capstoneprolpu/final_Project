@@ -25,6 +25,7 @@
     padding: 0;
     flex-flow: row wrap;
 justify-content: space-around;
+    color: var(--textLight);
   }
   h1{
     font-family: 'Playfair Display', serif;

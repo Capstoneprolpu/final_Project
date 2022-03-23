@@ -12,3 +12,11 @@ man_btn.addEventListener("click",(e)=>{
         stat1="false";
     }
 });
+
+let mainsearch = document.getElementById('main_search_bar');
+mainsearch.addEventListener('change',e=>{
+    fetch('/search',{method:'GET', mode:'same-origin'}).then(response=>response.json).then(response=>{searchlist(response)}).catch(error=>console.log(error));
+})
+
+
+

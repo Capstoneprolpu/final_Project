@@ -4,7 +4,6 @@
 #profile_side {
   max-height: 100px;
   display: flex;
-  justify-content: center;
   align-items: center;
   border-bottom: 1px solid var(--lightBg);
 }
@@ -27,6 +26,7 @@
 #info_side {
   display: grid;
   grid-template-columns: 1fr 4fr;
+  /*! margin: 0px 30px; */
 }
 #user_rentals {
   height: 80vh;
@@ -41,7 +41,7 @@
 .user_rentals_item {
   margin: 20px 10px;
   box-shadow: rgba(0,0,0,0.3) 0px 5px 10px;
-  border-radius: 25px;
+  border-radius: 10px;
   overflow: hidden;
   max-width: 400px;
   max-height: 288px;
@@ -50,6 +50,8 @@
 .user_rent_pics {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 2%;
+  margin: 3% 3% 0px 3%;
 }
 .user_ren_info h2 {
   font-family: 'times new roman', serif;
@@ -147,26 +149,27 @@
 #left_nav_men ul {
   flex-flow: column nowrap;
   margin: 20px 0px;
+  margin-right: 40px;
 }
 #left_nav_men ul li {
-  padding: 10px 12px;
+  padding: 10px 20px;
   font-family: 'roboto','arial';
   cursor: pointer;
   border-radius: 10px;
-  margin: 0px 20px;
   font-size: 0.9rem;
   font-weight: bold;
-  color: var(--textMedium);
 }
 #left_nav_men ul li:hover {
   color: var(--blueM);
-  border: 2px solid var(--blueD);
 }
 .selected_nav{
- border: 1px solid var(--lightBorder);
+  text-decoration: underline;
+  color: var(--textMedium);
+  background: var(--lightBg);
 }
 #left_s {
   border-right: 1px solid var(--lightBg);
+  margin-left: 30px;
 }
 .right_s_item {
   position: absolute;
@@ -294,6 +297,30 @@
 #preview_pp_btns button:hover {
   text-decoration: underline;
   color: var(--textMedium);
+}
+.add_btn {
+  padding: 0;
+  color: var(--modeColor);
+  background: var(--blueM);
+  width: 170px;
+}
+.add_btn a {
+  padding: 10px 10px;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  /*! justify-content: center; */
+}
+.add_btn:hover {
+  background: var(--blueD);
+}
+.add_btn p {
+  flex-basis: 120px;
+  padding: 0;
+  margin: 0;
+}
+.add_btn svg {
+  width: 20px;
 }
 
 @media(max-width:1200px){
