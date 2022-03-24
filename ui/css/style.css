@@ -63,6 +63,8 @@ justify-content: space-around;
 
 #main_body{
   background-color: var(--modeColor);
+  position: relative;
+  height: 100vh;
 }
   .top_header {
     display: flex;

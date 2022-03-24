@@ -45,7 +45,7 @@ legend {
 
   .filter_ext {
     position: absolute;
-    top: 51px;
+    top: 48px;
     left: 0;
     background: var(--modeColor);
     z-index: 20;
@@ -149,6 +149,7 @@ border-radius: 2px;
     top: 4px;
     border: none;
     background:var(--modeColor);
+  max-width: 30px;
   }
 
   #city_input{
@@ -259,6 +260,7 @@ border-radius: 3px;
         .filters{
       flex-flow: row wrap;
       margin: 10px 10px;
+      position: relative;
     }
   }
   @media (max-width: 500px){
@@ -281,13 +283,45 @@ border-radius: 3px;
     #toggle_filter_btn_c:checked + label #down_filter_toggle{
       display: inline-block;
     }
-     
+    .arrow_filter{
+      display: none;
+    }
     .filters li {
-  margin: 10px 5px;
+  margin: 5px 5px;
+  position: initial;
 }
     .home_item{
       max-width: 90%;
     }
-   
+    .filter_ext {
+      top: 180px;
+      max-width: 90%;
+        margin-left:20px;
+}
+    .filter_ext form label{
+      font-size: 1rem;
+    }
+    .radio_circles{
+      height: 15px;
+    }
+    legend{
+      font-size:0.9rem;
+    }
+    .f1{
+      font-size:0.9rem;
+      padding: 5px 10px;
+    }
+    #mins, #maxs{
+      font-size:0.9rem;
+      padding: 5px 5px;
+    }
+    .price_dd{
+      font-size: 0.9rem;
+      padding: 5px 5px;
+    }
+    .space_type{
+      height: 15px;
+        width:15px;
+    }
   }
 
