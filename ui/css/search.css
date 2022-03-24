@@ -164,6 +164,9 @@ border-radius: 2px;
 
   .city_in{
       min-width: 200px;
+      margin-left: 10px;
+      border: 1px solid var(--lightBorder);
+      border-radius: 5px;
   }
 
   #main_dis {
@@ -223,10 +226,29 @@ margin-right: 15px;
   }
 
 
+#toggle_filter_btn_c {
+  display:none ;
+}
+#tfb_label{
+  height: 35px;
+margin-left: 30px;
+padding: 6px 20px 6px 15px;
+font-size: 1rem;
+border: solid var(--lightBorder) 1px;
+background: var(--modeColor);
+border-radius: 3px;
+  display: none;
+  color: var(--blueM);
+}
+#tfb_label:hover{
+  background-color: var(--blueM);
+  color: var(--modeColor);
+  border-color: var(--blueM);
+}
 
 
 
-  @media (max-width: 800px){
+  @media (max-width: 850px){
     #map{
       display: none;
       
@@ -234,10 +256,38 @@ margin-right: 15px;
     #homelist{
       max-width: 100%;
     }
+        .filters{
+      flex-flow: row wrap;
+      margin: 10px 10px;
+    }
   }
   @media (max-width: 500px){
+   
+
+    #tfb_label{
+      display: block;
+    }
+    #toggle_filter_btn_c:checked ~ li{
+      display: none;
+    }
+    
+     #down_filter_toggle{
+      display: none;
+    }
+    
+    #toggle_filter_btn_c:checked + label #up_filter_toggle{
+      display: none;
+    }
+    #toggle_filter_btn_c:checked + label #down_filter_toggle{
+      display: inline-block;
+    }
+     
+    .filters li {
+  margin: 10px 5px;
+}
     .home_item{
       max-width: 90%;
     }
+   
   }
 

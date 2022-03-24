@@ -1,125 +1,216 @@
 .add_form {
-    display: flex;
-    flex-flow: column nowrap;
-    position:absolute;
-    width: 100%;
-  }
+  display: flex;
+  flex-flow: column nowrap;
+  position: absolute;
+  width: 100%;
+}
 
 .select_input {
-    padding: 8px 5px;
-    color: var(--textMedium);
-    margin-bottom: 15px;
-    background: var(--modeColor);
-    border: 1px solid var(--lightBorder);
-    border-radius: 5px;
-  }
+  padding: 8px 5px;
+  color: var(--textMedium);
+  margin-bottom: 15px;
+  background: var(--modeColor);
+  border: 1px solid var(--lightBorder);
+  border-radius: 5px;
+}
 
 .baths_beds {
-    display: flex;
-    justify-content: space-between;
-  }
-  .flex_col {
-    display: flex;
-    flex-flow: column nowrap;
-  }
-  .add_form input {
-    font-size: 0.8rem;
-    border: solid 1px var(--lightBorder);
-    border-radius: 5px;
-    padding: 10px 6px;
-    margin-bottom: 15px;
-  }
-  .add_form textarea {
-    font-size: 0.9rem;
-    border: solid 1px var(--lightBorder);
-    border-radius: 5px;
-    padding: 10px 5px;
-    margin-bottom: 15px;
-    resize: none;
-    font-family: inherit;
-  }
+  display: flex;
+  justify-content: space-between;
+}
+.flex_col {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.add_form input {
+  font-size: 0.8rem;
+  border: solid 1px var(--lightBorder);
+  border-radius: 5px;
+  padding: 10px 6px;
+  margin-bottom: 15px;
+}
+.add_form textarea {
+  font-size: 0.9rem;
+  border: solid 1px var(--lightBorder);
+  border-radius: 5px;
+  padding: 10px 5px;
+  margin-bottom: 15px;
+  resize: none;
+  font-family: inherit;
+}
 
-  .add_form h2{
-    font-size: 1.1rem;
-    color: var(--blueM);
-  }
+.add_form h2 {
+  font-size: 1.1rem;
+  color: var(--blueM);
+}
 
-  label {
-    color: var(--blueM);
-    margin: 5px 4px;
-    font-family: "Roboto","sans-serif";
-    font-weight: bold;
-  }
+label {
+  color: var(--blueM);
+  margin: 5px 4px;
+  font-family: "Roboto", "sans-serif";
+  font-weight: bold;
+}
 
-  .form_for {
-    padding: 10px 5px;
-    border: 2px solid var(--blueM);
-    border-radius: 5px;
-    font-weight: bolder;
-    font-size: 1.3rem;
-    margin-top: 35px;
-  }
+.form_for {
+  padding: 10px 5px;
+  border: 2px solid var(--blueM);
+  border-radius: 5px;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  margin-top: 35px;
+}
 
-  .form_bac {
-    border: none;
-    background: inherit;
-    color: var(--textLight);
-    font-size: 1.3rem;
-    font-weight: bolder;
-    max-height: 52px;
-    max-width: 80px;
-    margin: auto;
-      margin-top: auto;
-    display: flex;
-    align-items: flex-start;
-    margin-top: 20px;
-  }
+.form_bac {
+  border: none;
+  background: inherit;
+  color: var(--textLight);
+  font-size: 1.3rem;
+  font-weight: bolder;
+  max-height: 52px;
+  max-width: 80px;
+  margin: auto;
+  margin-top: auto;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20px;
+}
 
-  .form_bac:hover{
-      background-color: var(--modeColor);
-      color: var(--textMedium);
-      transform: scale(1.1);
-  }
+.form_bac:hover {
+  background-color: var(--modeColor);
+  color: var(--textMedium);
+  transform: scale(1.1);
+}
 
+#previews {
+  height: 400px;
+  background: var(--lightBg);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: space-evenly;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.preview_item {
+  flex-basis: 45%;
+  height: 45%;
+  margin-left: 3.3%;
+  border: 2px solid var(--modeColor);
+  box-shadow: rgba(0,0,0,0.5) 0px 0px 10px;
+  object-fit: cover;
+}
+
+#previews h2 {
+  font-size: 2rem;
+  color: var(--textLight);
+  margin: 0% 0 0 22%;
+}
+
+#add_btn {
+  background: var(--blueM);
+  color: var(--modeColor);
+  width: 31%;
+  padding: 10px 10px;
+  cursor: pointer;
+  font-weight: lighter;
+  text-align: center;
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+#add_btn:hover {
+  background: var(--blueD);
+}
+
+#add_btn i {
+  height: 25px;
+}
+#previews h3 {
+  color: var(--textLight);
+  font-family: 'roboto','arial';
+  margin-left: 18%;
+  margin-top: -35%;
+}
+#pic_btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 25px 0;
+}
+#remove_pics {
+  margin: 0;
+  padding: 5px 20px;
+  color: var(--brandOrange);
+  border: 2px solid var(--brandOrange);
+  background: white;
+  font-weight: bold;
+}
+#remove_pics:hover {
+  background-color: var(--brandOrange);
+  color: var(--modeColor);
+}
+
+
+
+
+
+
+@media (max-width:480px){
+  
+  h2 {
+  font-size: 1.3rem;
+}
+  
+  
   #previews {
-    height: 400px;
-    background: var(--lightBorder);
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-content: space-evenly;
-  }
-
-  .preview_item {
-    width: 45%;
-    height: 45%;
-  }
-
-  #add_img_txt {
-    font-size: 2rem;
-    color: var(--textLight);
-    margin: 32% 20%;
-  }
-
-  #add_btn{
-    background: var(--blueM);
-    color: var(--modeColor);
-    width: 31%;
-    padding: 10px 10px;
-    cursor: pointer;
-    font-weight: lighter;
-    text-align: center;
-    max-height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-  }
-
-  #add_btn:hover{
-      background: var(--blueD);
-  }
-
-  #add_btn i{
-    height: 25px;
-  }
+  height: 250px;
+  margin-bottom: 10px;
+}
+  #add_btn {
+  width: 35%;
+  font-size: 0.7rem;
+  max-height: 30px;
+}
+  label {
+  font-size: 0.8rem;
+}
+.select_input {
+  font-size: 0.7rem;
+  padding: 5px 3px;
+  margin-bottom: 10px;
+}
+.add_form input {
+  font-size: 0.7rem;
+  padding: 7px 7px;
+  margin-bottom: 10px;
+}
+.add_form textarea {
+  padding: 5px 5px;
+  font-size: 0.7rem;
+  margin-bottom: 10px;
+}
+.form_for {
+  padding: 5px 5px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+  .form_bac {
+  font-size: 1.1rem;
+  max-width: 70px;
+}
+  #previews h2 {
+  font-size: 1.5rem;
+}
+#previews h3 {
+  font-size: 0.8rem;
+}
+  #remove_pics {
+  width: 35%;
+  font-size: 0.7rem;
+  min-height: 30px;
+}
+}
