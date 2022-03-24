@@ -7,6 +7,8 @@
     <title>Search page</title>
     <link rel="stylesheet" href="../css/search.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -21,7 +23,7 @@
          <li class="nav_item"><a>Sell</a></li>
          <li class="nav_item"><a>Manage Rental</a></li>
      </ul>
-     <div class="dis_flex">
+     <a id="main_logo_header" class="dis_flex" href="../../index.html">
         <span id="logo"><svg xmlns="http://www.w3.org/2000/svg" fill='currentColor' viewBox="0 0 91.84 92.65"><title>spacerentallogo</title>
             <path d="M20.73,0a22.44,22.44,0,0,0-9.16,1.84A17.35,17.35,0,0,0,4.74,7.07a17.7,17.7,0,0,0-3.13,
             6.85A51.8,51.8,0,0,0,.66,25.2V41.73H41V25.2a51.8,51.8,0,0,0-1-11.28,17.7,17.7,0,0,0-3.13-6.85A17.35,17.35,0,
@@ -34,7 +36,7 @@
             51.7 91.48 51.7 91.83 51.7 91.83 92.65 78.69 92.65"/>
             </svg></span>
     <h1>Space Rental</h1>
-    </div>
+        </a>
      <ul  class="nav_side">
          <li class="nav_item"><a>Advertise</a></li>
          <li class="nav_item"><a>Help</a></li>
@@ -43,7 +45,12 @@
     </div>
     <nav>
         <ul class="filters">
+            
+                
+            
             <li class="city_in"><form id="city_input" ><input type="text" placeholder="Lucknow, IN"><button class="searchBtn" type="submit"><svg viewBox="0 0 32 32" class="iconSearch" aria-hidden="true" focusable="false" role="img"><title>Search</title><path stroke="none" d="M29.41,26.59,23.77,21A12,12,0,0,0,14,2c-.17,0-.33,0-.5,0s-.33,0-.5,0A11,11,0,0,0,2,13c0,.17,0,.33,0,.5s0,.33,0,.5a12,12,0,0,0,19,9.77l5.64,5.64a2,2,0,0,0,2.82-2.82ZM14,22a8,8,0,1,1,8-8A8,8,0,0,1,14,22Z"></path></svg></button></form></li>
+            <input id="toggle_filter_btn_c" type="checkbox" checked>
+            <label id="tfb_label" for="toggle_filter_btn_c"><i id="down_filter_toggle" class="bi bi-chevron-down"></i><i id="up_filter_toggle" class="bi bi-chevron-up"></i>Filters</label>
             <li><button id="r_s" class="filter_btn">Rent</button>
                 <span class="arrow_filter"></span>
                 <div class="filter_ext">
@@ -144,7 +151,7 @@
                     </form>                      
                 </div>
             </li>
-            <li><button class="filter_btn">Save search</button></li>
+            <li><button class="filter_btn">Apply Filters</button></li>
         </ul>
     </nav>
     <div id="main_dis">
