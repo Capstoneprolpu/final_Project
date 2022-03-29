@@ -26,7 +26,6 @@ const preview = document.getElementById("previews");
 const inputElement = document.getElementById("pic_files");
 const imgtxt = document.getElementsByClassName("add_img_txt");
 let nofpics = 0;
-
 inputElement.addEventListener("change", handleFiles, false);
 function handleFiles() {
   while (imgtxt[0]) {
@@ -61,3 +60,15 @@ function handleFiles() {
     nofpics = nofpics + 1;
   }
 }
+
+//function to remove previewed pictures
+
+const rempic = document.getElementById("remove_pics");
+rempic.addEventListener("click", (e) => {
+  e.preventDefault();
+  const temp = document.getElementsByClassName("preview_item");
+  while (temp[0]) {
+    temp[0].remove();
+    nofpics = 0;
+  }
+});
