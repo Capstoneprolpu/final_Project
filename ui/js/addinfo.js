@@ -59,7 +59,9 @@ const handleFiles = () => {
     reader.readAsDataURL(file);
     noOfPics += 1;
   }
-}
+};
+
+inputElement.addEventListener("change", handleFiles, false);
 
 //function to remove previewed pictures
 
@@ -69,6 +71,6 @@ rempic.addEventListener("click", (e) => {
   const temp = document.getElementsByClassName("preview_item");
   while (temp[0]) {
     temp[0].remove();
-    nofpics = 0;
+    noOfPics = 0;
   }
 });

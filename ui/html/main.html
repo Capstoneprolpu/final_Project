@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search page</title>
     <link rel="icon" type="image/png" href="../../favicon.png" />
-    <link rel="stylesheet" href="../css/search.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/search.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="top_header">
-        <input type="checkbox" id="toggle" checked><label for="toggle" class="nav_toggle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-       </svg></label>
-     <ul class="nav_side">
+      <input type="checkbox" id="toggle" checked /><label
+        for="toggle"
+        class="nav_toggle"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-list"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+          /></svg
+      ></label>
+      <ul class="nav_side">
         <li class="nav_item"><a href="./main.html">Buy</a></li>
         <li class="nav_item"><a href="./signup.html">Sell</a></li>
         <li class="nav_item">
@@ -34,200 +53,324 @@
             </ul>
           </div>
         </li>
-     </ul>
-     <a id="main_logo_header" class="dis_flex" href="../../index.html">
-        <span id="logo"><svg xmlns="http://www.w3.org/2000/svg" fill='currentColor' viewBox="0 0 91.84 92.65"><title>spacerentallogo</title>
-            <path d="M20.73,0a22.44,22.44,0,0,0-9.16,1.84A17.35,17.35,0,0,0,4.74,7.07a17.7,17.7,0,0,0-3.13,
+      </ul>
+      <a id="main_logo_header" class="dis_flex" href="../../index.html">
+        <span id="logo"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 91.84 92.65"
+          >
+            <title>spacerentallogo</title>
+            <path
+              d="M20.73,0a22.44,22.44,0,0,0-9.16,1.84A17.35,17.35,0,0,0,4.74,7.07a17.7,17.7,0,0,0-3.13,
             6.85A51.8,51.8,0,0,0,.66,25.2V41.73H41V25.2a51.8,51.8,0,0,0-1-11.28,17.7,17.7,0,0,0-3.13-6.85A17.35,17.35,0,
-            0,0,30,1.84,22.44,22.44,0,0,0,20.88,0h-.15Z"/>
-            <polygon points="91.48 41.73 91.48 1.19 50.89 
-            41.73 91.48 41.73"/>
-            <polygon points="27.8 51.7 27.8 79.49 13.14 79.49 13.14 51.7 0 51.7 0 81.75 
-            0 92.65 40.59 92.65 40.95 92.65 40.95 51.7 27.8 51.7"/>
-            <polygon points="78.69 92.65 78.69 64.86 64.03 64.86 64.03 92.65 50.89 92.65 50.89 62.6 50.89 
-            51.7 91.48 51.7 91.83 51.7 91.83 92.65 78.69 92.65"/>
-            </svg></span>
-    <h1>Space Rental</h1>
-        </a>
-     <ul  class="nav_side">
-         <li class="nav_item"><a>Advertise</a></li>
-         <li class="nav_item"><a>Help</a></li>
-         <li  class="nav_item"><a id="sign_btn" href="../html/signup.html">Sign in</a></li>
-     </ul>
+            0,0,30,1.84,22.44,22.44,0,0,0,20.88,0h-.15Z"
+            />
+            <polygon
+              points="91.48 41.73 91.48 1.19 50.89 
+            41.73 91.48 41.73"
+            />
+            <polygon
+              points="27.8 51.7 27.8 79.49 13.14 79.49 13.14 51.7 0 51.7 0 81.75 
+            0 92.65 40.59 92.65 40.95 92.65 40.95 51.7 27.8 51.7"
+            />
+            <polygon
+              points="78.69 92.65 78.69 64.86 64.03 64.86 64.03 92.65 50.89 92.65 50.89 62.6 50.89 
+            51.7 91.48 51.7 91.83 51.7 91.83 92.65 78.69 92.65"
+            /></svg
+        ></span>
+        <h1>Space Rental</h1>
+      </a>
+      <ul class="nav_side">
+        <li class="nav_item"><a>Advertise</a></li>
+        <li class="nav_item"><a>Help</a></li>
+        <li class="nav_item">
+          <a id="sign_btn" href="../html/signup.html">Sign in</a>
+        </li>
+      </ul>
     </div>
     <nav>
-        <ul class="filters">
-            
-                
-            
-            <li class="city_in"><form id="city_input" ><input type="text" placeholder="Lucknow, IN"><button class="searchBtn" type="submit"><svg viewBox="0 0 32 32" class="iconSearch" aria-hidden="true" focusable="false" role="img"><title>Search</title><path stroke="none" d="M29.41,26.59,23.77,21A12,12,0,0,0,14,2c-.17,0-.33,0-.5,0s-.33,0-.5,0A11,11,0,0,0,2,13c0,.17,0,.33,0,.5s0,.33,0,.5a12,12,0,0,0,19,9.77l5.64,5.64a2,2,0,0,0,2.82-2.82ZM14,22a8,8,0,1,1,8-8A8,8,0,0,1,14,22Z"></path></svg></button></form></li>
-            <input id="toggle_filter_btn_c" type="checkbox" checked>
-            <label id="tfb_label" for="toggle_filter_btn_c"><i id="down_filter_toggle" class="bi bi-chevron-down"></i><i id="up_filter_toggle" class="bi bi-chevron-up"></i>Filters</label>
-            <li><button id="r_s" class="filter_btn">Rent</button>
-                <span class="arrow_filter"></span>
-                <div class="filter_ext">
-                    <form>
-                        <label for="rentradio"><input class="radio_circles" id="rentradio" type="radio" name="hometype" value="Rent">For rent</label>
-                        <label for="saleradio"><input class="radio_circles" type="radio" id="saleradio" name="hometype" value="Sale">For Sale</label>
-                        <div class="filter_div"><button class="filter_done" type="submit">Done</button></div>
-                    </form>
-                </div>
-            </li>
-            <li><button id="b_b" class="filter_btn">Beds and baths</button>
-                <span class="arrow_filter"></span>
-                <div class="filter_ext">
-                    <form >
-                        <fieldset id="fi1" >
-                            <legend>Bedrooms:</legend>
-                            <button pressed="true" class="formbtn f1" value="0+ Bd">Any</button>
-                            <button pressed="false" class="formbtn f1" value="1+ Bd">1+</button>
-                            <button pressed="false" class="formbtn f1" value="2+ Bd">2+</button>
-                            <button pressed="false" class="formbtn f1" value="3+ Bd">3+</button>
-                            <button pressed="false" class="formbtn f1" value="4+ Bd">4+</button>
-                            <button pressed="false" class="formbtn f1" value="5+ Bd">5+</button>
-                           
-                          </fieldset>
-                          <fieldset  id="fi2" >
-                            <legend>Bathrooms:</legend>
-                            <button pressed="true" class="formbtn1 f1" value="0+ Ba">Any</button>
-                            <button pressed="false" class="formbtn1 f1" value="1+ Ba">1+</button>
-                            <button pressed="false" class="formbtn1 f1" value="2+ Ba">2+</button>
-                            <button pressed="false" class="formbtn1 f1" value="3+ Ba">3+</button>
-                            <button pressed="false" class="formbtn1 f1" value="4+ Ba">4+</button>
-                            <button pressed="false" class="formbtn1 f1" value="5+ Ba">5+</button>
-                           
-                          </fieldset>
-                        <div class="filter_div"><button class="filter_done" type="submit">Done</button></div>
-                    </form>                    
-                </div>
-            </li>
-            <li><button id="pricebtn" class="filter_btn">Price</button>
-                <span class="arrow_filter"></span>
-                <div class="filter_ext">
-                    <form id="price_form">
-                        <fieldset class="price_field">
-                            <legend>Min. Price</legend>
-                            <input id="mins" type="text" placeholder="0+" autocomplete="off">
-                            <select class="price_dd" >
-                              <option value="" selected>0</option>
-                              <option value="1000">1000</option>
-                              <option value="2000">2000</option>
-                              <option value="3000">3000</option>
-                              <option value="4000">4000</option>
-                            </select>
-                          </fieldset>
-                          <span>__</span>
-                          <fieldset class="price_field">
-                              <legend>Max. price</legend>
-                            <input id="maxs" type="text" placeholder="Any" autocomplete="off">
-                               <select class="price_dd" >
-                              <option class="op2" value="" selected>Any</option>   
-                              <option class="op2" value="1000">1000</option>
-                              <option class="op2" value="2000">2000</option>
-                              <option class="op2" value="3000">3000</option>
-                              <option class="op2" value="4000">4000</option>
-                              
-                            </select>
-                          </fieldset>
-                        <div class="filter_div"><button id="price_sub" class="filter_done" type="submit">Done</button></div>
-                    </form>                      
-                </div>
-            </li>
-            <li><button id="space_type_btn" class="filter_btn">Home type</button>
-                <span class="arrow_filter"></span>
-                <div class="filter_ext">
-                    <form>
-                        <legend>Space Type</legend>
-                        <label><input class="space_type" type="checkbox" checked value="Home" autocomplete="off">Home</label>
-                        <label><input class="space_type" type="checkbox" checked value="Apartment" autocomplete="off">Apartment</label>
-                        <label><input class="space_type" type="checkbox" checked value="Room" autocomplete="off">Room</label>
-                        <div class="filter_div"><button id="roomtype" class="filter_done" type="submit">Done</button>
-                    </form>                     
-                </div>
-            </li>
-            <li><button class="filter_btn">More</button>
-                <span class="arrow_filter"></span>
-                <div class="filter_ext">
-                    <form>
-                        <fieldset id="fi3" >
-                           
-                            <button pressed="true" class="formbtn" value="0">Any</button>
-                            <button pressed="false" class="formbtn" value="1">1+</button>
-                            <button pressed="false" class="formbtn" value="2">2+</button>
-                            <button pressed="false" class="formbtn" value="3">3+</button>
-                            <button pressed="false" class="formbtn" value="4">4+</button>
-                            <button pressed="false" class="formbtn" value="5">5+</button>
-                           
-                          </fieldset>
-                        <div class="filter_div"><button class="filter_done" type="submit">Done</button></div>
-                    </form>                      
-                </div>
-            </li>
-            <li><button class="filter_btn">Apply Filters</button></li>
-        </ul>
+      <ul class="filters">
+        <li class="city_in">
+          <form id="city_input">
+            <input type="text" placeholder="Lucknow, IN" /><button
+              class="searchBtn"
+              type="submit"
+            >
+              <svg
+                viewBox="0 0 32 32"
+                class="iconSearch"
+                aria-hidden="true"
+                focusable="false"
+                role="img"
+              >
+                <title>Search</title>
+                <path
+                  stroke="none"
+                  d="M29.41,26.59,23.77,21A12,12,0,0,0,14,2c-.17,0-.33,0-.5,0s-.33,0-.5,0A11,11,0,0,0,2,13c0,.17,0,.33,0,.5s0,.33,0,.5a12,12,0,0,0,19,9.77l5.64,5.64a2,2,0,0,0,2.82-2.82ZM14,22a8,8,0,1,1,8-8A8,8,0,0,1,14,22Z"
+                ></path>
+              </svg>
+            </button>
+          </form>
+        </li>
+        <input id="toggle_filter_btn_c" type="checkbox" checked />
+        <label id="tfb_label" for="toggle_filter_btn_c"
+          ><i id="down_filter_toggle" class="bi bi-chevron-down"></i
+          ><i id="up_filter_toggle" class="bi bi-chevron-up"></i>Filters</label
+        >
+        <li>
+          <button id="r_s" class="filter_btn">Rent</button>
+          <span class="arrow_filter"></span>
+          <div class="filter_ext">
+            <form>
+              <label for="rentradio"
+                ><input
+                  class="radio_circles"
+                  id="rentradio"
+                  type="radio"
+                  name="hometype"
+                  value="Rent"
+                />For rent</label
+              >
+              <label for="saleradio"
+                ><input
+                  class="radio_circles"
+                  type="radio"
+                  id="saleradio"
+                  name="hometype"
+                  value="Sale"
+                />For Sale</label
+              >
+              <div class="filter_div">
+                <button class="filter_done" type="submit">Done</button>
+              </div>
+            </form>
+          </div>
+        </li>
+        <li>
+          <button id="b_b" class="filter_btn">Beds and baths</button>
+          <span class="arrow_filter"></span>
+          <div class="filter_ext">
+            <form>
+              <fieldset id="fi1">
+                <legend>Bedrooms:</legend>
+                <button pressed="true" class="formbtn f1" value="0+ Bd">
+                  Any
+                </button>
+                <button pressed="false" class="formbtn f1" value="1+ Bd">
+                  1+
+                </button>
+                <button pressed="false" class="formbtn f1" value="2+ Bd">
+                  2+
+                </button>
+                <button pressed="false" class="formbtn f1" value="3+ Bd">
+                  3+
+                </button>
+                <button pressed="false" class="formbtn f1" value="4+ Bd">
+                  4+
+                </button>
+                <button pressed="false" class="formbtn f1" value="5+ Bd">
+                  5+
+                </button>
+              </fieldset>
+              <fieldset id="fi2">
+                <legend>Bathrooms:</legend>
+                <button pressed="true" class="formbtn1 f1" value="0+ Ba">
+                  Any
+                </button>
+                <button pressed="false" class="formbtn1 f1" value="1+ Ba">
+                  1+
+                </button>
+                <button pressed="false" class="formbtn1 f1" value="2+ Ba">
+                  2+
+                </button>
+                <button pressed="false" class="formbtn1 f1" value="3+ Ba">
+                  3+
+                </button>
+                <button pressed="false" class="formbtn1 f1" value="4+ Ba">
+                  4+
+                </button>
+                <button pressed="false" class="formbtn1 f1" value="5+ Ba">
+                  5+
+                </button>
+              </fieldset>
+              <div class="filter_div">
+                <button class="filter_done" type="submit">Done</button>
+              </div>
+            </form>
+          </div>
+        </li>
+        <li>
+          <button id="pricebtn" class="filter_btn">Price</button>
+          <span class="arrow_filter"></span>
+          <div class="filter_ext">
+            <form id="price_form">
+              <fieldset class="price_field">
+                <legend>Min. Price</legend>
+                <input
+                  id="mins"
+                  type="text"
+                  placeholder="0+"
+                  autocomplete="off"
+                />
+                <select class="price_dd">
+                  <option value="" selected>0</option>
+                  <option value="1000">1000</option>
+                  <option value="2000">2000</option>
+                  <option value="3000">3000</option>
+                  <option value="4000">4000</option>
+                </select>
+              </fieldset>
+              <span>__</span>
+              <fieldset class="price_field">
+                <legend>Max. price</legend>
+                <input
+                  id="maxs"
+                  type="text"
+                  placeholder="Any"
+                  autocomplete="off"
+                />
+                <select class="price_dd">
+                  <option class="op2" value="" selected>Any</option>
+                  <option class="op2" value="1000">1000</option>
+                  <option class="op2" value="2000">2000</option>
+                  <option class="op2" value="3000">3000</option>
+                  <option class="op2" value="4000">4000</option>
+                </select>
+              </fieldset>
+              <div class="filter_div">
+                <button id="price_sub" class="filter_done" type="submit">
+                  Done
+                </button>
+              </div>
+            </form>
+          </div>
+        </li>
+        <li>
+          <button id="space_type_btn" class="filter_btn">Home type</button>
+          <span class="arrow_filter"></span>
+          <div class="filter_ext">
+            <form>
+              <legend>Space Type</legend>
+              <label
+                ><input
+                  class="space_type"
+                  type="checkbox"
+                  checked
+                  value="Home"
+                  autocomplete="off"
+                />Home</label
+              >
+              <label
+                ><input
+                  class="space_type"
+                  type="checkbox"
+                  checked
+                  value="Apartment"
+                  autocomplete="off"
+                />Apartment</label
+              >
+              <label
+                ><input
+                  class="space_type"
+                  type="checkbox"
+                  checked
+                  value="Room"
+                  autocomplete="off"
+                />Room</label
+              >
+              <div class="filter_div">
+                <button id="roomtype" class="filter_done" type="submit">
+                  Done
+                </button>
+              </div>
+            </form>
+          </div>
+        </li>
+        <li>
+          <button class="filter_btn">More</button>
+          <span class="arrow_filter"></span>
+          <div class="filter_ext">
+            <form>
+              <fieldset id="fi3">
+                <button pressed="true" class="formbtn" value="0">Any</button>
+                <button pressed="false" class="formbtn" value="1">1+</button>
+                <button pressed="false" class="formbtn" value="2">2+</button>
+                <button pressed="false" class="formbtn" value="3">3+</button>
+                <button pressed="false" class="formbtn" value="4">4+</button>
+                <button pressed="false" class="formbtn" value="5">5+</button>
+              </fieldset>
+              <div class="filter_div">
+                <button class="filter_done" type="submit">Done</button>
+              </div>
+            </form>
+          </div>
+        </li>
+        <li><button class="filter_btn">Apply Filters</button></li>
+      </ul>
     </nav>
     <div id="main_dis">
-    <div id="map"></div>
+      <div id="map"></div>
 
-    <div id="homelist">
+      <div id="homelist">
         <h2>Rental Listings</h2>
         <div class="home_item">
-            <img src="../media/home1.jpg" class="home_img">
-            <article>
+          <img src="../media/home1.jpg" class="home_img" />
+          <article>
             <h2 id="price_r">Rs2000/mo</h2>
             <p>5Bds 1Ba 4200sqft- Apartment for rent</p>
             <p>Near some place, somewhere</p>
-        </article>
+          </article>
         </div>
         <div class="home_item">
-            <img src="../media/home2.jpg" class="home_img">
-            <article>
+          <img src="../media/home2.jpg" class="home_img" />
+          <article>
             <h2 id="price_r">Rs1500/mo</h2>
             <p>8Bds 5Ba 500sqft- Apartment for rent</p>
             <p>Near some place, somewhere</p>
-        </article>
+          </article>
         </div>
         <div class="home_item">
-            <img src="../media/home3.jpg" class="home_img">
-            <article>
+          <img src="../media/home3.jpg" class="home_img" />
+          <article>
             <h2 id="price_r">Rs3500/mo</h2>
             <p>4Bds 2Ba 4100sqft- Apartment for rent</p>
             <p>Near some place, somewhere</p>
-        </article>
+          </article>
         </div>
         <div class="home_item">
-            <img src="../media/home4.jpg" class="home_img">
-            <article>
+          <img src="../media/home4.jpg" class="home_img" />
+          <article>
             <h2 id="price_r">Rs900/mo</h2>
             <p>6Bds 4Ba 2400sqft- Apartment for rent</p>
             <p>Near some place, somewhere</p>
-        </article>
+          </article>
         </div>
         <div class="home_item">
-            <img src="../media/home1.jpg" class="home_img">
-        <article>
+          <img src="../media/home1.jpg" class="home_img" />
+          <article>
             <h2 id="price_r">Rs4000/mo</h2>
             <p>3Bds 2Ba 4200sqft- Apartment for rent</p>
             <p>Near some place, somewhere</p>
-        </article>
+          </article>
         </div>
         <div class="home_item">
-        
-            <img src="../media/home2.jpg" class="home_img">
-            <article>
+          <img src="../media/home2.jpg" class="home_img" />
+          <article>
             <h2 id="price_r">Rs9000/mo</h2>
             <p>5Bds 5Ba 4400sqft- Apartment for rent</p>
             <p>Near some place, somewhere</p>
-        </article>
+          </article>
         </div>
+      </div>
     </div>
-
-</div>
 
     <script src="../js/main.js"></script>
     <script src="../js/nav.js"></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0roVlX7F2OFWaOm7INNVt2DBlhYP8uiY&libraries=places&callback=initMap"></script>
-
-    
-</body>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0roVlX7F2OFWaOm7INNVt2DBlhYP8uiY&libraries=places&callback=initMap"
+    ></script>
+  </body>
 </html>
