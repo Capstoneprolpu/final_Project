@@ -27,6 +27,7 @@ ul {
   justify-content: space-around;
   color: var(--textLight);
 }
+
 h1 {
   font-family: "Playfair Display", serif;
   /*! font-family: futura; */
@@ -65,6 +66,7 @@ svg {
   position: relative;
   height: 100vh;
 }
+
 .top_header {
   display: flex;
   align-items: center;
@@ -92,6 +94,7 @@ svg {
   align-self: center;
   position: relative;
 }
+
 .nav_item:hover {
   color: var(--blueM);
 }
@@ -465,11 +468,13 @@ footer {
   body {
     position: relative;
   }
+  
   .footer_img {
-    left: 0;
-    width: 100%;
-    overflow: hidden;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
   }
+  
   .footer-image {
     width: 380%;
     position: relative;

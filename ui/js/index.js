@@ -1,10 +1,11 @@
 //function to send request to backend to get suggestions for search
-let mainsearch = document.getElementById("main_search_bar");
-mainsearch.addEventListener("change", (e) => {
+let mainSearch = document.getElementById("main_search_bar");
+mainSearch.addEventListener("change", () => {
   fetch("/search", { method: "GET", mode: "same-origin" })
     .then((response) => response.json)
     .then((response) => {
-      searchlist(response);
+      // searchList() still needs to be implemented
+      searchList(response);
     })
     .catch((error) => console.log(error));
 });
