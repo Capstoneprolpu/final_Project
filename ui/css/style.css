@@ -236,6 +236,7 @@ transition: all 300ms ease-in-out 0s;
     font-family: 'Roboto', sans-serif;
 
     width: 100%;
+
   }
   .footer_img{
     position: absolute;
@@ -383,6 +384,7 @@ min-height: 110px;
 }
 
 
+
   @media (min-width: 850px){
     .nav_toggle{
       display: none;
@@ -472,6 +474,9 @@ min-height: 110px;
 }
   }
 @media (max-width:480px){
+  body{
+    position: relative;
+  }
   .footer_img {
   left: 0;
   width: 100%;
@@ -479,5 +484,7 @@ min-height: 110px;
 }
 .footer-image {
   width: 380%;
+  position: relative;
+bottom: 0;
 }
 }
