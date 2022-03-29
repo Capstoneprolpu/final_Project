@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search page</title>
+    <link rel="icon" type="image/png" href="../../favicon.png" />
     <link rel="stylesheet" href="../css/search.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -19,9 +20,20 @@
          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
        </svg></label>
      <ul class="nav_side">
-         <li class="nav_item"><a>Buy</a></li>
-         <li class="nav_item"><a>Sell</a></li>
-         <li class="nav_item"><a>Manage Rental</a></li>
+        <li class="nav_item"><a href="./main.html">Buy</a></li>
+        <li class="nav_item"><a href="./signup.html">Sell</a></li>
+        <li class="nav_item">
+          <a id="man_dd">Manage Rental</a>
+          <span class="arrow_nav"></span>
+          <div class="nav_dd">
+            <ul>
+              <li>
+                <a href="./dashboard.html">Manage your rentals</a>
+              </li>
+              <li><a href="./addinfo.html">Add new rental</a></li>
+            </ul>
+          </div>
+        </li>
      </ul>
      <a id="main_logo_header" class="dis_flex" href="../../index.html">
         <span id="logo"><svg xmlns="http://www.w3.org/2000/svg" fill='currentColor' viewBox="0 0 91.84 92.65"><title>spacerentallogo</title>
@@ -213,6 +225,7 @@
 </div>
 
     <script src="../js/main.js"></script>
+    <script src="../js/nav.js"></script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0roVlX7F2OFWaOm7INNVt2DBlhYP8uiY&libraries=places&callback=initMap"></script>
 
     

@@ -64,6 +64,8 @@ svg {
 
 #main_body {
   background-color: var(--modeColor);
+  position: relative;
+  height: 100vh;
 }
 
 .top_header {
@@ -224,15 +226,11 @@ button:hover {
   background-color: var(--blueM);
 }
 
-.art_p {
-  font-size: 1.15em;
-  padding-bottom: 10px;
-}
-
 footer {
   background-color: var(--modeColor);
   font-family: "Roboto", sans-serif;
   width: 100%;
+  overflow: hidden;
 }
 
 .footer_img {
@@ -493,14 +491,119 @@ footer {
   }
 }
 
-@media (max-width: 480px) {
-  .footer_img {
-    left: 0;
-    width: 100%;
-    overflow: hidden;
+  @media (min-width: 850px){
+    .nav_toggle{
+      display: none;
+    }
+    .filters{
+      flex-flow: row wrap
+    }
   }
 
-  .footer-image {
-    width: 380%;
+@media (max-width: 850px) {
+  #main_logo_header {
+    position: absolute;
+  }
+
+  .nav_side {
+    display: flex;
+    margin-top: 260px;
+    background: var(--modeColor);
+    width: 100%;
+    left: 0;
+    height: 33vh;
+    z-index: 20;
+    position: relative;
+    top: 28px;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+  
+  .nav_item {
+    padding: 15px 15px;
+    margin: 10px 0px;
+  }
+
+  .nav_toggle {
+    margin-right: 15px;
+    width: 40px;
+    position: absolute;
+    text-decoration: none;
+    right: 0;
+    cursor: pointer;
+    z-index: 5;
+  }
+  
+  input:checked ~ .nav_side {
+    display: none;
+  }
+
+  #search_toptext {
+    font-size: 2em;
+  }
+
+  .search_input {
+    width: 100%;
+  }
+  
+  .main_search {
+    width: 95%;
+    height: 45px;
+    font-size: 1em;
+    padding-left: 0.5em;
+  }
+  
+  .search_button {
+    height: 44px;
+    font-size: 1em;
+    padding: 0 1em;
+    margin-top: 25px;
+  }
+  
+  .form_a {
+    width: 80%;
+  }
+  
+  .form_input {
+    font-size: 1em;
+    height: 40px;
+    margin: 10px 0;
+  }
+  
+  #main_sign {
+    font-size: 1.4rem;
+  }
+  
+  #t_c {
+    font-size: 0.8em;
+  }
+  
+  .form_btn {
+    height: 40px;
+    font-size: 1em;
+    margin: 20px;
+  }
+  
+  #sign_ask {
+    margin-left: 18%;
   }
 }
+
+@media (max-width:480px){
+  body{
+    position: relative;
+  }
+  
+  .footer_img {
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  }
+  
+  .footer-image {
+    width: 380%;
+    position: relative;
+    bottom: 0;
+  }
+}
+

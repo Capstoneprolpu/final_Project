@@ -38,9 +38,6 @@ legend {
   border-radius: 3px;
 }
 
-.filter_btn:visited {
-  border: solid 1px var(--blueM);
-}
 
 .filter_ext {
   position: absolute;
@@ -148,7 +145,8 @@ legend {
   top: 4px;
   border: none;
   background: var(--modeColor);
-}
+  max-width: 30px;
+ }
 
 #city_input {
   position: relative;
@@ -286,7 +284,53 @@ legend {
 
   .filters li {
     margin: 10px 5px;
+    position: initial;
   }
+  
+  .arrow_filter{
+      display: none;
+  }
+   
+  .home_item{
+      max-width: 90%;
+  }
+  
+  .filter_ext {
+      top: 180px;
+      max-width: 90%;
+        margin-left:20px;
+  }
+  
+  .filter_ext form label{
+      font-size: 1rem;
+   }
+  
+  .radio_circles{
+      height: 15px;
+   }
+  
+   legend{
+      font-size:0.9rem;
+   }
+  
+   .f1{
+      font-size:0.9rem;
+      padding: 5px 10px;
+   }
+    
+   #mins, #maxs{
+      font-size:0.9rem;
+      padding: 5px 5px;
+   }
+  
+   .price_dd{
+      font-size: 0.9rem;
+      padding: 5px 5px;
+   }
+   .space_type{
+      height: 15px;
+      width:15px;
+   }
 
   .home_item {
     max-width: 90%;
