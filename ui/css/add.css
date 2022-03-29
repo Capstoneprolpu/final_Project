@@ -18,10 +18,12 @@
   display: flex;
   justify-content: space-between;
 }
+
 .flex_col {
   display: flex;
   flex-flow: column nowrap;
 }
+
 .add_form input {
   font-size: 0.8rem;
   border: solid 1px var(--lightBorder);
@@ -29,6 +31,7 @@
   padding: 10px 6px;
   margin-bottom: 15px;
 }
+
 .add_form textarea {
   font-size: 0.9rem;
   border: solid 1px var(--lightBorder);
@@ -97,7 +100,7 @@ label {
   height: 45%;
   margin-left: 3.3%;
   border: 2px solid var(--modeColor);
-  box-shadow: rgba(0,0,0,0.5) 0px 0px 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
   object-fit: cover;
 }
 
@@ -129,18 +132,21 @@ label {
 #add_btn i {
   height: 25px;
 }
+
 #previews h3 {
   color: var(--textLight);
-  font-family: 'roboto','arial';
+  font-family: "roboto", "arial";
   margin-left: 18%;
   margin-top: -35%;
 }
+
 #pic_btns {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 0 25px 0;
 }
+
 #remove_pics {
   margin: 0;
   padding: 5px 20px;
@@ -149,68 +155,72 @@ label {
   background: white;
   font-weight: bold;
 }
+
 #remove_pics:hover {
   background-color: var(--brandOrange);
   color: var(--modeColor);
 }
 
-
-
-
-
-
-@media (max-width:480px){
-  
+@media (max-width: 480px) {
   h2 {
-  font-size: 1.3rem;
-}
-  
-  
+    font-size: 1.3rem;
+  }
+
   #previews {
-  height: 250px;
-  margin-bottom: 10px;
-}
+    height: 250px;
+    margin-bottom: 10px;
+  }
+
   #add_btn {
-  width: 35%;
-  font-size: 0.7rem;
-  max-height: 30px;
-}
+    width: 35%;
+    font-size: 0.7rem;
+    max-height: 30px;
+  }
+
   label {
-  font-size: 0.8rem;
-}
-.select_input {
-  font-size: 0.7rem;
-  padding: 5px 3px;
-  margin-bottom: 10px;
-}
-.add_form input {
-  font-size: 0.7rem;
-  padding: 7px 7px;
-  margin-bottom: 10px;
-}
-.add_form textarea {
-  padding: 5px 5px;
-  font-size: 0.7rem;
-  margin-bottom: 10px;
-}
-.form_for {
-  padding: 5px 5px;
-  font-size: 1.1rem;
-  margin-top: 20px;
-}
+    font-size: 0.8rem;
+  }
+
+  .select_input {
+    font-size: 0.7rem;
+    padding: 5px 3px;
+    margin-bottom: 10px;
+  }
+
+  .add_form input {
+    font-size: 0.7rem;
+    padding: 7px 7px;
+    margin-bottom: 10px;
+  }
+
+  .add_form textarea {
+    padding: 5px 5px;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+  }
+
+  .form_for {
+    padding: 5px 5px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+
   .form_bac {
-  font-size: 1.1rem;
-  max-width: 70px;
-}
+    font-size: 1.1rem;
+    max-width: 70px;
+  }
+
   #previews h2 {
-  font-size: 1.5rem;
-}
-#previews h3 {
-  font-size: 0.8rem;
-}
+    font-size: 1.5rem;
+  }
+
+  #previews h3 {
+    font-size: 0.8rem;
+  }
+
   #remove_pics {
-  width: 35%;
-  font-size: 0.7rem;
-  min-height: 30px;
-}
+    width: 35%;
+    font-size: 0.7rem;
+    min-height: 30px;
+  }
 }

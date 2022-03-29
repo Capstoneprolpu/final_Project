@@ -1,190 +1,172 @@
-var map;
-var location1 = {lat: 26.8467, lng: 80.9462};
+let map;
+let primaryLocation = { lat: 26.8467, lng: 80.9462 };
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: location1,
-    zoom: 11
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: primaryLocation,
+    zoom: 11,
   });
 
-    var marker = new google.maps.Marker({
-      map: map,
-      position: location1
-    });
+  var marker = new google.maps.Marker({
+    map: map,
+    position: primaryLocation,
+  });
+}
+
+//Code for filter buttons
+const filters = document.querySelectorAll(".filter_btn");
+const filterExt = document.getElementsByClassName("filter_ext");
+const arrowFilter = document.getElementsByClassName("arrow_filter");
+let filterNumber = 0;
+let filterone = false;
+
+filters.forEach((filter, filterIndex) => {
+  filter.addEventListener("click", (event) => {
+    handleFilter(event, filterIndex);
+  });
+});
+
+const handleFilter = (event, i) => {
+  if (filterNumber !== i) {
+    filterExt[filterNumber].style.visibility = "hidden";
+    arrowFilter[filterNumber].style.visibility = "hidden";
+    filterExt[i].style.visibility = "visible";
+    arrowFilter[i].style.visibility = "visible";
+    filterNumber = i;
+  } else if (i === 0 && filterone === false) {
+    filterExt[i].style.visibility = "visible";
+    arrowFilter[i].style.visibility = "visible";
+    filterone = true;
+  } else {
+    filterExt[i].style.visibility = "hidden";
+    arrowFilter[i].style.visibility = "hidden";
+    filterNumber = 0;
+    filterone = false;
   }
+};
 
+//Code to disappear filters menu
+const subs = document.querySelectorAll(".filter_done");
+subs.forEach((sub, subIndex) => {
+  sub.addEventListener("click", (event) => {
+    event.preventDefault();
+    filterExt[subIndex].style.visibility = "hidden";
+    arrowFilter[subIndex].style.visibility = "hidden";
+  });
+});
 
-  const data = fetch()
+document.body.addEventListener("click", (event) => {
+  if (
+    !document
+      .getElementsByClassName("filter_ext")
+      [filterNumber].contains(event.target) &&
+    !filters[filterNumber].contains(event.target)
+  ) {
+    const boxs = document.getElementsByClassName("filter_ext");
 
-
-
-  //Code for filter buttons
-
-  var filters = document.getElementsByClassName("filter_btn");
-  var filext = document.getElementsByClassName("filter_ext");
-  var arrowfil = document.getElementsByClassName("arrow_filter")
-  var filternumber = 0;
-  var filterone = false;
-  for(let i=0; i<filters.length; i++){
-    filters[i].addEventListener('click',(e)=>{handlefilter(e , i);});
+    boxs[filterNumber].style.visibility = "hidden";
+    arrowFilter[filterNumber].style.visibility = "hidden";
+    filterNumber = 0;
+    filterone = false;
   }
-  function handlefilter(e, i){
-    if(filternumber!=i){
-    filext[filternumber].style.visibility="hidden";
-    arrowfil[filternumber].style.visibility="hidden";  
-    filext[i].style.visibility="visible";
-    arrowfil[i].style.visibility="visible";
-    filternumber=i;
-    }
-    else if(i==0 && filterone == false ){
-      filext[i].style.visibility="visible";
-      arrowfil[i].style.visibility="visible";
-      filterone=true;
-    }
-    else{
-      filext[i].style.visibility="hidden";
-      arrowfil[i].style.visibility="hidden";
-      filternumber=0;
-      filterone=false;
-    }
-  }
- 
-  //Code to disappear filters menu
+});
 
-  var subs = document.getElementsByClassName("filter_done");
-  for(let i=0;i<subs.length;i++){
-    subs[i].addEventListener('click',(e)=>{
-      e.preventDefault();
-      filext[i].style.visibility="hidden";
-      arrowfil[i].style.visibility="hidden";
-    })
-  }
-
-
-  document.body.addEventListener('click',(event)=>{
-    
-    if(!document.getElementsByClassName("filter_ext")[filternumber].contains(event.target)&&!filters[filternumber].contains(event.target)){
-    var boxs = document.getElementsByClassName("filter_ext");
-    
-      boxs[filternumber].style.visibility="hidden";
-      arrowfil[filternumber].style.visibility="hidden";
-      filternumber=0;
-      filterone=false;
-    }
-  })
-
-
-  //Code for rent and sale filter
-
-  var rs = document.getElementById("r_s");
-  var radCir = document.getElementsByClassName("radio_circles");
-  radCir[0].addEventListener('click',(e)=>{
-   rs.textContent=radCir[0].value;
-  })
-  radCir[1].addEventListener('click',(e)=>{
-    rs.textContent=radCir[1].value;
-    
-   })
-
+//Code for rent and sale filter
+const rs = document.getElementById("r_s");
+const radCir = document.getElementsByClassName("radio_circles");
+radCir[0].addEventListener("click", () => {
+  rs.textContent = radCir[0].value;
+});
+radCir[1].addEventListener("click", () => {
+  rs.textContent = radCir[1].value;
+});
 
 //Code for filter bedroom and bathroom selection.
-var bb = document.getElementById("b_b");
-
-var btns = document.getElementsByClassName("formbtn");
-var bds = 0;
-for(let i = 0;i<btns.length;i++){
-  btns[i].addEventListener('click',(e)=>{
-   e.preventDefault()
-    btns[i].setAttribute("pressed","true");
-    btns[bds].setAttribute("pressed","false");
-    bds=i;
-   bb.textContent = `${bds}+ Bd, ${bds1}+ Ba`;
-   bb.style.borderColor="rgb(0,106,255)";
-  })
-}
-var btns1 = document.getElementsByClassName("formbtn1");
-var bds1 = 0;
-for(let i = 0;i<btns1.length;i++){
-  btns1[i].addEventListener('click',(e)=>{
-   e.preventDefault()
-    btns1[i].setAttribute("pressed","true");
-    btns1[bds1].setAttribute("pressed","false");
-    bds1=i;
+const bb = document.getElementById("b_b");
+const btns = document.querySelectorAll(".formbtn");
+let bds = 0;
+btns.forEach((btn, btnIndex) => {
+  btn.addEventListener("click", (event) => {
+    event.preventDefault();
+    btns[btnIndex].setAttribute("pressed", "true");
+    btns[bds].setAttribute("pressed", "false");
+    bds = btnIndex;
     bb.textContent = `${bds}+ Bd, ${bds1}+ Ba`;
-    bb.style.borderColor="rgb(0,106,255)";
-  })
-}
- 
+    bb.style.borderColor = "rgb(0,106,255)";
+  });
+});
 
-//Price filters form
+const btns1 = document.querySelectorAll(".formbtn1");
+var bds1 = 0;
+btns1.forEach((btn1, btn1Index) => {
+  btn1.addEventListener("click", (event) => {
+    event.preventDefault();
+    btn1.setAttribute("pressed", "true");
+    btns1[bds1].setAttribute("pressed", "false");
+    bds1 = btn1Index;
+    bb.textContent = `${bds}+ Bd, ${bds1}+ Ba`;
+    bb.style.borderColor = "rgb(0,106,255)";
+  });
+});
 
-var sub = document.getElementById("price_sub")
-var mins = document.getElementById("mins");
-var maxs = document.getElementById("maxs");
-var priceSe = document.getElementsByClassName("price_dd");
-var opt = document.getElementsByClassName("op2");
-var pricebtn = document.getElementById("pricebtn")
-priceSe[0].addEventListener('click',(e)=>{
-   e.preventDefault()
-   mins.value =priceSe[0].value ;
-  var minvalue = +priceSe[0].value+1000;
-  for(let i=1;i<opt.length;i++){
+// Price filters form
+const sub = document.getElementById("price_sub");
+const mins = document.getElementById("mins");
+const maxs = document.getElementById("maxs");
+const priceSe = document.getElementsByClassName("price_dd");
+const opt = document.getElementsByClassName("op2");
+const priceBtn = document.getElementById("pricebtn");
+
+priceSe[0].addEventListener("click", (event) => {
+  event.preventDefault();
+  mins.value = priceSe[0].value;
+  let minvalue = +priceSe[0].value + 1000;
+  for (let i = 1; i < opt.length; i++) {
     opt[i].textContent = minvalue;
-    opt[i].value=minvalue;
-    minvalue=minvalue+1000;
+    opt[i].value = minvalue;
+    minvalue = minvalue + 1000;
   }
-  
-})
-priceSe[1].addEventListener('click',(e)=>{
-   e.preventDefault()
-   maxs.value =priceSe[1].value;
-})
-sub.addEventListener('click',(e)=>{
-  if(mins.value=="" && maxs.value==""){
-    pricebtn.textContent=`Price`
+});
+
+priceSe[1].addEventListener("click", (event) => {
+  event.preventDefault();
+  maxs.value = priceSe[1].value;
+});
+
+sub.addEventListener("click", () => {
+  if (mins.value === "" && maxs.value === "") {
+    priceBtn.textContent = `Price`;
+  } else if (maxs.value === "") {
+    priceBtn.textContent = `Rs${mins.value}+`;
+    priceBtn.style.borderColor = "rgb(0,106,255)";
+  } else if (mins.value === "") {
+    priceBtn.textContent = `Upto Rs${maxs.value}`;
+    priceBtn.style.borderColor = "rgb(0,106,255)";
+  } else {
+    priceBtn.textContent = `Rs${mins.value} - Rs${maxs.value}`;
+    priceBtn.style.borderColor = "rgb(0,106,255)";
   }
-  else if(maxs.value==""){
-    pricebtn.textContent=`Rs${mins.value}+`;
-    pricebtn.style.borderColor="rgb(0,106,255)";
-  }
-  else if(mins.value==""){
-    pricebtn.textContent=`Upto Rs${maxs.value}`;
-    pricebtn.style.borderColor="rgb(0,106,255)";
-  }
-  else{
-    pricebtn.textContent=`Rs${mins.value} - Rs${maxs.value}`;
-    pricebtn.style.borderColor="rgb(0,106,255)";
-  }
-})
- 
+});
 
 //Space type filter settings
+const subrt = document.getElementById("roomtype");
+const space = document.getElementsByClassName("space_type");
+const sptybt = document.getElementById("space_type_btn");
 
-var subrt = document.getElementById("roomtype")
-var space = document.getElementsByClassName("space_type")
-var sptybt = document.getElementById("space_type_btn");
-
-subrt.addEventListener('click',(e)=>{
+subrt.addEventListener("click", (e) => {
   let count = 0;
   let temp = "";
-  for(let i=0;i<space.length;i++){
-    if(space[i].checked){
+  for (let i = 0; i < space.length; i++) {
+    if (space[i].checked) {
       count++;
-      if(count==(space.length-1)){
-        temp=temp+space[i].value;
-      }
-      else{
-      temp=temp+space[i].value+",";
+      if (count === space.length - 1) {
+        temp = temp + space[i].value;
+      } else {
+        temp = temp + space[i].value + ",";
       }
     }
   }
-  if(count!=3){
-    sptybt.textContent=temp;
-    sptybt.style.borderColor="rgb(0,106,255)";
+  if (count != 3) {
+    sptybt.textContent = temp;
+    sptybt.style.borderColor = "rgb(0,106,255)";
   }
-})
-
-  
-
-
-
-
+});
