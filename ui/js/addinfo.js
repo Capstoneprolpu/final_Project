@@ -62,3 +62,15 @@ const handleFiles = () => {
 };
 
 inputElement.addEventListener("change", handleFiles, false);
+
+//function to remove previewed pictures
+
+const rempic = document.getElementById("remove_pics");
+rempic.addEventListener("click", (e) => {
+  e.preventDefault();
+  const temp = document.getElementsByClassName("preview_item");
+  while (temp[0]) {
+    temp[0].remove();
+    noOfPics = 0;
+  }
+});
