@@ -1,18 +1,21 @@
 .side_margin30 {
   margin: 0px 30px;
 }
+
 #profile_side {
   max-height: 100px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--lightBg);
 }
+
 #profile_box img {
   height: 40px;
   width: 40px;
   border-radius: 50%;
   margin-right: 10px;
 }
+
 #profile_box {
   display: flex;
   font-family: "roboto", "arial";
@@ -23,21 +26,25 @@
   margin: 20px 0px;
   border: 2px solid var(--blueM);
 }
+
 #info_side {
   display: grid;
   grid-template-columns: 1fr 4fr;
   /*! margin: 0px 30px; */
 }
+
 #user_rentals {
   height: 80vh;
   overflow-y: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
 #user_homes {
   height: 80vh;
   overflow-y: auto;
 }
+
 .user_rentals_item {
   margin: 20px 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px;
@@ -47,29 +54,34 @@
   max-height: 288px;
   border: 2px solid var(--lightBg);
 }
+
 .user_rent_pics {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2%;
   margin: 3% 3% 0px 3%;
 }
+
 .user_ren_info h2 {
   font-family: "times new roman", serif;
   color: var(--textMedium);
   font-size: 1.3rem;
   padding: 10px 0px;
 }
+
 .user_ren_info p {
   font-size: 0.8rem;
   font-family: "roboto", "sans-serif";
   color: var(--textLight);
 }
+
 .user_ren_info div {
   margin-top: 20px;
   min-width: 130px;
   display: flex;
   align-items: baseline;
 }
+
 .user_ren_info {
   display: flex;
   flex-flow: column nowrap;
@@ -80,18 +92,22 @@
   font-weight: lighter;
   font-size: 0.8rem;
 }
+
 #profile_box div {
   align-self: center;
 }
+
 #user_rentals .user_ren_info div h3 {
   color: var(--blueD);
   font-size: 1rem;
   margin: 0px 10px;
 }
+
 .arrow_down {
   width: 36px;
   align-self: center;
 }
+
 #user_homes h3 {
   color: var(--blueM);
   font-family: "roboto", "arial";
@@ -109,26 +125,31 @@
   border-radius: 5px;
   max-width: 300px;
 }
+
 .user_rented_info h2 {
   font-size: 1rem;
   font-family: "roboto", "arial";
   font-weight: bold;
   color: var(--textMedium);
 }
+
 .user_rented_info {
   margin: -10px 20px 30px;
 }
+
 .user_rented_info p {
   font-family: "roboto", "arial";
   font-size: 0.8rem;
   font-weight: bolder;
   color: var(--textLight);
 }
+
 .user_rented_info div {
   margin-top: 15px;
   display: flex;
   align-items: center;
 }
+
 #user_homes .user_rented_info h3 {
   margin-left: 0;
   font-size: 0.9rem;
@@ -136,6 +157,7 @@
   color: var(--blueD);
   margin-bottom: 5px;
 }
+
 .header_rent_list {
   color: var(--blueM);
   font-family: "roboto", "arial";
@@ -146,11 +168,13 @@
   justify-content: center;
   font-size: 1.5rem;
 }
+
 #left_nav_men ul {
   flex-flow: column nowrap;
   margin: 20px 0px;
   margin-right: 40px;
 }
+
 #left_nav_men ul li {
   padding: 10px 20px;
   font-family: "roboto", "arial";
@@ -159,31 +183,38 @@
   font-size: 0.9rem;
   font-weight: bold;
 }
+
 #left_nav_men ul li:hover {
   color: var(--blueM);
 }
+
 .selected_nav {
   text-decoration: underline;
   color: var(--textMedium);
   background: var(--lightBg);
 }
+
 #left_s {
   border-right: 1px solid var(--lightBg);
   margin-left: 30px;
 }
+
 .right_s_item {
   position: absolute;
   visibility: hidden;
   margin: 20px 20px;
   width: calc(100% - 40px);
 }
+
 #right_s {
   position: relative;
 }
+
 .user_ren_in {
   display: flex;
   flex-flow: row nowrap;
 }
+
 .btn.card_btn {
   height: 30px;
   padding: 5px 15px;
@@ -193,31 +224,37 @@
   font-size: 0.9rem;
   min-height: 30px;
 }
+
 .top_block_space {
   height: 20vh;
   background-color: var(--lightBorder);
   width: 100%;
 }
+
 #profile_main_left {
   width: 50%;
   display: flex;
   margin: -25px 0px 20px 60px;
   height: 100px;
 }
+
 #profile_top_info {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
 }
+
 #profile_main_left img {
   border-radius: 50%;
   height: 100px;
   width: 100px;
 }
+
 #profile_main_left div {
   margin: 36px 0px 0px 20px;
 }
+
 #change_pass_btn {
   margin-top: 10px;
   padding: 5px 10px;
@@ -225,6 +262,7 @@
   font-size: 0.8rem;
   background-color: var(--modeColor);
 }
+
 #pfbtn_left {
   margin-right: 5px;
   border-radius: 5px;
@@ -234,6 +272,7 @@
   background-color: var(--modeColor);
   cursor: pointer;
 }
+
 #pfbtn_right {
   margin-right: 5px;
   border-radius: 5px;
@@ -244,21 +283,26 @@
   background-color: var(--blueM);
   cursor: pointer;
 }
+
 #change_pass_btn:hover {
   background: var(--blueM);
 }
+
 #pfbtn_right:hover {
   background: var(--blueD);
   border: 2px solid var(--blueD);
 }
+
 #pfbtn_left:hover {
   background: var(--blueM);
 }
+
 #main_form_profile {
   display: grid;
   margin-left: 30px;
   width: 65%;
 }
+
 #main_form_profile label {
   color: var(--textMedium);
   font-family: "roboto", "arial";
@@ -278,14 +322,17 @@
   width: 50%;
   height: 60%;
 }
+
 #profile_pic_div {
   width: 50%;
   display: flex;
   justify-content: space-between;
 }
+
 #preview_pp_btns {
   margin-top: -25px;
 }
+
 #preview_pp_btns button {
   border: none;
   background: var(--modeColor);
@@ -294,16 +341,19 @@
   font-weight: bolder;
   cursor: pointer;
 }
+
 #preview_pp_btns button:hover {
   text-decoration: underline;
   color: var(--textMedium);
 }
+
 .add_btn {
   padding: 0;
   color: var(--modeColor);
   background: var(--blueM);
   width: 170px;
 }
+
 .add_btn a {
   padding: 10px 10px;
   display: flex;
@@ -311,14 +361,17 @@
   align-items: center;
   /*! justify-content: center; */
 }
+
 .add_btn:hover {
   background: var(--blueD);
 }
+
 .add_btn p {
   flex-basis: 120px;
   padding: 0;
   margin: 0;
 }
+
 .add_btn svg {
   width: 20px;
 }
