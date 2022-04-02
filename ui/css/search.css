@@ -29,15 +29,24 @@ legend {
 }
 
 .filter_btn {
-  height: 35px;
-  margin: 11px 5px;
-  padding: 0 20px;
-  font-size: 0.8em;
+  margin: 10px;
+  padding: 5px 10px;
+  font-size: 1.25rem;
   border: solid var(--lightBorder) 1px;
   background: var(--modeColor);
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
+.filter_btn:last-child {
+  background-color: var(--brandOrange);
+  color: var(--modeColor);
+  border-color: var(--brandOrange);
+}
+
+.filter_btn:last-child:hover {
+  border-color: var(--brandOrangeDark);
+  background-color: var(--brandOrangeDark);
+}
 
 .filter_ext {
   position: absolute;
@@ -57,7 +66,6 @@ legend {
   justify-content: flex-start;
   height: 100%;
   font-size: 1.5em;
-  font-family: "Roboto", "sans-serif";
   color: var(--textMedium);
   padding-bottom: 54px;
   margin-bottom: 20px;
@@ -117,7 +125,6 @@ legend {
   margin: 0px 20px 16px 0px;
   padding: 8px 5px;
   width: 100%;
-  font-family: "calibri", "sans-serif";
   color: var(--textlight);
   border-radius: 5px;
   border: 1px solid var(--lightBorder);
@@ -127,7 +134,6 @@ legend {
   font-size: 0.8em;
   border: 2px solid var(--blueM);
   padding: 7px 2px;
-  font-family: "calibri", "sans-serif";
   color: var(--blueM);
   border-radius: 5px;
 }
@@ -139,24 +145,39 @@ legend {
 }
 
 .searchBtn {
-  height: 24px;
   position: absolute;
-  right: 3px;
-  top: 4px;
+  right: 1px;
+  top: 1px;
+  padding: 0;
   border: none;
-  background: var(--modeColor);
-  max-width: 30px;
- }
+  background: transparent;
+}
+
+.searchBtn:hover {
+  background-color: transparent;
+}
+
+.search-icon {
+  margin: 7.5px 10px 0 0;
+  width: 20px;
+  height: 20px;
+  transition: transform 350ms;
+}
+
+.search-icon:hover {
+  transform: rotate(45deg);
+}
 
 #city_input {
   position: relative;
 }
 
 #city_input input {
-  height: 35px;
-  width: 100%;
   border: 2px solid var(--textlight);
   border-radius: 3px;
+  font-size: 1.25rem;
+  padding: 5px 10px;
+  width: 100%;
 }
 
 .city_in {
@@ -183,27 +204,32 @@ legend {
 .home_item {
   max-width: calc(50% - 15px);
   margin: 10px 7px;
-  border-bottom: 4px solid var(--blueM);
+  border-bottom: 4px solid var(--brandOrange);
   padding-bottom: 8px;
+  transition-property: transform, background;
+  transition-duration: 400ms;
+}
+
+.home_item:hover {
+  transform: scale(1.05);
+  z-index: 1;
+  background-color: var(--brandOrangeLight);
 }
 
 .home_item article {
   padding: 0 3%;
+  font-size: 1.25rem;
 }
 
-.home_item article,
-.home_item article h2 {
-  font-family: "Roboto", "Verdana";
-}
-
-.home_item article p:nth-child(2) {
-  font-size: 1em;
-  color: var(--textMedium);
+.home_item > article > ul {
+  display: block;
+  list-style: initial;
+  margin-left: 15px;
 }
 
 .home_item article p {
-  font-size: 0.8em;
   color: var(--textlight);
+  margin-top: 10px;
 }
 
 #homelist #price_r {
@@ -215,8 +241,11 @@ legend {
   margin: auto;
 }
 
-#r_s {
-  border-color: var(--blueM);
+#homelist > h2 {
+  font-family: "Lora", serif;
+  font-size: 1.75rem;
+  width: 100%;
+  margin-left: 10px;
 }
 
 .radio_circles {
@@ -286,51 +315,52 @@ legend {
     margin: 10px 5px;
     position: initial;
   }
-  
-  .arrow_filter{
-      display: none;
+
+  .arrow_filter {
+    display: none;
   }
-   
-  .home_item{
-      max-width: 90%;
+
+  .home_item {
+    max-width: 90%;
   }
-  
+
   .filter_ext {
-      top: 180px;
-      max-width: 90%;
-        margin-left:20px;
+    top: 180px;
+    max-width: 90%;
+    margin-left: 20px;
   }
-  
-  .filter_ext form label{
-      font-size: 1rem;
-   }
-  
-  .radio_circles{
-      height: 15px;
-   }
-  
-   legend{
-      font-size:0.9rem;
-   }
-  
-   .f1{
-      font-size:0.9rem;
-      padding: 5px 10px;
-   }
-    
-   #mins, #maxs{
-      font-size:0.9rem;
-      padding: 5px 5px;
-   }
-  
-   .price_dd{
-      font-size: 0.9rem;
-      padding: 5px 5px;
-   }
-   .space_type{
-      height: 15px;
-      width:15px;
-   }
+
+  .filter_ext form label {
+    font-size: 1rem;
+  }
+
+  .radio_circles {
+    height: 15px;
+  }
+
+  legend {
+    font-size: 0.9rem;
+  }
+
+  .f1 {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+
+  #mins,
+  #maxs {
+    font-size: 0.9rem;
+    padding: 5px 5px;
+  }
+
+  .price_dd {
+    font-size: 0.9rem;
+    padding: 5px 5px;
+  }
+  .space_type {
+    height: 15px;
+    width: 15px;
+  }
 
   .home_item {
     max-width: 90%;
