@@ -7,12 +7,6 @@
     <title>Sign up</title>
     <link rel="icon" type="image/png" href="../../favicon.png" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <div id="main_body">
@@ -47,12 +41,12 @@
         </a>
       </div>
       <div class="form_a" id="form1">
-        <h2 id="main_sign">Sign in</h2>
+        <h2 class="sign-in-header">Sign in</h2>
         <form class="main_form" action="/login" method="post">
           <input type="email" class="form_input" placeholder="E-mail address" />
           <input type="password" class="form_input" placeholder="Password" />
           <p id="t_c">
-            By signing in, I agree to the Space rental
+            By signing in, you agree to the Space rental
             <a>Terms and Conditions</a> and <a>Privacy Statement</a>.
           </p>
           <input type="submit" class="form_btn" value="Continue" />
@@ -62,7 +56,7 @@
       </div>
 
       <div class="form_a" id="form2" style="display: none">
-        <h2 id="main_sign">Create an account</h2>
+        <h2 class="sign-up-header">Create an account</h2>
         <form class="main_form" action="/signup" method="post">
           <input type="email" class="form_input" placeholder="E-mail address" />
           <input type="text" class="form_input" placeholder="First name" />

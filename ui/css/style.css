@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,600&family=Nunito:wght@400;600&display=swap");
+
 * {
+  font-family: "Nunito", sans-serif;
   margin: 0;
   box-sizing: border-box;
 }
@@ -6,7 +9,9 @@
 :root {
   --blueM: rgb(0, 106, 255);
   --blueD: rgb(15, 67, 140);
+  --brandOrangeLight: rgb(254, 165, 142);
   --brandOrange: rgb(255, 75, 30);
+  --brandOrangeDark: rgb(213, 42, 0);
   --greyBorder: rgb(117, 117, 117);
   --lightBorder: rgb(177, 177, 177);
   --textMedium: rgb(41, 41, 41);
@@ -15,7 +20,61 @@
   --lightBg: rgb(228, 228, 228);
 }
 
+a {
+  text-decoration: none;
+  color: var(--brandOrange);
+  user-select: none;
+  cursor: pointer;
+}
+
+a svg {
+  color: black;
+}
+
+button,
+btn {
+  border: 2px solid var(--brandOrange);
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+button:hover {
+  color: var(--modeColor);
+  background-color: var(--brandOrange);
+}
+
+button a,
+button a:hover {
+  color: inherit;
+}
+
 img {
+  width: 100%;
+}
+
+input[type="text"],
+input[type="submit"] {
+  font-family: "Nunito", sans-serif;
+}
+
+button,
+input[type="submit"] {
+  transition-property: background, background-color;
+  transition-duration: 400ms;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+h2 {
+  padding: 14px 0;
+  font-weight: 400;
+}
+
+svg {
+  height: 100%;
   width: 100%;
 }
 
@@ -28,37 +87,20 @@ ul {
   color: var(--textLight);
 }
 
-h1 {
-  font-family: "Playfair Display", serif;
-  /*! font-family: futura; */
-  font-weight: 700;
+.dis_flex {
+  display: flex;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  user-select: none;
+#logo > svg {
+  color: var(--brandOrange);
 }
 
 #main_logo_header h1 {
   color: var(--brandOrange);
-  font-size: 1.5em;
-  min-width: 250px;
+  font-size: 2rem;
   margin: auto;
-}
-
-h2 {
-  font-family: "Playfair Display", serif;
-  padding: 14px 0;
-  font-weight: 400;
-}
-svg {
-  height: 100%;
-  width: 100%;
-}
-
-.dis_flex {
-  display: flex;
+  font-family: "Lora", serif;
+  font-weight: 600;
 }
 
 #main_body {
@@ -99,6 +141,15 @@ svg {
   color: var(--blueM);
 }
 
+.nav_item a {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.section-heading {
+  font-family: "Lora", serif;
+}
+
 .main_b {
   height: 68vh;
   background-image: url("../media/background.webp");
@@ -114,24 +165,24 @@ svg {
 }
 
 #search_toptext {
+  color: var(--modeColor);
+  font-family: "Lora", serif;
   font-size: 2.5em;
   padding-bottom: 0.5em;
-  color: var(--modeColor);
-  font-family: "Playfair Display", serif;
-  font-weight: 400;
   text-shadow: rgb(0, 0, 0) 0px 0px 20px;
 }
 
 #sign_btn {
-  border: 2px solid var(--blueM);
-  padding: 10px 10px;
+  border: 2px solid var(--brandOrange);
   border-radius: 5px;
-  color: var(--blueM);
+  color: var(--brandOrange);
+  padding: 10px 10px;
+  transition: background 400ms;
 }
 
 #sign_btn:hover {
   color: var(--modeColor);
-  background: var(--blueM);
+  background: var(--brandOrange);
 }
 
 .search_input {
@@ -139,42 +190,45 @@ svg {
   margin: auto;
   font-family: "Roboto", sans-serif;
 }
+
 .main_search {
+  border: none;
+  border-radius: 5px;
   width: 85%;
   height: 65px;
-  font-size: 1.2em;
+  font-size: 1.25em;
   padding-left: 0.5em;
   font-family: "Roboto", sans-serif;
-  border-radius: 10px;
 }
+
 .search_button {
-  height: 65px;
-  font-size: 1.2em;
-  padding: 0 1em;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  border-radius: 10px;
-  border: 2px solid var(--blueM);
-  color: var(--textMedium);
-  background-color: var(--modeColor);
-  cursor: pointer;
-}
-.search_button:hover {
+  background-color: var(--brandOrange);
+  border: none;
+  border-radius: 5px;
   color: var(--modeColor);
-  background-color: var(--blueM);
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  height: 65px;
+  padding: 0 1em;
+  transition: background-color 400ms;
+}
+
+.search_button:hover {
+  background-color: var(--brandOrangeDark);
 }
 
 #main_quote {
-  text-align: center;
-  max-width: 480px;
-  font-size: 1.5em;
-  margin: auto;
-  line-height: 27px;
-  padding: 81px 0;
-  font-weight: 700;
   color: var(--textMedium);
-  font-family: "Playfair Display", serif;
+  font-family: "Lora", serif;
+  font-size: 1.5em;
   font-weight: 400;
+  line-height: 27px;
+  margin: auto;
+  max-width: 480px;
+  padding: 81px 0;
+  text-align: center;
 }
 
 .art_div {
@@ -195,29 +249,20 @@ svg {
   background: var(--modeColor);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px;
   min-width: 300px;
+  transition: transform 300ms ease-in-out;
 }
 
 .art_box:hover {
-  transform: scale(1.02) translate(0px, -8px);
-  transition: all 300ms ease-in-out 0s;
-}
-.btn {
-  padding: 10px 15px;
-  margin: 20px;
-  border-radius: 5px;
-  min-height: 40px;
-}
-button {
-  font-size: 1em;
-  border: 1px solid var(--blueM);
-  color: var(--blueM);
-  cursor: pointer;
-  font-family: "Roboto", sans-serif;
+  transform: scale(1.05);
 }
 
-button:hover {
-  color: var(--modeColor);
-  background-color: var(--blueM);
+.art_box h2 {
+  font-family: "Lora", serif;
+}
+
+.art_box button {
+  font-size: 1.25rem;
+  margin-top: 30px;
 }
 
 .art_p {
@@ -231,6 +276,7 @@ footer {
   overflow: hidden;
   width: 100%;
 }
+
 .footer_img {
   position: absolute;
   bottom: 0;
@@ -259,14 +305,17 @@ footer {
   margin-bottom: 40px;
   font-family: "Roboto", sans-serif;
 }
+
 .socials a {
-  width: 33px;
-  display: inline-block;
-  margin: 8px;
   cursor: pointer;
+  display: inline-block;
+  margin: 10px;
+  transition: transform 250ms;
+  width: 25px;
 }
+
 .socials a:hover {
-  transform: scale(1.1);
+  transform: scale(1.5);
 }
 
 .arrow_filter {
@@ -292,41 +341,39 @@ footer {
   z-index: 2;
   margin-top: 15px;
 }
+
 .main_form {
   display: flex;
   flex-flow: column nowrap;
   text-align: center;
 }
+
 .form_input {
-  height: 50px;
-  margin: 15px 0;
-  font-size: 1.1em;
-  border-radius: 3px;
   border: 1px solid var(--greyBorder);
+  border-radius: 5px;
   display: block;
+  font-size: 1.25rem;
+  margin: 15px 0;
+  padding: 10px;
 }
+
 .form_btn {
-  height: 50px;
-  border-radius: 25px;
-  border: 1px solid var(--blueM);
-  background: var(--blueM);
-  font-size: 1.2em;
-  font-weight: 100;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: var(--brandOrange);
+  font-size: 1.25rem;
   color: var(--modeColor);
   margin-bottom: 10px;
   cursor: pointer;
 }
+
 .form_btn:hover {
-  background: var(--blueD);
+  background: var(--brandOrangeDark);
 }
-.toggle_page,
-#t_c a {
-  cursor: pointer;
-  color: var(--blueM);
-}
+
 .toggle_page:hover,
 #t_c a:hover {
-  color: var(--blueD);
   text-decoration: underline;
 }
 
@@ -335,6 +382,7 @@ footer {
   font-family: roboto, sans-serif;
   font-size: 0.9em;
 }
+
 .form_a span {
   margin-left: 26%;
 }
@@ -351,9 +399,11 @@ footer {
   color: var(--textMedium);
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 30px;
 }
+
 .nav_dd:hover {
   color: var(--textMedium);
 }
+
 .nav_dd ul {
   flex-flow: column nowrap;
   align-items: flex-start;
@@ -365,22 +415,34 @@ footer {
 .nav_dd ul li {
   padding: 10px 10px;
 }
+
 .nav_dd ul li:hover {
   color: var(--blueM);
   cursor: pointer;
   background: var(--lightBg);
 }
+
 .btn_a {
-  padding: 0;
+  transition: background-color 400ms;
+  color: var(--brandOrange);
+  background-color: var(--modeColor);
 }
+
 .a_btn {
-  padding: 10px 16px;
+  display: inline-block;
+}
+
+.sign-in-header,
+.sign-up-header {
+  font-family: "Lora", serif;
+  font-size: 1.75rem;
 }
 
 @media (min-width: 850px) {
   .nav_toggle {
     display: none;
   }
+
   .filters {
     flex-flow: row wrap;
   }
@@ -393,7 +455,7 @@ footer {
 
   .nav_side {
     display: flex;
-    margin-top: 260px;
+    margin-top: 300px;
     background: var(--modeColor);
     width: 100%;
     left: 0;
@@ -404,6 +466,7 @@ footer {
     flex-flow: column nowrap;
     justify-content: center;
   }
+
   .nav_item {
     padding: 15px 15px;
     margin: 10px 0px;
@@ -418,6 +481,7 @@ footer {
     cursor: pointer;
     z-index: 5;
   }
+
   input:checked ~ .nav_side {
     display: none;
   }
@@ -429,37 +493,41 @@ footer {
   .search_input {
     width: 100%;
   }
+
   .main_search {
     width: 95%;
     height: 45px;
     font-size: 1em;
     padding-left: 0.5em;
   }
+
   .search_button {
     height: 44px;
     font-size: 1em;
     padding: 0 1em;
     margin-top: 25px;
   }
+
   .form_a {
     width: 80%;
   }
+
   .form_input {
     font-size: 1em;
     height: 40px;
     margin: 10px 0;
   }
-  #main_sign {
-    font-size: 1.4rem;
-  }
+
   #t_c {
     font-size: 0.8em;
   }
+
   .form_btn {
     height: 40px;
     font-size: 1em;
     margin: 20px;
   }
+
   #sign_ask {
     margin-left: 18%;
   }
@@ -468,13 +536,13 @@ footer {
   body {
     position: relative;
   }
-  
+
   .footer_img {
-  left: 0;
-  width: 100%;
-  overflow: hidden;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
   }
-  
+
   .footer-image {
     width: 380%;
     position: relative;
