@@ -96,7 +96,7 @@ label {
 }
 
 .preview_item {
-  flex-basis: 45%;
+  width: 45%;
   height: 45%;
   margin-left: 3.3%;
   border: 2px solid var(--modeColor);
