@@ -10,32 +10,31 @@
 }
 
 #profile_box img {
-  height: 40px;
-  width: 40px;
+  height: 75px;
+  width: 75px;
+  border: 4px solid var(--brandOrange);
   border-radius: 50%;
   margin-right: 10px;
 }
 
 #profile_box {
   display: flex;
-  font-family: "roboto", "arial";
-  font-weight: lighter;
-  box-shadow: rgb(125, 176, 247) 0px 0px 4px;
-  padding: 5px;
   border-radius: 5px;
   margin: 20px 0px;
-  border: 2px solid var(--blueM);
+  padding: 5px 10px;
 }
 
 #info_side {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  /*! margin: 0px 30px; */
+}
+
+.toggle_right {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 #user_rentals {
-  height: 80vh;
-  overflow-y: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -48,10 +47,10 @@
 .user_rentals_item {
   margin: 20px 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
-  max-width: 400px;
-  max-height: 288px;
+  max-width: 500px;
+  padding: 20px;
   border: 2px solid var(--lightBg);
 }
 
@@ -59,144 +58,87 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2%;
-  margin: 3% 3% 0px 3%;
+}
+
+.user_rent_pics > * {
+  border-radius: 5px;
+}
+
+.user_ren_in {
+  display: grid;
+  margin-left: 20px;
 }
 
 .user_ren_info h2 {
-  font-family: "times new roman", serif;
-  color: var(--textMedium);
-  font-size: 1.3rem;
-  padding: 10px 0px;
+  margin-left: -20px;
 }
 
-.user_ren_info p {
-  font-size: 0.8rem;
-  font-family: "roboto", "sans-serif";
-  color: var(--textLight);
+.room-feats {
+  display: initial;
+  list-style: initial;
+  font-size: 1.25rem;
 }
 
-.user_ren_info div {
-  margin-top: 20px;
-  min-width: 130px;
-  display: flex;
-  align-items: baseline;
+.room-feats > * {
+  margin: 10px 0;
 }
 
-.user_ren_info {
-  display: flex;
-  flex-flow: column nowrap;
-  padding-left: 5%;
+.modify-ren-info {
+  margin-left: -20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 #profile_box h3 {
-  font-weight: lighter;
-  font-size: 0.8rem;
+  font-weight: 400;
+  font-size: 1.25rem;
 }
 
 #profile_box div {
   align-self: center;
 }
 
-#user_rentals .user_ren_info div h3 {
-  color: var(--blueD);
-  font-size: 1rem;
-  margin: 0px 10px;
-}
-
 .arrow_down {
-  width: 36px;
   align-self: center;
-}
-
-#user_homes h3 {
-  color: var(--blueM);
-  font-family: "roboto", "arial";
-  margin-left: 10px;
-  max-height: 30px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.user_rented_item {
-  margin: 5px;
-  box-shadow: rgb(0, 0, 0) 0px 0px 5px;
-  overflow: hidden;
-  border-radius: 5px;
-  max-width: 300px;
-}
-
-.user_rented_info h2 {
-  font-size: 1rem;
-  font-family: "roboto", "arial";
-  font-weight: bold;
-  color: var(--textMedium);
-}
-
-.user_rented_info {
-  margin: -10px 20px 30px;
-}
-
-.user_rented_info p {
-  font-family: "roboto", "arial";
-  font-size: 0.8rem;
-  font-weight: bolder;
-  color: var(--textLight);
-}
-
-.user_rented_info div {
-  margin-top: 15px;
-  display: flex;
-  align-items: center;
-}
-
-#user_homes .user_rented_info h3 {
-  margin-left: 0;
-  font-size: 0.9rem;
-  margin-top: 5px;
-  color: var(--blueD);
-  margin-bottom: 5px;
+  width: 36px;
+  margin-top: 10px;
 }
 
 .header_rent_list {
-  color: var(--blueM);
-  font-family: "roboto", "arial";
+  color: var(--brandOrange);
+  display: flex;
+  font-family: "Lora", serif;
+  font-size: 1.5rem;
+  justify-content: center;
+  margin-bottom: 15px;
   margin-left: 10px;
   max-height: 30px;
-  display: flex;
-  margin-bottom: 15px;
-  justify-content: center;
-  font-size: 1.5rem;
 }
 
 #left_nav_men ul {
   flex-flow: column nowrap;
-  margin: 20px 0px;
-  margin-right: 40px;
 }
 
 #left_nav_men ul li {
   padding: 10px 20px;
-  font-family: "roboto", "arial";
   cursor: pointer;
-  border-radius: 10px;
-  font-size: 0.9rem;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 
 #left_nav_men ul li:hover {
-  color: var(--blueM);
+  color: var(--brandOrangeDark);
+  background: var(--brandOrangeLight);
 }
 
 .selected_nav {
-  text-decoration: underline;
-  color: var(--textMedium);
-  background: var(--lightBg);
+  color: var(--brandOrangeDark);
+  background: var(--brandOrangeLight);
 }
 
 #left_s {
   border-right: 1px solid var(--lightBg);
-  margin-left: 30px;
+  border-bottom: 1px solid var(--lightBg);
 }
 
 .right_s_item {
@@ -210,25 +152,20 @@
   position: relative;
 }
 
-.user_ren_in {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-.btn.card_btn {
-  height: 30px;
-  padding: 5px 15px;
-  margin: 15px 10px;
-  width: 86px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  min-height: 30px;
+.card_btn {
+  padding: 5px 10px;
+  margin: 10px;
+  font-size: 1.25rem;
+  background-color: var(--modeColor);
 }
 
 .top_block_space {
   height: 20vh;
-  background-color: var(--lightBorder);
+  background-color: var(--brandOrangeLight);
   width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 2px solid var(--brandOrange);
 }
 
 #profile_main_left {
@@ -247,28 +184,39 @@
 
 #profile_main_left img {
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
+  border: 2px solid var(--brandOrange);
+  position: relative;
+  bottom: 50px;
 }
 
 #profile_main_left div {
   margin: 36px 0px 0px 20px;
 }
 
+#profile_username_main {
+  font-size: 1.25rem;
+}
+
 #change_pass_btn {
   margin-top: 10px;
   padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  border-radius: 5px;
+  font-size: 1rem;
   background-color: var(--modeColor);
+}
+
+#change_pass_btn:hover {
+  background: var(--brandOrange);
 }
 
 #pfbtn_left {
   margin-right: 5px;
   border-radius: 5px;
-  padding: 4px 8px;
-  font-size: 0.9rem;
-  border: 2px solid var(--blueM);
+  padding: 5px 10px;
+  font-size: 1.25rem;
+  border: 2px solid var(--brandOrange);
   background-color: var(--modeColor);
   cursor: pointer;
 }
@@ -276,25 +224,26 @@
 #pfbtn_right {
   margin-right: 5px;
   border-radius: 5px;
-  padding: 4px 8px;
-  font-size: 0.9rem;
-  border: 2px solid var(--blueM);
+  padding: 5px 10px;
+  font-size: 1.25rem;
+  border: none;
   color: var(--modeColor);
-  background-color: var(--blueM);
+  background-color: var(--brandOrange);
+  border: 2px solid var(--brandOrange);
   cursor: pointer;
 }
 
-#change_pass_btn:hover {
-  background: var(--blueM);
-}
-
 #pfbtn_right:hover {
-  background: var(--blueD);
-  border: 2px solid var(--blueD);
+  background: var(--brandOrangeDark);
+  border: 2px solid var(--brandOrangeDark);
 }
 
 #pfbtn_left:hover {
-  background: var(--blueM);
+  background: var(--brandOrange);
+}
+
+#profile_form_edit form * {
+  font-size: 1.25rem;
 }
 
 #main_form_profile {
@@ -305,8 +254,6 @@
 
 #main_form_profile label {
   color: var(--textMedium);
-  font-family: "roboto", "arial";
-  font-size: 0.8rem;
   font-weight: bold;
 }
 
@@ -321,53 +268,52 @@
 .main_form_profile_item input {
   width: 50%;
   height: 60%;
+  padding: 5px 10px;
+  border: 1px solid var(--textMedium);
+  border-radius: 5px;
 }
 
-#profile_pic_div {
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
-}
-
-#preview_pp_btns {
-  margin-top: -25px;
+.main_form_profile_item:nth-child(2) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 #preview_pp_btns button {
+  background: transparent;
   border: none;
-  background: var(--modeColor);
-  font-size: 0.8rem;
-  color: var(--blueD);
-  font-weight: bolder;
+  color: var(--brandOrangeDark);
+  border: 2px solid var(--brandOrangeDark);
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: bolder;
+  padding: 5px 10px;
+  margin: 0 20px 0 0;
 }
 
 #preview_pp_btns button:hover {
-  text-decoration: underline;
-  color: var(--textMedium);
+  background: var(--brandOrangeLight);
 }
 
 .add_btn {
-  padding: 0;
+  background: var(--brandOrange);
+  border: none;
   color: var(--modeColor);
-  background: var(--blueM);
-  width: 170px;
 }
 
 .add_btn a {
-  padding: 10px 10px;
-  display: flex;
-  height: 40px;
   align-items: center;
-  /*! justify-content: center; */
+  color: inherit;
+  column-gap: 10px;
+  display: flex;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .add_btn:hover {
-  background: var(--blueD);
+  background: var(--brandOrangeDark);
 }
 
 .add_btn p {
-  flex-basis: 120px;
   padding: 0;
   margin: 0;
 }

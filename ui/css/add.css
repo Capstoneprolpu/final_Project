@@ -1,3 +1,11 @@
+form {
+  font-size: 1.25rem;
+}
+
+.form_a h2 {
+  font-family: "Lora", serif;
+}
+
 .add_form {
   display: flex;
   flex-flow: column nowrap;
@@ -10,8 +18,9 @@
   color: var(--textMedium);
   margin-bottom: 15px;
   background: var(--modeColor);
-  border: 1px solid var(--lightBorder);
+  border: 1px solid var(--brandOrangeLight);
   border-radius: 5px;
+  font-size: inherit;
 }
 
 .baths_beds {
@@ -25,63 +34,72 @@
 }
 
 .add_form input {
-  font-size: 0.8rem;
-  border: solid 1px var(--lightBorder);
+  border: solid 1px var(--brandOrangeLight);
   border-radius: 5px;
-  padding: 10px 6px;
+  padding: 5px 10px;
+  font-size: inherit;
   margin-bottom: 15px;
 }
 
 .add_form textarea {
-  font-size: 0.9rem;
-  border: solid 1px var(--lightBorder);
+  border: solid 1px var(--brandOrangeLight);
   border-radius: 5px;
-  padding: 10px 5px;
+  padding: 5px 10px;
   margin-bottom: 15px;
   resize: none;
+  font-size: inherit;
   font-family: inherit;
 }
 
-.add_form h2 {
-  font-size: 1.1rem;
-  color: var(--blueM);
+h2.address-label {
+  font-family: "Nunito", sans-serif;
+  color: var(--brandOrange);
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 label {
-  color: var(--blueM);
+  color: var(--brandOrange);
   margin: 5px 4px;
-  font-family: "Roboto", "sans-serif";
   font-weight: bold;
 }
 
 .form_for {
-  padding: 10px 5px;
-  border: 2px solid var(--blueM);
+  padding: 10px 20px;
+  border: 2px solid var(--brandOrange);
   border-radius: 5px;
   font-weight: bolder;
-  font-size: 1.3rem;
   margin-top: 35px;
+  background-color: var(--brandOrange);
+  font-size: inherit;
+  color: var(--modeColor);
+}
+
+.form_for:hover {
+  background-color: var(--brandOrangeDark);
 }
 
 .form_bac {
-  border: none;
-  background: inherit;
-  color: var(--textLight);
-  font-size: 1.3rem;
-  font-weight: bolder;
-  max-height: 52px;
-  max-width: 80px;
-  margin: auto;
-  margin-top: auto;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: 2px solid var(--brandOrange);
+  color: var(--brandOrange);
   display: flex;
-  align-items: flex-start;
+  font-size: inherit;
   margin-top: 20px;
+  padding: 0;
+  transition: all 350ms;
 }
 
 .form_bac:hover {
-  background-color: var(--modeColor);
-  color: var(--textMedium);
-  transform: scale(1.1);
+  color: var(--brandOrangeDark);
+  background-color: transparent;
+  transform: translateX(-20px);
+}
+
+.form_bac svg {
+  width: 40px;
 }
 
 #previews {
@@ -104,16 +122,25 @@ label {
   object-fit: cover;
 }
 
-#previews h2 {
-  font-size: 2rem;
-  color: var(--textLight);
-  margin: 0% 0 0 22%;
+h2.add_img_txt,
+h3.add_img_txt {
+  font-family: "Nunito", sans-serif;
+  color: var(--brandOrange);
+  display: block;
+  margin: 10px auto;
+}
+
+h2.add_img_txt {
+  font-size: 1.5rem;
+}
+
+h3.add_img_txt {
+  font-size: 1.25rem;
 }
 
 #add_btn {
-  background: var(--blueM);
+  background: var(--brandOrange);
   color: var(--modeColor);
-  width: 31%;
   padding: 10px 10px;
   cursor: pointer;
   font-weight: lighter;
@@ -126,7 +153,7 @@ label {
 }
 
 #add_btn:hover {
-  background: var(--blueD);
+  background: var(--brandOrangeDark);
 }
 
 #add_btn i {
@@ -135,7 +162,6 @@ label {
 
 #previews h3 {
   color: var(--textLight);
-  font-family: "roboto", "arial";
   margin-left: 18%;
   margin-top: -35%;
 }
@@ -152,8 +178,8 @@ label {
   padding: 5px 20px;
   color: var(--brandOrange);
   border: 2px solid var(--brandOrange);
-  background: white;
-  font-weight: bold;
+  background: transparent;
+  font-size: inherit;
 }
 
 #remove_pics:hover {
