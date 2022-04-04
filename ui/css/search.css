@@ -96,6 +96,10 @@ legend {
   background-color: var(--modeColor);
 }
 
+#apply-filters-btn {
+  font-size: 1rem;
+}
+
 .f1 {
   font-size: 0.75em;
   padding: 10px 15px;
@@ -208,6 +212,7 @@ legend {
   padding-bottom: 8px;
   transition-property: transform, background;
   transition-duration: 400ms;
+  cursor: pointer;
 }
 
 .home_item:hover {
@@ -274,6 +279,179 @@ legend {
   background-color: var(--blueM);
   color: var(--modeColor);
   border-color: var(--blueM);
+}
+
+#portal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+}
+#main-portal-div {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  margin-top: 3rem;
+  background: var(--modeColor);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px 0px;
+  position: relative;
+}
+
+#portal-left-side {
+  position: relative;
+  padding: 0.5rem;
+}
+
+.portal-img {
+  visibility: hidden;
+  position: absolute;
+  height: 78vh;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.portal-img.active {
+  visibility: visible;
+}
+
+#portal-images {
+  position: relative;
+}
+
+#portal-img-left-arrow,
+#portal-img-right-arrow {
+  height: 4rem;
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  top: 32vh;
+}
+#portal-img-left-arrow:hover,
+#portal-img-right-arrow:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+#portal-img-left-arrow svg,
+#portal-img-right-arrow svg {
+  color: var(--modeColor);
+}
+
+#portal-img-left-arrow {
+  left: 0;
+}
+
+#portal-img-right-arrow {
+  right: 0;
+}
+
+.portel-dot {
+  text-align: center;
+  margin-top: 80vh;
+}
+.dot {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: var(--lightBorder);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.dot.dot-active {
+  background: var(--textLight);
+}
+
+#portal-right-side {
+  margin: 1rem 1.5rem;
+}
+
+#portal-logo {
+  height: 2rem;
+  margin-left: -0.5rem;
+}
+#portal-logo h1 {
+  font-size: 1.5rem;
+}
+#portal-logo .logo {
+  margin: 0;
+}
+
+#portal-top-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#portal-main-info {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+#portal-main-info h2 {
+  padding: 0;
+  margin-bottom: 0.25rem;
+}
+
+#portal-main-info li {
+  border-left: 2px solid var(--lightBorder);
+  padding: 0 1rem;
+}
+
+#portal-details h2 {
+  padding-bottom: 0.25rem;
+}
+
+#portal-features ul {
+  flex-flow: column nowrap;
+  list-style: disc;
+  margin-left: 1rem;
+}
+#portal-features {
+  margin-bottom: 1rem;
+}
+
+#portal-ownerinfo {
+  display: flex;
+  align-items: center;
+}
+
+#portal-ownerpic {
+  width: 80px;
+  margin-right: 1rem;
+  border-radius: 5px;
+}
+
+#portal-action {
+  margin: 1rem 0;
+}
+
+#portal-rent-btn {
+  background: var(--brandOrange);
+  color: var(--modeColor);
+  font-size: 1rem;
+}
+
+#portal-rent-btn:hover {
+  background: var(--brandOrangeDark);
+}
+
+#portal-close-btn {
+  width: 25px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+
+#portal-close-btn svg:hover {
+  color: var(--brandOrangeDark);
 }
 
 @media (max-width: 850px) {

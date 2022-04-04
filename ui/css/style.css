@@ -91,7 +91,7 @@ ul {
   display: flex;
 }
 
-#logo > svg {
+.logo > svg {
   color: var(--brandOrange);
 }
 
@@ -116,9 +116,12 @@ ul {
   height: 10vh;
   background-color: var(--modeColor);
   border-bottom: 1px solid var(--lightBorder);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+  z-index: 10;
+  position: relative;
 }
 
-#logo {
+.logo {
   width: 50px;
   margin: 0 12px;
   color: var(--brandOrange);
@@ -234,9 +237,11 @@ ul {
 .art_div {
   min-height: 70vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: flex-start;
   flex-flow: row wrap;
+  background-color: var(--lightBg);
+  padding: 50px 0px;
 }
 
 .art_box {
@@ -247,7 +252,7 @@ ul {
   padding: 22px;
   text-align: center;
   background: var(--modeColor);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 7px 0px;
   min-width: 300px;
   transition: transform 300ms ease-in-out;
 }

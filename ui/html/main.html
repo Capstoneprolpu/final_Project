@@ -48,7 +48,7 @@
         </li>
       </ul>
       <a id="main_logo_header" class="dis_flex" href="../../index.html">
-        <span id="logo"
+        <span class="logo"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -136,7 +136,7 @@
                 />For Sale</label
               >
               <div class="filter_div">
-                <button class="filter_done" type="submit">Done</button>
+                <button class="filter_done">Done</button>
               </div>
             </form>
           </div>
@@ -207,7 +207,7 @@
                   placeholder="0+"
                   autocomplete="off"
                 />
-                <select class="price_dd">
+                <select class="price_dd" autocomplete="off">
                   <option value="" selected>0</option>
                   <option value="1000">1000</option>
                   <option value="2000">2000</option>
@@ -224,7 +224,7 @@
                   placeholder="Any"
                   autocomplete="off"
                 />
-                <select class="price_dd">
+                <select class="price_dd" autocomplete="off">
                   <option class="op2" value="" selected>Any</option>
                   <option class="op2" value="1000">1000</option>
                   <option class="op2" value="2000">2000</option>
@@ -300,7 +300,11 @@
             </form>
           </div>
         </li>
-        <li><button class="filter_btn">Apply Filters</button></li>
+        <li>
+          <button class="btn btn_a" id="apply-filters-btn">
+            Apply Filters
+          </button>
+        </li>
       </ul>
     </nav>
     <div id="main_dis">
@@ -379,6 +383,133 @@
             </ul>
             <p>Near some place, somewhere</p>
           </article>
+        </div>
+      </div>
+    </div>
+    <div id="portal">
+      <div id="main-portal-div">
+        <div id="portal-left-side">
+          <div id="portal-images">
+            <img class="portal-img active" src="../media/home1.jpg" />
+            <img class="portal-img" src="../media/home2.jpg" />
+            <img class="portal-img" src="../media/home3.jpg" />
+            <img class="portal-img" src="../media/home4.jpg" />
+            <a id="portal-img-left-arrow"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-chevron-left"
+                viewBox="3 0 10 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                /></svg
+            ></a>
+            <a id="portal-img-right-arrow"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-chevron-right"
+                viewBox="3 0 10 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                /></svg
+            ></a>
+          </div>
+          <div class="portel-dot">
+            <span class="dot dot-active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+        <div id="portal-right-side">
+          <div id="portal-top-header">
+            <a id="portal-logo" class="dis_flex" href="../../index.html">
+              <span class="logo"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 91.84 92.65"
+                >
+                  <title>spacerentallogo</title>
+                  <path
+                    d="M20.73,0a22.44,22.44,0,0,0-9.16,1.84A17.35,17.35,0,0,0,4.74,7.07a17.7,17.7,0,0,0-3.13,
+                      6.85A51.8,51.8,0,0,0,.66,25.2V41.73H41V25.2a51.8,51.8,0,0,0-1-11.28,17.7,17.7,0,0,0-3.13-6.85A17.35,17.35,0,
+                      0,0,30,1.84,22.44,22.44,0,0,0,20.88,0h-.15Z"
+                  />
+                  <polygon
+                    points="91.48 41.73 91.48 1.19 50.89 
+                      41.73 91.48 41.73"
+                  />
+                  <polygon
+                    points="27.8 51.7 27.8 79.49 13.14 79.49 13.14 51.7 0 51.7 0 81.75 
+                      0 92.65 40.59 92.65 40.95 92.65 40.95 51.7 27.8 51.7"
+                  />
+                  <polygon
+                    points="78.69 92.65 78.69 64.86 64.03 64.86 64.03 92.65 50.89 92.65 50.89 62.6 50.89 
+                      51.7 91.48 51.7 91.83 51.7 91.83 92.65 78.69 92.65"
+                  /></svg
+              ></span>
+              <h1>Space Rental</h1>
+            </a>
+            <a id="portal-close-btn"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-x-lg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"
+                /></svg
+            ></a>
+          </div>
+          <div id="portal-main-info">
+            <h2>₹2000/mo</h2>
+            <ul>
+              <li>5 Beds</li>
+              <li>5 Bathroom</li>
+              <li>4400 sqft.</li>
+            </ul>
+          </div>
+          <div id="portal-action">
+            <button id="portal-rent-btn">Contact Owner</button>
+          </div>
+          <div id="portal-details">
+            <h2>More Info</h2>
+            <div id="portal-features">
+              <a id="portal-features-tog"><h3>Feature</h3></a>
+              <ul>
+                <li>Wi-fi</li>
+                <li>Swimming Pool</li>
+                <li>Gym in vicinity</li>
+              </ul>
+            </div>
+            <div id="portal-address">
+              <a id="portal-address-tog"><h3>Address</h3></a>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+                veritatis, architecto laboriosam.
+              </p>
+            </div>
+            <h2>Owner Info</h2>
+            <div id="portal-ownerinfo">
+              <img id="portal-ownerpic" src="../media/0.jpg" />
+              <div>
+                <h3>Firstname Lastname</h3>
+                <p>emailofuser@user.com</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
