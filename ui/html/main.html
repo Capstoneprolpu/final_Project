@@ -136,7 +136,7 @@
                 />For Sale</label
               >
               <div class="filter_div">
-                <button class="filter_done" type="submit">Done</button>
+                <button class="filter_done">Done</button>
               </div>
             </form>
           </div>
@@ -207,7 +207,7 @@
                   placeholder="0+"
                   autocomplete="off"
                 />
-                <select class="price_dd">
+                <select class="price_dd" autocomplete="off">
                   <option value="" selected>0</option>
                   <option value="1000">1000</option>
                   <option value="2000">2000</option>
@@ -224,7 +224,7 @@
                   placeholder="Any"
                   autocomplete="off"
                 />
-                <select class="price_dd">
+                <select class="price_dd" autocomplete="off">
                   <option class="op2" value="" selected>Any</option>
                   <option class="op2" value="1000">1000</option>
                   <option class="op2" value="2000">2000</option>
@@ -300,7 +300,11 @@
             </form>
           </div>
         </li>
-        <li><button class="filter_btn">Apply Filters</button></li>
+        <li>
+          <button class="btn btn_a" id="apply-filters-btn">
+            Apply Filters
+          </button>
+        </li>
       </ul>
     </nav>
     <div id="main_dis">
@@ -381,6 +385,9 @@
           </article>
         </div>
       </div>
+    </div>
+    <div id="portal">
+      <div id="main_window"></div>
     </div>
 
     <script src="../js/main.js"></script>

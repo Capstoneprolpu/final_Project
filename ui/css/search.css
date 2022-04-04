@@ -96,6 +96,10 @@ legend {
   background-color: var(--modeColor);
 }
 
+#apply-filters-btn {
+  font-size: 1rem;
+}
+
 .f1 {
   font-size: 0.75em;
   padding: 10px 15px;

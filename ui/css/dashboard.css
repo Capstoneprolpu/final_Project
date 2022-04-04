@@ -1,7 +1,3 @@
-.side_margin30 {
-  margin: 0px 30px;
-}
-
 #profile_side {
   max-height: 100px;
   display: flex;
@@ -298,6 +294,7 @@
   background: var(--brandOrange);
   border: none;
   color: var(--modeColor);
+  margin-left: 10px;
 }
 
 .add_btn a {
