@@ -91,7 +91,7 @@ ul {
   display: flex;
 }
 
-#logo > svg {
+.logo > svg {
   color: var(--brandOrange);
 }
 
@@ -116,12 +116,12 @@ ul {
   height: 10vh;
   background-color: var(--modeColor);
   border-bottom: 1px solid var(--lightBorder);
-  box-shadow: rgba(0,0,0,0.5) 0px 0px 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
   z-index: 10;
   position: relative;
 }
 
-#logo {
+.logo {
   width: 50px;
   margin: 0 12px;
   color: var(--brandOrange);

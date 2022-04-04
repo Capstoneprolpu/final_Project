@@ -224,4 +224,74 @@ subrt.addEventListener("click", (e) => {
   }
 });
 
-//functions to do get the value of the filters and to do a 'POST' request
+//js to handle the portal
+
+const listingElements = document.querySelectorAll(".home_item");
+const portal = document.querySelector("#portal");
+const portalDiv = document.querySelector("#main-portal-div");
+const closePortalBtn = document.querySelector("#portal-close-btn");
+
+let portalStatus = false;
+
+function togglePortal() {
+  if (!portalStatus) {
+    portal.style.display = "block";
+    portalStatus = true;
+  } else {
+    portal.style.display = "none";
+    portalStatus = false;
+  }
+}
+
+listingElements.forEach((Element, index) => {
+  Element.addEventListener("click", () => {
+    togglePortal();
+  });
+});
+closePortalBtn.addEventListener("click", () => {
+  togglePortal();
+});
+
+//js to handle the portal images slideshow
+const imgElements = document.querySelectorAll(".portal-img");
+const dotElements = document.querySelectorAll(".dot");
+const arrowLeft = document.querySelector("#portal-img-left-arrow");
+const arrowRight = document.querySelector("#portal-img-right-arrow");
+
+let activeImg = 0;
+
+function imageHide(index) {
+  imgElements[index].classList.remove("active");
+  dotElements[index].classList.remove("dot-active");
+}
+
+function imageShow(index) {
+  imgElements[activeImg].classList.add("active");
+  dotElements[activeImg].classList.add("dot-active");
+}
+
+arrowLeft.addEventListener("click", () => {
+  imageHide(activeImg);
+  activeImg--;
+  if (activeImg < 0) {
+    activeImg = imgElements.length - 1;
+  }
+  imageShow(activeImg);
+});
+
+arrowRight.addEventListener("click", () => {
+  imageHide(activeImg);
+  activeImg++;
+  if (activeImg >= imgElements.length) {
+    activeImg = 0;
+  }
+  imageShow(activeImg);
+});
+
+dotElements.forEach((element, index) => {
+  element.addEventListener("click", () => {
+    imageHide(activeImg);
+    activeImg = index;
+    imageShow(activeImg);
+  });
+});
