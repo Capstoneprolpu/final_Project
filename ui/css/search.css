@@ -6,14 +6,13 @@ fieldset {
 
 legend {
   font-size: 0.75em;
-  color: var(--textMedium);
   padding-top: 12px;
   margin: auto;
 }
 
 #map {
   width: 45%;
-  border: var(--lightBorder) solid 2px;
+  border: var(--off-white) solid 2px;
 }
 
 .filters {
@@ -32,9 +31,14 @@ legend {
   margin: 10px;
   padding: 5px 10px;
   font-size: 1.25rem;
-  border: solid var(--lightBorder) 1px;
+  border: 1px solid var(--off-white);
   background: var(--modeColor);
   border-radius: 5px;
+}
+
+.filter_btn:hover {
+  background-color: var(--brandSupport);
+  border: var(--brandSupport);
 }
 
 .filter_btn:last-child {
@@ -65,8 +69,7 @@ legend {
   flex-flow: column nowrap;
   justify-content: flex-start;
   height: 100%;
-  font-size: 1.5em;
-  color: var(--textMedium);
+  font-size: 1.25rem;
   padding-bottom: 54px;
   margin-bottom: 20px;
 }
@@ -80,7 +83,7 @@ legend {
   width: 100%;
   position: absolute;
   bottom: 0;
-  background: var(--blueM);
+  background: var(--brandSupport);
 }
 
 .filter_done {
@@ -89,29 +92,47 @@ legend {
   font-size: 0.8em;
   padding: 5px 15px;
   cursor: pointer;
-}
-
-.filter_done:hover {
-  color: var(--blueD);
+  border: 1px solid var(--brandSupport);
   background-color: var(--modeColor);
 }
 
+.filter_done:hover {
+  background-color: var(--modeColor);
+  color: var(--brandSupport);
+}
+
 #apply-filters-btn {
-  font-size: 1rem;
+  font-size: 1.25rem;
+  padding: 5px 10px;
+  background-color: var(--brandOrange);
+  color: var(--modeColor);
+}
+
+#apply-filters-btn:hover {
+  background-color: var(--brandOrangeDark);
 }
 
 .f1 {
-  font-size: 0.75em;
-  padding: 10px 15px;
-  border: 1px solid var(--lightBorder);
-  color: var(--textMedium);
+  font-size: 1.25rem;
+  padding: 5px 10px;
+  border: 1px solid var(--off-white);
   border-radius: 2px;
 }
 
+.f1:hover {
+  background-color: var(--brandSupport);
+  color: var(--modeColor);
+}
+
 .f1[pressed="true"] {
-  color: var(--blueM);
-  border-color: var(--blueM);
+  background-color: var(--brandSupport);
+  border-color: var(--brandSupport);
+  color: var(--modeColor);
   border-width: 2px;
+}
+
+.f1[pressed="true"]:hover {
+  color: var(--modeColor);
 }
 
 .price_field {
@@ -125,21 +146,22 @@ legend {
 
 #mins,
 #maxs {
-  font-size: 0.8em;
-  margin: 0px 20px 16px 0px;
-  padding: 8px 5px;
-  width: 100%;
-  color: var(--textlight);
+  border: 2px solid var(--off-white);
   border-radius: 5px;
-  border: 1px solid var(--lightBorder);
+  color: var(--off-white);
+  font-size: 1.25rem;
+  margin: 0px 20px 16px 0px;
+  padding: 5px 10px;
+  width: 100%;
 }
 
 .price_dd {
-  font-size: 0.8em;
-  border: 2px solid var(--blueM);
-  padding: 7px 2px;
-  color: var(--blueM);
+  background-color: var(--brandSupportLight);
+  border: 2px solid var(--brandSupport);
   border-radius: 5px;
+  color: var(--brandSupport);
+  font-size: 1.25rem;
+  padding: 7px 2px;
 }
 
 .space_type {
@@ -177,17 +199,22 @@ legend {
 }
 
 #city_input input {
-  border: 2px solid var(--textlight);
-  border-radius: 3px;
+  border: none;
+  outline: 2px solid var(--off-white);
+  border-radius: 5px;
   font-size: 1.25rem;
   padding: 5px 10px;
   width: 100%;
 }
 
+#city_input input:focus {
+  outline: 2px solid var(--black);
+}
+
 .city_in {
   min-width: 200px;
   margin-left: 10px;
-  border: 1px solid var(--lightBorder);
+  border: 1px solid var(--off-white);
   border-radius: 5px;
 }
 
@@ -202,7 +229,7 @@ legend {
   max-width: 55%;
   overflow-y: auto;
   height: calc(89vh - 57px);
-  border-top: 1px solid var(--lightBorder);
+  border-top: 1px solid var(--off-white);
 }
 
 .home_item {
@@ -233,8 +260,10 @@ legend {
 }
 
 .home_item article p {
-  color: var(--textlight);
+  font-style: italic;
+  font-size: 1.25rem;
   margin-top: 10px;
+  opacity: 80%;
 }
 
 #homelist #price_r {
@@ -268,17 +297,17 @@ legend {
   margin-left: 30px;
   padding: 6px 20px 6px 15px;
   font-size: 1rem;
-  border: solid var(--lightBorder) 1px;
+  border: 1px solid var(--off-white);
   background: var(--modeColor);
   border-radius: 3px;
   display: none;
-  color: var(--blueM);
+  color: var(--brandOrange);
 }
 
 #tfb_label:hover {
-  background-color: var(--blueM);
+  background-color: var(--brandOrange);
   color: var(--modeColor);
-  border-color: var(--blueM);
+  border-color: var(--brandOrange);
 }
 
 #portal {
@@ -357,12 +386,12 @@ legend {
   width: 20px;
   height: 20px;
   display: inline-block;
-  background: var(--lightBorder);
+  background: var(--off-white);
   border-radius: 10px;
   cursor: pointer;
 }
 .dot.dot-active {
-  background: var(--textLight);
+  background: var(--off-white);
 }
 
 #portal-right-side {
@@ -400,7 +429,7 @@ legend {
 }
 
 #portal-main-info li {
-  border-left: 2px solid var(--lightBorder);
+  border-left: 2px solid var(--off-white);
   padding: 0 1rem;
 }
 
@@ -448,7 +477,6 @@ legend {
   top: 1rem;
   right: 1rem;
 }
-
 
 #portal-close-btn svg:hover {
   color: var(--brandOrangeDark);

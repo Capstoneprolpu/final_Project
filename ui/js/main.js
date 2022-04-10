@@ -133,7 +133,7 @@ btns.forEach((btn, btnIndex) => {
     bds = btnIndex;
     numberofBedrooms = bds;
     bb.textContent = `${bds}+ Bd, ${bds1}+ Ba`;
-    bb.style.borderColor = "rgb(0,106,255)";
+    bb.style.backgroundColor = "var(--brandSupport)";
   });
 });
 
@@ -147,7 +147,7 @@ btns1.forEach((btn1, btn1Index) => {
     bds1 = btn1Index;
     numberofBathrooms = bds1;
     bb.textContent = `${bds}+ Bd, ${bds1}+ Ba`;
-    bb.style.borderColor = "rgb(0,106,255)";
+    bb.style.backgroundColor = "var(--brandSupport)";
   });
 });
 
@@ -184,16 +184,16 @@ sub.addEventListener("click", () => {
   } else if (maxs.value === "") {
     priceBtn.textContent = `Rs${mins.value}+`;
     minPrice = mins.value;
-    priceBtn.style.borderColor = "rgb(0,106,255)";
+    priceBtn.style.backgroundColor = "var(--brandSupport)";
   } else if (mins.value === "") {
     priceBtn.textContent = `Upto Rs${maxs.value}`;
     maxPrice = maxs.value;
-    priceBtn.style.borderColor = "rgb(0,106,255)";
+    priceBtn.style.backgroundColor = "var(--brandSupport)";
   } else {
     priceBtn.textContent = `Rs${mins.value} - Rs${maxs.value}`;
     minPrice = mins.value;
     maxPrice = maxs.value;
-    priceBtn.style.borderColor = "rgb(0,106,255)";
+    priceBtn.style.backgroundColor = "var(--brandSupport)";
   }
 });
 
@@ -220,7 +220,7 @@ subrt.addEventListener("click", (e) => {
   }
   if (count != 3) {
     sptybt.textContent = temp;
-    sptybt.style.borderColor = "rgb(0,106,255)";
+    sptybt.style.backgroundColor = "var(--brandSupport)";
   }
 });
 

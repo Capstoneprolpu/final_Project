@@ -6,18 +6,19 @@
   box-sizing: border-box;
 }
 
+body {
+  color: var(--black);
+}
+
 :root {
-  --blueM: rgb(0, 106, 255);
-  --blueD: rgb(15, 67, 140);
   --brandOrangeLight: rgb(254, 165, 142);
   --brandOrange: rgb(255, 75, 30);
   --brandOrangeDark: rgb(213, 42, 0);
-  --greyBorder: rgb(117, 117, 117);
-  --lightBorder: rgb(177, 177, 177);
-  --textMedium: rgb(41, 41, 41);
-  --textLight: rgb(82, 82, 82);
+  --brandSupport: rgb(255, 187, 30);
+  --brandSupportLight: rgb(255, 238, 198);
+  --black: rgb(61, 61, 61);
+  --off-white: rgba(61, 61, 61, 0.25);
   --modeColor: white;
-  --lightBg: rgb(228, 228, 228);
 }
 
 a {
@@ -28,7 +29,7 @@ a {
 }
 
 a svg {
-  color: black;
+  color: var(--black);
 }
 
 button,
@@ -51,11 +52,6 @@ button a:hover {
 
 img {
   width: 100%;
-}
-
-input[type="text"],
-input[type="submit"] {
-  font-family: "Nunito", sans-serif;
 }
 
 button,
@@ -84,7 +80,6 @@ ul {
   padding: 0;
   flex-flow: row wrap;
   justify-content: space-around;
-  color: var(--textLight);
 }
 
 .dis_flex {
@@ -95,10 +90,16 @@ ul {
   color: var(--brandOrange);
 }
 
+.logo > svg > polygon:nth-of-type(1),
+.logo > svg > polygon:nth-of-type(2) {
+  color: var(--brandSupport);
+}
+
 #main_logo_header h1 {
   color: var(--brandOrange);
   font-size: 2rem;
   margin: auto;
+  margin-right: 10px;
   font-family: "Lora", serif;
   font-weight: 600;
 }
@@ -114,11 +115,11 @@ ul {
   align-items: center;
   justify-content: space-between;
   height: 10vh;
-  background-color: var(--modeColor);
-  border-bottom: 1px solid var(--lightBorder);
+  border-bottom: 1px solid var(--off-white);
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
   z-index: 10;
   position: relative;
+  background-color: var(--brandSupportLight);
 }
 
 .logo {
@@ -130,23 +131,45 @@ ul {
 .nav_side {
   width: 35%;
   font-size: 1em;
-  color: var(--textMedium);
-  font-family: "Roboto", sans-serif;
 }
 
 .nav_item {
   cursor: pointer;
   align-self: center;
   position: relative;
+  padding: 5px 10px;
+  color: var(--brandOrange);
+  transition: color 400ms;
 }
 
-.nav_item:hover {
-  color: var(--blueM);
+.nav_item:hover > a {
+  color: var(--brandSupport);
+  text-decoration: underline;
+}
+
+.nav_item:hover a#sign_btn {
+  text-decoration: none;
 }
 
 .nav_item a {
+  color: inherit;
   font-size: 1.25rem;
   font-weight: 600;
+}
+
+.nav_item ul {
+  display: grid;
+}
+
+.nav-sub-item {
+  padding: 10px 10px;
+  color: var(--brandOrange);
+}
+
+.nav-sub-item:hover a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--brandSupport);
 }
 
 .section-heading {
@@ -186,22 +209,20 @@ ul {
 #sign_btn:hover {
   color: var(--modeColor);
   background: var(--brandOrange);
+  text-decoration: unset;
 }
 
 .search_input {
   width: 70%;
   margin: auto;
-  font-family: "Roboto", sans-serif;
 }
 
 .main_search {
   border: none;
   border-radius: 5px;
   width: 85%;
-  height: 65px;
-  font-size: 1.25em;
-  padding-left: 0.5em;
-  font-family: "Roboto", sans-serif;
+  padding: 15px;
+  font-size: 1.25rem;
 }
 
 .search_button {
@@ -210,11 +231,9 @@ ul {
   border-radius: 5px;
   color: var(--modeColor);
   cursor: pointer;
-  font-family: "Roboto", sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
-  height: 65px;
-  padding: 0 1em;
+  padding: 15px;
   transition: background-color 400ms;
 }
 
@@ -223,14 +242,12 @@ ul {
 }
 
 #main_quote {
-  color: var(--textMedium);
   font-family: "Lora", serif;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 27px;
-  margin: auto;
-  max-width: 480px;
-  padding: 81px 0;
+  margin: 50px auto;
+  max-width: 500px;
   text-align: center;
 }
 
@@ -240,21 +257,20 @@ ul {
   justify-content: space-evenly;
   align-items: flex-start;
   flex-flow: row wrap;
-  background-color: var(--lightBg);
-  padding: 50px 0px;
 }
 
 .art_box {
-  width: 35%;
-  max-width: 400px;
+  background: var(--modeColor);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 7px 0px;
   height: 59vh;
   margin: 10px 11px;
+  max-width: 400px;
+  min-width: 300px;
   padding: 22px;
   text-align: center;
-  background: var(--modeColor);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 7px 0px;
-  min-width: 300px;
   transition: transform 300ms ease-in-out;
+  width: 35%;
 }
 
 .art_box:hover {
@@ -276,8 +292,7 @@ ul {
 }
 
 footer {
-  background-color: var(--modeColor);
-  font-family: "Roboto", sans-serif;
+  background-color: var(--brandSupportLight);
   overflow: hidden;
   width: 100%;
 }
@@ -291,7 +306,6 @@ footer {
   justify-content: space-around;
   padding: 40px;
   font-size: 1.2em;
-  color: var(--textLight);
 }
 
 .footer_nav_item {
@@ -300,7 +314,6 @@ footer {
 }
 
 .footer_nav_item:hover {
-  color: var(--textMedium);
   text-decoration: underline;
 }
 
@@ -308,7 +321,6 @@ footer {
   text-align: center;
   font-size: 1.2em;
   margin-bottom: 40px;
-  font-family: "Roboto", sans-serif;
 }
 
 .socials a {
@@ -354,7 +366,7 @@ footer {
 }
 
 .form_input {
-  border: 1px solid var(--greyBorder);
+  border: 1px solid var(--off-white);
   border-radius: 5px;
   display: block;
   font-size: 1.25rem;
@@ -384,7 +396,6 @@ footer {
 
 .form_a p {
   margin: 10px 0;
-  font-family: roboto, sans-serif;
   font-size: 0.9em;
 }
 
@@ -395,18 +406,13 @@ footer {
 .nav_dd {
   visibility: hidden;
   position: absolute;
-  background: var(--modeColor);
+  background: var(--brandSupportLight);
   top: 50px;
   left: -10px;
   width: 200px;
   min-height: 100px;
   cursor: default;
-  color: var(--textMedium);
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 30px;
-}
-
-.nav_dd:hover {
-  color: var(--textMedium);
 }
 
 .nav_dd ul {
@@ -415,16 +421,6 @@ footer {
   min-height: 110px;
 
   margin: 10px;
-}
-
-.nav_dd ul li {
-  padding: 10px 10px;
-}
-
-.nav_dd ul li:hover {
-  color: var(--blueM);
-  cursor: pointer;
-  background: var(--lightBg);
 }
 
 .btn_a {
