@@ -2,7 +2,7 @@
   max-height: 100px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--lightBg);
+  border-bottom: 1px solid var(--off-white);
 }
 
 #profile_box img {
@@ -47,7 +47,7 @@
   overflow: hidden;
   max-width: 500px;
   padding: 20px;
-  border: 2px solid var(--lightBg);
+  border: 2px solid var(--off-white);
 }
 
 .user_rent_pics {
@@ -133,8 +133,8 @@
 }
 
 #left_s {
-  border-right: 1px solid var(--lightBg);
-  border-bottom: 1px solid var(--lightBg);
+  border-right: 1px solid var(--off-white);
+  border-bottom: 1px solid var(--off-white);
 }
 
 .right_s_item {
@@ -153,6 +153,14 @@
   margin: 10px;
   font-size: 1.25rem;
   background-color: var(--modeColor);
+}
+
+.modify-ren-info .card_btn:first-child {
+  border-color: var(--brandSupport);
+}
+
+.modify-ren-info .card_btn:first-child:hover {
+  background-color: var(--brandSupport);
 }
 
 .top_block_space {
@@ -249,7 +257,6 @@
 }
 
 #main_form_profile label {
-  color: var(--textMedium);
   font-weight: bold;
 }
 
@@ -258,15 +265,15 @@
   justify-content: space-between;
   align-items: center;
   min-height: 60px;
-  border-bottom: 1px solid var(--lightBorder);
+  border-bottom: 1px solid var(--off-white);
 }
 
 .main_form_profile_item input {
-  width: 50%;
+  border: 1px solid var(--black);
+  border-radius: 5px;
   height: 60%;
   padding: 5px 10px;
-  border: 1px solid var(--textMedium);
-  border-radius: 5px;
+  width: 50%;
 }
 
 .main_form_profile_item:nth-child(2) {

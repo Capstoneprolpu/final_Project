@@ -15,7 +15,6 @@ form {
 
 .select_input {
   padding: 8px 5px;
-  color: var(--textMedium);
   margin-bottom: 15px;
   background: var(--modeColor);
   border: 1px solid var(--brandOrangeLight);
@@ -104,7 +103,7 @@ label {
 
 #previews {
   height: 400px;
-  background: var(--lightBg);
+  background: var(--off-white);
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
@@ -135,7 +134,9 @@ h2.add_img_txt {
 }
 
 h3.add_img_txt {
+  color: var(--black);
   font-size: 1.25rem;
+  margin-top: -150px;
 }
 
 #add_btn {
@@ -158,12 +159,6 @@ h3.add_img_txt {
 
 #add_btn i {
   height: 25px;
-}
-
-#previews h3 {
-  color: var(--textLight);
-  margin-left: 18%;
-  margin-top: -35%;
 }
 
 #pic_btns {
