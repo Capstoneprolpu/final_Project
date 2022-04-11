@@ -64,6 +64,18 @@ label {
   font-weight: bold;
 }
 
+#map-section {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#map-section input {
+  width: 9rem;
+  margin-right: 1rem;
+}
+
 .form_for {
   padding: 10px 20px;
   border: 2px solid var(--brandOrange);

@@ -7,16 +7,24 @@ let locations = [
     lng: 80.9462,
   },
   {
-    lat: 26.8427,
+    lat: 26.8227,
     lng: 80.9432,
   },
   {
-    lat: 26.8487,
-    lng: 80.9442,
+    lat: 26.8787,
+    lng: 80.9242,
   },
   {
     lat: 26.8497,
-    lng: 80.9562,
+    lng: 80.9162,
+  },
+  {
+    lat: 26.8307,
+    lng: 80.9962,
+  },
+  {
+    lat: 26.8,
+    lng: 80.9,
   },
 ];
 
@@ -26,6 +34,11 @@ function initMap() {
     zoom: 11,
   });
 
+  const infoWindow = new google.maps.InfoWindow({
+    content: "",
+    disableAutoPan: true,
+  });
+
   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   const markers = locations.map((position, i) => {
@@ -33,6 +46,7 @@ function initMap() {
     const marker = new google.maps.Marker({
       position,
       label,
+      map: map,
     });
   });
 }
