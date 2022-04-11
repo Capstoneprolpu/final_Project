@@ -80,7 +80,7 @@
         <form>
           <div class="add_form">
             <label>Select rental type</label>
-            <select class="select_input">
+            <select name="spaceType" class="select_input">
               <option>Home</option>
               <option>Apartment</option>
               <option>Room</option>
@@ -88,7 +88,7 @@
             <div class="baths_beds">
               <div class="flex_col">
                 <label>Number of bedrooms</label>
-                <select class="select_input">
+                <select name="NumberOfBedrooms" class="select_input">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -99,7 +99,7 @@
               </div>
               <div class="flex_col">
                 <label>Number of bathrooms</label>
-                <select class="select_input">
+                <select name="NumberOfBathrooms" class="select_input">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -110,20 +110,65 @@
               </div>
             </div>
             <label>Area of the space</label>
-            <input type="text" class="" placeholder="Area in sqft" />
+            <input
+              name="area"
+              type="text"
+              class=""
+              placeholder="Area in sqft"
+            />
             <label>More Information about the rental</label>
-            <textarea type="text" class="" placeholder="More Info"></textarea>
+            <textarea
+              name="info"
+              type="text"
+              class=""
+              placeholder="More Info"
+            ></textarea>
             <label>Rent Price estimate</label>
-            <input type="text" class="" placeholder="Rent price in Rupees" />
+            <input
+              name="price"
+              type="text"
+              class=""
+              placeholder="Rent price in Rupees"
+            />
             <button class="form_for" value="Continue">Continue</button>
           </div>
           <div class="add_form" style="visibility: hidden">
             <h2 class="address-label">Enter address</h2>
-            <input type="text" class="" placeholder="City" />
-            <input type="text" class="" placeholder="Street Name" />
-            <input type="text" class="" placeholder="House/Building No." />
-            <input type="text" class="" placeholder="Nearest Landmark" />
-            <input type="text" class="" placeholder="Pin-Code" />
+            <input name="city" type="text" class="" placeholder="City" />
+            <input
+              name="streetName"
+              type="text"
+              class=""
+              placeholder="Street Name"
+            />
+            <input
+              name="landmark"
+              type="text"
+              class=""
+              placeholder="Nearest Landmark"
+            />
+            <input
+              name="houseNumber"
+              type="text"
+              class=""
+              placeholder="House/Building No."
+            />
+            <input name="pinCode" type="text" class="" placeholder="Pin-Code" />
+            <div id="map-section">
+              <input
+                name="latitude"
+                type="text"
+                class=""
+                placeholder="latitude"
+              />
+              <input
+                name="longitude"
+                type="text"
+                class=""
+                placeholder="longitude"
+              />
+              <button id="open-map">Find in Map</button>
+            </div>
 
             <button class="form_for" value="Continue">Continue</button>
             <button class="form_bac">
@@ -147,6 +192,7 @@
               <h3 class="add_img_txt">Maximum 4 images can be added</h3>
             </div>
             <input
+              name="pics"
               id="pic_files"
               type="file"
               multiple

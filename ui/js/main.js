@@ -1,16 +1,75 @@
 let map;
 let primaryLocation = { lat: 26.8467, lng: 80.9462 };
+
+let locations = [
+  {
+    lat: 26.8467,
+    lng: 80.9462,
+  },
+  {
+    lat: 26.8227,
+    lng: 80.9432,
+  },
+  {
+    lat: 26.8787,
+    lng: 80.9242,
+  },
+  {
+    lat: 26.8497,
+    lng: 80.9162,
+  },
+  {
+    lat: 26.8307,
+    lng: 80.9962,
+  },
+  {
+    lat: 26.8,
+    lng: 80.9,
+  },
+];
+
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: primaryLocation,
     zoom: 11,
   });
 
-  var marker = new google.maps.Marker({
-    map: map,
-    position: primaryLocation,
+  const infoWindow = new google.maps.InfoWindow({
+    content: "",
+    disableAutoPan: true,
+  });
+
+  const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  const markers = locations.map((position, i) => {
+    const label = labels[i % labels.length];
+    const marker = new google.maps.Marker({
+      position,
+      label,
+      map: map,
+    });
   });
 }
+
+const searchCityBtn = document.getElementById("city-search-btn");
+const searchCityName = document.getElementById("city-name-input");
+
+searchCityBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  const city = searchCityName.value.toLowerCase();
+  fetch(`https://citylocate.herokuapp.com/${city}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((data) => data.json())
+    .then((data) => {
+      primaryLocation = data.data;
+      initMap();
+    })
+    .catch((e) => console.log(e));
+});
 
 //Code for filter buttons
 const filters = document.querySelectorAll(".filter_btn");
@@ -102,7 +161,7 @@ applyFilters.addEventListener("click", (event) => {
     },
     body: JSON.stringify(postData),
   })
-    .then((data) => data.json)
+    .then((data) => data.json())
     .then((data) => {
       console.log("We got something back!");
       //here next functionalities will applied
