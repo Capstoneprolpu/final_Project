@@ -1,3 +1,17 @@
+//js for waiting loader
+const loader = document.getElementById("loader-bg");
+let loaderStatus = false;
+const toggleLoader = () => {
+  if (!loaderStatus) {
+    loader.style.display = "block";
+    loaderStatus = true;
+  } else {
+    loader.style.display = "none";
+    loaderStatus = false;
+  }
+};
+
+//js for form functionalities
 const formParts = document.querySelectorAll(".add_form");
 const toggleVisibility = (ins) => {
   formParts.forEach((formPart) => {
@@ -103,7 +117,7 @@ const portelLongitudeInput = document.getElementById("portel-map-longitude");
 
 const cityInput = document.getElementById("city-input");
 
-let primaryLocation = { lat: 10.234, lng: 35.24 };
+let primaryLocation = { lat: 24.8118, lng: 77.9196 };
 let zoom = 4;
 
 const updateMap = async () => {
@@ -112,6 +126,7 @@ const updateMap = async () => {
     togglePortel();
     return;
   }
+  toggleLoader();
   fetch(`https://citylocate.herokuapp.com/${city}`, {
     method: "GET",
     headers: {
@@ -120,9 +135,12 @@ const updateMap = async () => {
   })
     .then((data) => data.json())
     .then((data) => {
-      primaryLocation = data.data;
-      zoom = 11;
+      if (data.data) {
+        primaryLocation = data.data;
+        zoom = 11;
+      }
       initMap();
+      toggleLoader();
       togglePortel();
     })
     .catch((e) => console.log(e));
@@ -153,6 +171,7 @@ function initMap() {
     center: primaryLocation,
     zoom: zoom,
   });
+  map.setOptions({ cursor: "crosshair" });
 
   let infoWindow = new google.maps.InfoWindow({
     content: "Click the map to get Lat/Lng!",

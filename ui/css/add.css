@@ -220,7 +220,14 @@ h3.add_img_txt {
   width: 765px;
   background: var(--brandSupportLight);
   margin: auto;
+  border: 1px solid var(--brandSupport);
 }
+
+#open-map {
+  font-size: 1rem;
+  padding: 7px 20px;
+}
+
 #map-click-info {
   margin: 1.25rem 0rem;
 }
