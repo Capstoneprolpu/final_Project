@@ -1,9 +1,10 @@
 form {
-  font-size: 1.25rem;
+  font-size: 2rem;
 }
 
 .form_a h2 {
   font-family: "Lora", serif;
+  font-size: 2.5rem;
 }
 
 .add_form {
@@ -14,12 +15,11 @@ form {
 }
 
 .select_input {
-  padding: 8px 5px;
-  margin-bottom: 15px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
   background: var(--modeColor);
   border: 1px solid var(--brandOrangeLight);
-  border-radius: 5px;
-  font-size: inherit;
+  border-radius: 0.5rem;
 }
 
 .baths_beds {
@@ -34,32 +34,30 @@ form {
 
 .add_form input {
   border: solid 1px var(--brandOrangeLight);
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: inherit;
-  margin-bottom: 15px;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .add_form textarea {
   border: solid 1px var(--brandOrangeLight);
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin-bottom: 15px;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
   resize: none;
-  font-size: inherit;
   font-family: inherit;
 }
 
 h2.address-label {
   font-family: "Nunito", sans-serif;
   color: var(--brandOrange);
-  font-size: 1.25rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
 label {
   color: var(--brandOrange);
-  margin: 5px 4px;
+  margin: 0.5rem 4px;
   font-weight: bold;
 }
 
@@ -71,18 +69,28 @@ label {
 }
 
 #map-section input {
-  width: 9rem;
+  width: 25%;
   margin-right: 1rem;
 }
 
+#open-map {
+  padding: 0.5rem 1rem;
+  background-color: var(--modeColor);
+  border-color: var(--brandOrange);
+  color: var(--brandOrange);
+}
+
+#open-map:hover {
+  background-color: var(--brandOrangeLight);
+}
+
 .form_for {
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   border: 2px solid var(--brandOrange);
-  border-radius: 5px;
+  border-radius: 0.5rem;
   font-weight: bolder;
-  margin-top: 35px;
+  margin-top: 3.5rem;
   background-color: var(--brandOrange);
-  font-size: inherit;
   color: var(--modeColor);
 }
 
@@ -97,8 +105,7 @@ label {
   border: 2px solid var(--brandOrange);
   color: var(--brandOrange);
   display: flex;
-  font-size: inherit;
-  margin-top: 20px;
+  margin-top: 2rem;
   padding: 0;
   transition: all 350ms;
 }
@@ -106,22 +113,22 @@ label {
 .form_bac:hover {
   color: var(--brandOrangeDark);
   background-color: transparent;
-  transform: translateX(-20px);
+  transform: translateX(-2rem);
 }
 
 .form_bac svg {
-  width: 40px;
+  width: 4rem;
 }
 
 #previews {
-  height: 400px;
-  background: var(--off-white);
+  height: 40rem;
+  background: var(--offWhite);
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-content: space-evenly;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 0.5rem;
 }
 
 .preview_item {
@@ -138,31 +145,31 @@ h3.add_img_txt {
   font-family: "Nunito", sans-serif;
   color: var(--brandOrange);
   display: block;
-  margin: 10px auto;
+  margin: 1rem auto;
 }
 
 h2.add_img_txt {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
 h3.add_img_txt {
   color: var(--black);
-  font-size: 1.25rem;
-  margin-top: -150px;
+  font-size: 2rem;
+  margin-top: -15rem;
 }
 
 #add_btn {
   background: var(--brandOrange);
   color: var(--modeColor);
-  padding: 10px 10px;
+  padding: 1rem 1rem;
   cursor: pointer;
   font-weight: lighter;
   text-align: center;
-  max-height: 40px;
+  max-height: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 5px;
+  border-radius: 0.5rem;
 }
 
 #add_btn:hover {
@@ -170,28 +177,26 @@ h3.add_img_txt {
 }
 
 #add_btn i {
-  height: 25px;
+  height: 2.5rem;
 }
 
 #pic_btns {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 0 25px 0;
+  margin: 0 0 2.5rem 0;
 }
 
 #remove_pics {
   margin: 0;
-  padding: 5px 20px;
+  padding: 0.5rem 2rem;
   color: var(--brandOrange);
   border: 2px solid var(--brandOrange);
   background: transparent;
-  font-size: inherit;
 }
 
 #remove_pics:hover {
-  background-color: var(--brandOrange);
-  color: var(--modeColor);
+  background-color: var(--brandOrangeLight);
 }
 
 @media (max-width: 480px) {
@@ -200,14 +205,14 @@ h3.add_img_txt {
   }
 
   #previews {
-    height: 250px;
-    margin-bottom: 10px;
+    height: 25rem;
+    margin-bottom: 1rem;
   }
 
   #add_btn {
     width: 35%;
     font-size: 0.7rem;
-    max-height: 30px;
+    max-height: 3rem;
   }
 
   label {
@@ -216,35 +221,35 @@ h3.add_img_txt {
 
   .select_input {
     font-size: 0.7rem;
-    padding: 5px 3px;
-    margin-bottom: 10px;
+    padding: 0.5rem 3px;
+    margin-bottom: 1rem;
   }
 
   .add_form input {
     font-size: 0.7rem;
     padding: 7px 7px;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
   }
 
   .add_form textarea {
-    padding: 5px 5px;
+    padding: 0.5rem 0.5rem;
     font-size: 0.7rem;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
   }
 
   .form_for {
-    padding: 5px 5px;
+    padding: 0.5rem 0.5rem;
     font-size: 1.1rem;
-    margin-top: 20px;
+    margin-top: 2rem;
   }
 
   .form_bac {
     font-size: 1.1rem;
-    max-width: 70px;
+    max-width: 7rem;
   }
 
   #previews h2 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
   #previews h3 {
@@ -254,6 +259,6 @@ h3.add_img_txt {
   #remove_pics {
     width: 35%;
     font-size: 0.7rem;
-    min-height: 30px;
+    min-height: 3rem;
   }
 }

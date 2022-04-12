@@ -1,15 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,600&family=Nunito:wght@400;600&display=swap");
 
-* {
-  font-family: "Nunito", sans-serif;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  color: var(--black);
-}
-
 :root {
   --brandOrangeLight: rgb(254, 165, 142);
   --brandOrange: rgb(255, 75, 30);
@@ -17,8 +7,22 @@ body {
   --brandSupport: rgb(255, 187, 30);
   --brandSupportLight: rgb(255, 238, 198);
   --black: rgb(61, 61, 61);
-  --off-white: rgba(61, 61, 61, 0.25);
+  --offWhite: rgba(61, 61, 61, 0.25);
   --modeColor: white;
+  /* 
+    Setting '1rem' to be equal to '10px'.
+    (This is done to make the units be more predictable & used consistently.
+    Hence, this will replace any absolute units with values greater than 
+    or equal to '10px' (and '5px') be replaced with their rem counterparts.)
+  */
+  font-size: 10px;
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 2rem;
 }
 
 a {
@@ -32,12 +36,16 @@ a svg {
   color: var(--black);
 }
 
+body {
+  color: var(--black);
+}
+
 button,
 btn {
   border: 2px solid var(--brandOrange);
+  border-radius: 0.5rem;
   cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 1rem 2rem;
 }
 
 button:hover {
@@ -60,13 +68,9 @@ input[type="submit"] {
   transition-duration: 400ms;
 }
 
-h1 {
-  font-weight: 600;
-}
-
 h2 {
-  padding: 14px 0;
   font-weight: 400;
+  padding: 1.5rem 0;
 }
 
 svg {
@@ -97,9 +101,9 @@ ul {
 
 #main_logo_header h1 {
   color: var(--brandOrange);
-  font-size: 2rem;
+  font-size: 3rem;
   margin: auto;
-  margin-right: 10px;
+  margin-right: 1rem;
   font-family: "Lora", serif;
   font-weight: 600;
 }
@@ -115,7 +119,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   height: 10vh;
-  border-bottom: 1px solid var(--off-white);
+  border-bottom: 1px solid var(--offWhite);
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
   z-index: 10;
   position: relative;
@@ -123,21 +127,20 @@ ul {
 }
 
 .logo {
-  width: 50px;
-  margin: 0 12px;
+  width: 5rem;
+  margin: 0 1.2rem;
   color: var(--brandOrange);
 }
 
 .nav_side {
   width: 35%;
-  font-size: 1em;
 }
 
 .nav_item {
   cursor: pointer;
   align-self: center;
   position: relative;
-  padding: 5px 10px;
+  padding: 0.5rem 1rem;
   color: var(--brandOrange);
   transition: color 400ms;
 }
@@ -153,7 +156,6 @@ ul {
 
 .nav_item a {
   color: inherit;
-  font-size: 1.25rem;
   font-weight: 600;
 }
 
@@ -162,7 +164,7 @@ ul {
 }
 
 .nav-sub-item {
-  padding: 10px 10px;
+  padding: 1rem;
   color: var(--brandOrange);
 }
 
@@ -174,6 +176,7 @@ ul {
 
 .section-heading {
   font-family: "Lora", serif;
+  font-size: 3rem;
 }
 
 .main_b {
@@ -184,25 +187,34 @@ ul {
   background-size: cover;
 }
 
+.image-filter {
+  background-color: var(--brandSupportLight);
+  height: 68vh;
+  width: 100vw;
+  opacity: 0.35;
+}
+
 .search_block {
   margin: auto;
   text-align: center;
-  padding: 9em 0;
+  padding: 10rem 0;
+  position: relative;
+  top: -68vh;
 }
 
 #search_toptext {
   color: var(--modeColor);
   font-family: "Lora", serif;
-  font-size: 2.5em;
-  padding-bottom: 0.5em;
+  font-size: 3rem;
+  margin-bottom: 1rem;
   text-shadow: rgb(0, 0, 0) 0px 0px 20px;
 }
 
 #sign_btn {
   border: 2px solid var(--brandOrange);
-  border-radius: 5px;
+  border-radius: 0.5rem;
   color: var(--brandOrange);
-  padding: 10px 10px;
+  padding: 1rem;
   transition: background 400ms;
 }
 
@@ -219,21 +231,23 @@ ul {
 
 .main_search {
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   width: 85%;
-  padding: 15px;
-  font-size: 1.25rem;
+  padding: 1.5rem;
+}
+
+#main_search_bar {
+  margin-right: -0.75rem;
 }
 
 .search_button {
   background-color: var(--brandOrange);
   border: none;
-  border-radius: 5px;
+  border-radius: 0 0.5rem 0.5rem 0;
   color: var(--modeColor);
   cursor: pointer;
-  font-size: 1.25rem;
   font-weight: bold;
-  padding: 15px;
+  padding: 1.5rem;
   transition: background-color 400ms;
 }
 
@@ -243,11 +257,11 @@ ul {
 
 #main_quote {
   font-family: "Lora", serif;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 400;
-  line-height: 27px;
-  margin: 50px auto;
-  max-width: 500px;
+  line-height: 2.7rem;
+  margin: 5rem auto;
+  max-width: 50rem;
   text-align: center;
 }
 
@@ -261,13 +275,13 @@ ul {
 
 .art_box {
   background: var(--modeColor);
-  border-radius: 5px;
+  border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 7px 0px;
   height: 59vh;
-  margin: 10px 11px;
-  max-width: 400px;
-  min-width: 300px;
-  padding: 22px;
+  margin: 1rem;
+  max-width: 40rem;
+  min-width: 30rem;
+  padding: 2.2rem;
   text-align: center;
   transition: transform 300ms ease-in-out;
   width: 35%;
@@ -279,16 +293,15 @@ ul {
 
 .art_box h2 {
   font-family: "Lora", serif;
+  font-size: 2.5rem;
 }
 
 .art_box button {
-  font-size: 1.25rem;
-  margin-top: 30px;
+  margin-top: 3rem;
 }
 
 .art_p {
-  font-size: 1.15em;
-  padding-bottom: 10px;
+  padding-bottom: 1rem;
 }
 
 footer {
@@ -304,13 +317,12 @@ footer {
 
 .footer_nav {
   justify-content: space-around;
-  padding: 40px;
-  font-size: 1.2em;
+  padding: 4rem;
 }
 
 .footer_nav_item {
   cursor: pointer;
-  margin: 1em 1em;
+  margin: 1rem;
 }
 
 .footer_nav_item:hover {
@@ -319,16 +331,15 @@ footer {
 
 .socials {
   text-align: center;
-  font-size: 1.2em;
-  margin-bottom: 40px;
+  margin-bottom: 4rem;
 }
 
 .socials a {
   cursor: pointer;
   display: inline-block;
-  margin: 10px;
+  margin: 1rem;
   transition: transform 250ms;
-  width: 25px;
+  width: 2.5rem;
 }
 
 .socials a:hover {
@@ -337,11 +348,11 @@ footer {
 
 .arrow_filter {
   position: absolute;
-  top: 41px;
-  right: 31px;
+  top: 4.1rem;
+  right: 3.1rem;
   border-style: solid;
   border-color: transparent transparent var(--modeColor);
-  border-width: 0 10px 10px 10px;
+  border-width: 0 1rem 1rem 1rem;
   z-index: 33;
   visibility: hidden;
 }
@@ -352,11 +363,11 @@ footer {
 
 .form_a {
   height: 70vh;
-  max-width: 450px;
+  max-width: 45rem;
   margin: auto;
   position: relative;
   z-index: 2;
-  margin-top: 15px;
+  margin-top: 1.5rem;
 }
 
 .main_form {
@@ -366,22 +377,20 @@ footer {
 }
 
 .form_input {
-  border: 1px solid var(--off-white);
-  border-radius: 5px;
+  border: 1px solid var(--offWhite);
+  border-radius: 0.5rem;
   display: block;
-  font-size: 1.25rem;
-  margin: 15px 0;
-  padding: 10px;
+  margin: 1.5rem 0;
+  padding: 1rem;
 }
 
 .form_btn {
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   background: var(--brandOrange);
-  font-size: 1.25rem;
   color: var(--modeColor);
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   cursor: pointer;
 }
 
@@ -395,32 +404,36 @@ footer {
 }
 
 .form_a p {
-  margin: 10px 0;
-  font-size: 0.9em;
+  margin: 1rem 0;
 }
 
 .form_a span {
   margin-left: 26%;
 }
 
+#t_c,
+#t_c a {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 .nav_dd {
   visibility: hidden;
   position: absolute;
   background: var(--brandSupportLight);
-  top: 50px;
-  left: -10px;
-  width: 200px;
-  min-height: 100px;
+  top: 5rem;
+  left: -1rem;
+  width: 20rem;
+  min-height: 10rem;
   cursor: default;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 30px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 3rem;
 }
 
 .nav_dd ul {
   flex-flow: column nowrap;
   align-items: flex-start;
-  min-height: 110px;
-
-  margin: 10px;
+  min-height: 11rem;
+  margin: 1rem;
 }
 
 .btn_a {
@@ -436,7 +449,7 @@ footer {
 .sign-in-header,
 .sign-up-header {
   font-family: "Lora", serif;
-  font-size: 1.75rem;
+  font-size: 2.5rem;
 }
 
 @media (min-width: 850px) {
@@ -456,26 +469,26 @@ footer {
 
   .nav_side {
     display: flex;
-    margin-top: 300px;
+    margin-top: 30rem;
     background: var(--modeColor);
     width: 100%;
     left: 0;
     height: 33vh;
     z-index: 20;
     position: relative;
-    top: 28px;
+    top: 2.8rem;
     flex-flow: column nowrap;
     justify-content: center;
   }
 
   .nav_item {
-    padding: 15px 15px;
-    margin: 10px 0px;
+    padding: 1.5rem;
+    margin: 1rem 0;
   }
 
   .nav_toggle {
-    margin-right: 15px;
-    width: 40px;
+    margin-right: 1.5rem;
+    width: 4rem;
     position: absolute;
     text-decoration: none;
     right: 0;
@@ -488,7 +501,7 @@ footer {
   }
 
   #search_toptext {
-    font-size: 2em;
+    font-size: 2rem;
   }
 
   .search_input {
@@ -497,16 +510,16 @@ footer {
 
   .main_search {
     width: 95%;
-    height: 45px;
-    font-size: 1em;
-    padding-left: 0.5em;
+    height: 4.5rem;
+    font-size: 2rem;
+    padding-left: 0.5rem;
   }
 
   .search_button {
-    height: 44px;
-    font-size: 1em;
-    padding: 0 1em;
-    margin-top: 25px;
+    height: 4.4rem;
+    font-size: 2rem;
+    padding: 0 1rem;
+    margin-top: 2.5rem;
   }
 
   .form_a {
@@ -514,19 +527,19 @@ footer {
   }
 
   .form_input {
-    font-size: 1em;
-    height: 40px;
-    margin: 10px 0;
+    font-size: 2rem;
+    height: 4rem;
+    margin: 1rem 0;
   }
 
   #t_c {
-    font-size: 0.8em;
+    font-size: 2rem;
   }
 
   .form_btn {
-    height: 40px;
-    font-size: 1em;
-    margin: 20px;
+    height: 4rem;
+    font-size: 2rem;
+    margin: 2rem;
   }
 
   #sign_ask {

@@ -1,23 +1,23 @@
 #profile_side {
-  max-height: 100px;
+  max-height: 10rem;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--off-white);
+  border-bottom: 1px solid var(--offWhite);
 }
 
 #profile_box img {
-  height: 75px;
-  width: 75px;
+  height: 7.5rem;
+  width: 7.5rem;
   border: 4px solid var(--brandOrange);
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 
 #profile_box {
   display: flex;
-  border-radius: 5px;
-  margin: 20px 0px;
-  padding: 5px 10px;
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+  padding: 0.5rem 1rem;
 }
 
 #info_side {
@@ -26,8 +26,8 @@
 }
 
 .toggle_right {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
 }
 
 #user_rentals {
@@ -41,13 +41,13 @@
 }
 
 .user_rentals_item {
-  margin: 20px 10px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px;
-  border-radius: 5px;
+  margin: 2rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0.5rem 1rem;
+  border-radius: 0.5rem;
   overflow: hidden;
-  max-width: 500px;
-  padding: 20px;
-  border: 2px solid var(--off-white);
+  max-width: 50rem;
+  padding: 2rem;
+  border: 2px solid var(--offWhite);
 }
 
 .user_rent_pics {
@@ -57,37 +57,35 @@
 }
 
 .user_rent_pics > * {
-  border-radius: 5px;
+  border-radius: 0.5rem;
 }
 
 .user_ren_in {
   display: grid;
-  margin-left: 20px;
+  margin-left: 2rem;
 }
 
 .user_ren_info h2 {
-  margin-left: -20px;
+  margin-left: -2rem;
 }
 
 .room-feats {
   display: initial;
   list-style: initial;
-  font-size: 1.25rem;
 }
 
 .room-feats > * {
-  margin: 10px 0;
+  margin: 1rem 0;
 }
 
 .modify-ren-info {
-  margin-left: -20px;
+  margin-left: -2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
 #profile_box h3 {
   font-weight: 400;
-  font-size: 1.25rem;
 }
 
 #profile_box div {
@@ -96,19 +94,19 @@
 
 .arrow_down {
   align-self: center;
-  width: 36px;
-  margin-top: 10px;
+  width: 3.6rem;
+  margin-top: 1rem;
 }
 
 .header_rent_list {
   color: var(--brandOrange);
   display: flex;
   font-family: "Lora", serif;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   justify-content: center;
-  margin-bottom: 15px;
-  margin-left: 10px;
-  max-height: 30px;
+  margin-bottom: 1.5rem;
+  margin-left: 1rem;
+  max-height: 3rem;
 }
 
 #left_nav_men ul {
@@ -116,9 +114,8 @@
 }
 
 #left_nav_men ul li {
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   cursor: pointer;
-  font-size: 1.25rem;
   font-weight: bold;
 }
 
@@ -133,14 +130,14 @@
 }
 
 #left_s {
-  border-right: 1px solid var(--off-white);
-  border-bottom: 1px solid var(--off-white);
+  border-right: 1px solid var(--offWhite);
+  border-bottom: 1px solid var(--offWhite);
 }
 
 .right_s_item {
   position: absolute;
   visibility: hidden;
-  margin: 20px 20px;
+  margin: 2rem 2rem;
   width: calc(100% - 40px);
 }
 
@@ -149,9 +146,8 @@
 }
 
 .card_btn {
-  padding: 5px 10px;
-  margin: 10px;
-  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
   background-color: var(--modeColor);
 }
 
@@ -167,47 +163,42 @@
   height: 20vh;
   background-color: var(--brandOrangeLight);
   width: 100%;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
   border-bottom: 2px solid var(--brandOrange);
 }
 
 #profile_main_left {
   width: 50%;
   display: flex;
-  margin: -25px 0px 20px 60px;
-  height: 100px;
+  margin: -2.5rem 0 2rem 6rem;
+  height: 10rem;
 }
 
 #profile_top_info {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 4rem;
 }
 
 #profile_main_left img {
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  height: 15rem;
+  width: 15rem;
   border: 2px solid var(--brandOrange);
   position: relative;
-  bottom: 50px;
+  bottom: 5rem;
 }
 
 #profile_main_left div {
-  margin: 36px 0px 0px 20px;
-}
-
-#profile_username_main {
-  font-size: 1.25rem;
+  margin: 3.6rem 0 0 2rem;
 }
 
 #change_pass_btn {
-  margin-top: 10px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   background-color: var(--modeColor);
 }
 
@@ -216,20 +207,18 @@
 }
 
 #pfbtn_left {
-  margin-right: 5px;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 1.25rem;
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
   border: 2px solid var(--brandOrange);
   background-color: var(--modeColor);
   cursor: pointer;
 }
 
 #pfbtn_right {
-  margin-right: 5px;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 1.25rem;
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
   border: none;
   color: var(--modeColor);
   background-color: var(--brandOrange);
@@ -246,13 +235,9 @@
   background: var(--brandOrange);
 }
 
-#profile_form_edit form * {
-  font-size: 1.25rem;
-}
-
 #main_form_profile {
   display: grid;
-  margin-left: 30px;
+  margin-left: 3rem;
   width: 65%;
 }
 
@@ -264,15 +249,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 60px;
-  border-bottom: 1px solid var(--off-white);
+  min-height: 6rem;
+  border-bottom: 1px solid var(--offWhite);
 }
 
 .main_form_profile_item input {
   border: 1px solid var(--black);
-  border-radius: 5px;
+  border-radius: 0.5rem;
   height: 60%;
-  padding: 5px 10px;
+  padding: 0.5rem 1rem;
   width: 50%;
 }
 
@@ -287,10 +272,9 @@
   color: var(--brandOrangeDark);
   border: 2px solid var(--brandOrangeDark);
   cursor: pointer;
-  font-size: 1rem;
   font-weight: bolder;
-  padding: 5px 10px;
-  margin: 0 20px 0 0;
+  padding: 0.5rem 1rem;
+  margin: 0 2rem 0 0;
 }
 
 #preview_pp_btns button:hover {
@@ -301,15 +285,14 @@
   background: var(--brandOrange);
   border: none;
   color: var(--modeColor);
-  margin-left: 10px;
+  margin-left: 1rem;
 }
 
 .add_btn a {
   align-items: center;
   color: inherit;
-  column-gap: 10px;
+  column-gap: 1rem;
   display: flex;
-  font-size: 1.25rem;
   font-weight: 600;
 }
 
@@ -323,7 +306,7 @@
 }
 
 .add_btn svg {
-  width: 20px;
+  width: 2rem;
 }
 
 @media (max-width: 1200px) {

@@ -1,18 +1,17 @@
 fieldset {
   display: flex;
   border: none;
-  padding: 20px 20px;
+  padding: 2rem;
 }
 
 legend {
-  font-size: 0.75em;
-  padding-top: 12px;
+  padding-top: 1.2rem;
   margin: auto;
 }
 
 #map {
   width: 45%;
-  border: var(--off-white) solid 2px;
+  border: 2px solid var(--offWhite);
 }
 
 .filters {
@@ -20,7 +19,7 @@ legend {
   justify-content: flex-start;
   align-items: center;
   background-color: var(--modeColor);
-  margin-left: 20px;
+  margin-left: 2rem;
 }
 
 .filters li {
@@ -28,12 +27,11 @@ legend {
 }
 
 .filter_btn {
-  margin: 10px;
-  padding: 5px 10px;
-  font-size: 1.25rem;
-  border: 1px solid var(--off-white);
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--offWhite);
   background: var(--modeColor);
-  border-radius: 5px;
+  border-radius: 0.5rem;
 }
 
 .filter_btn:hover {
@@ -54,14 +52,14 @@ legend {
 
 .filter_ext {
   position: absolute;
-  top: 51px;
+  top: 5.1rem;
   left: 0;
   background: var(--modeColor);
   z-index: 20;
-  min-width: 200px;
-  min-height: 200px;
+  min-width: 20rem;
+  min-height: 20rem;
   visibility: hidden;
-  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0px 2rem rgba(0, 0, 0, 0.3);
 }
 
 .filter_ext form {
@@ -69,9 +67,8 @@ legend {
   flex-flow: column nowrap;
   justify-content: flex-start;
   height: 100%;
-  font-size: 1.25rem;
-  padding-bottom: 54px;
-  margin-bottom: 20px;
+  padding-bottom: 5.4rem;
+  margin-bottom: 2rem;
 }
 
 .filter_ext form label {
@@ -87,10 +84,10 @@ legend {
 }
 
 .filter_done {
-  margin: 10px 20px;
+  margin: 1rem 2rem;
   float: right;
   font-size: 0.8em;
-  padding: 5px 15px;
+  padding: 0.5rem 1.5rem;
   cursor: pointer;
   border: 1px solid var(--brandSupport);
   background-color: var(--modeColor);
@@ -102,8 +99,7 @@ legend {
 }
 
 #apply-filters-btn {
-  font-size: 1.25rem;
-  padding: 5px 10px;
+  padding: 0.5rem 1rem;
   background-color: var(--brandOrange);
   color: var(--modeColor);
 }
@@ -113,9 +109,8 @@ legend {
 }
 
 .f1 {
-  font-size: 1.25rem;
-  padding: 5px 10px;
-  border: 1px solid var(--off-white);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--offWhite);
   border-radius: 2px;
 }
 
@@ -137,7 +132,7 @@ legend {
 
 .price_field {
   flex-flow: column nowrap;
-  width: 170px;
+  width: 17rem;
 }
 
 #price_form {
@@ -146,28 +141,26 @@ legend {
 
 #mins,
 #maxs {
-  border: 2px solid var(--off-white);
-  border-radius: 5px;
-  color: var(--off-white);
-  font-size: 1.25rem;
-  margin: 0px 20px 16px 0px;
-  padding: 5px 10px;
+  border: 2px solid var(--offWhite);
+  border-radius: 0.5rem;
+  color: var(--offWhite);
+  margin: 0px 2rem 1.6rem 0px;
+  padding: 0.5rem 1rem;
   width: 100%;
 }
 
 .price_dd {
   background-color: var(--brandSupportLight);
   border: 2px solid var(--brandSupport);
-  border-radius: 5px;
+  border-radius: 0.5rem;
   color: var(--brandSupport);
-  font-size: 1.25rem;
   padding: 7px 2px;
 }
 
 .space_type {
-  height: 20px;
-  width: 20px;
-  margin-right: 15px;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1.5rem;
 }
 
 .searchBtn {
@@ -184,9 +177,9 @@ legend {
 }
 
 .search-icon {
-  margin: 7.5px 10px 0 0;
-  width: 20px;
-  height: 20px;
+  margin: 7.5px 1rem 0 0;
+  width: 2rem;
+  height: 2rem;
   transition: transform 350ms;
 }
 
@@ -200,10 +193,9 @@ legend {
 
 #city_input input {
   border: none;
-  outline: 2px solid var(--off-white);
-  border-radius: 5px;
-  font-size: 1.25rem;
-  padding: 5px 10px;
+  outline: 2px solid var(--offWhite);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
   width: 100%;
 }
 
@@ -212,10 +204,10 @@ legend {
 }
 
 .city_in {
-  min-width: 200px;
-  margin-left: 10px;
-  border: 1px solid var(--off-white);
-  border-radius: 5px;
+  min-width: 20rem;
+  margin-left: 1rem;
+  border: 1px solid var(--offWhite);
+  border-radius: 0.5rem;
 }
 
 #main_dis {
@@ -228,13 +220,13 @@ legend {
   flex-flow: row wrap;
   max-width: 55%;
   overflow-y: auto;
-  height: calc(89vh - 57px);
-  border-top: 1px solid var(--off-white);
+  height: calc(89vh - 5.7rem);
+  border-top: 1px solid var(--offWhite);
 }
 
 .home_item {
-  max-width: calc(50% - 15px);
-  margin: 10px 7px;
+  max-width: calc(50% - 1.5rem);
+  margin: 1rem 7px;
   border-bottom: 4px solid var(--brandOrange);
   padding-bottom: 8px;
   transition-property: transform, background;
@@ -250,19 +242,17 @@ legend {
 
 .home_item article {
   padding: 0 3%;
-  font-size: 1.25rem;
 }
 
 .home_item > article > ul {
   display: block;
   list-style: initial;
-  margin-left: 15px;
+  margin-left: 1.5rem;
 }
 
 .home_item article p {
   font-style: italic;
-  font-size: 1.25rem;
-  margin-top: 10px;
+  margin-top: 1rem;
   opacity: 80%;
 }
 
@@ -277,15 +267,15 @@ legend {
 
 #homelist > h2 {
   font-family: "Lora", serif;
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   width: 100%;
-  margin-left: 10px;
+  margin-left: 1rem;
 }
 
 .radio_circles {
-  width: 20px;
-  height: 20px;
-  margin-right: 15px;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1.5rem;
 }
 
 #toggle_filter_btn_c {
@@ -293,11 +283,11 @@ legend {
 }
 
 #tfb_label {
-  height: 35px;
-  margin-left: 30px;
-  padding: 6px 20px 6px 15px;
+  height: 3.5rem;
+  margin-left: 3rem;
+  padding: 6px 2rem 6px 1.5rem;
   font-size: 1rem;
-  border: 1px solid var(--off-white);
+  border: 1px solid var(--offWhite);
   background: var(--modeColor);
   border-radius: 3px;
   display: none;
@@ -325,16 +315,16 @@ legend {
   margin: auto;
   display: grid;
   grid-template-columns: 3fr 2fr;
-  margin-top: 3rem;
+  margin-top: 4.8rem;
   background: var(--modeColor);
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px 0px;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0.5rem 1rem 0px;
   position: relative;
 }
 
 #portal-left-side {
   position: relative;
-  padding: 0.5rem;
+  padding: 8px;
 }
 
 .portal-img {
@@ -342,7 +332,7 @@ legend {
   position: absolute;
   height: 78vh;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 0.5rem;
 }
 
 .portal-img.active {
@@ -355,7 +345,7 @@ legend {
 
 #portal-img-left-arrow,
 #portal-img-right-arrow {
-  height: 4rem;
+  height: 6.4rem;
   display: inline-block;
   position: absolute;
   cursor: pointer;
@@ -383,27 +373,27 @@ legend {
   margin-top: 80vh;
 }
 .dot {
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   display: inline-block;
-  background: var(--off-white);
-  border-radius: 10px;
+  background: var(--offWhite);
+  border-radius: 1rem;
   cursor: pointer;
 }
 .dot.dot-active {
-  background: var(--off-white);
+  background: var(--offWhite);
 }
 
 #portal-right-side {
-  margin: 1rem 1.5rem;
+  margin: 1.6rem 2.4rem;
 }
 
 #portal-logo {
-  height: 2rem;
-  margin-left: -0.5rem;
+  height: 3.2rem;
+  margin-left: -8px;
 }
 #portal-logo h1 {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 #portal-logo .logo {
   margin: 0;
@@ -420,30 +410,30 @@ legend {
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
-  margin-top: 2rem;
+  margin-top: 3.2rem;
 }
 
 #portal-main-info h2 {
   padding: 0;
-  margin-bottom: 0.25rem;
+  margin-bottom: 4px;
 }
 
 #portal-main-info li {
-  border-left: 2px solid var(--off-white);
-  padding: 0 1rem;
+  border-left: 2px solid var(--offWhite);
+  padding: 0 1.6rem;
 }
 
 #portal-details h2 {
-  padding-bottom: 0.25rem;
+  padding-bottom: 4px;
 }
 
 #portal-features ul {
   flex-flow: column nowrap;
   list-style: disc;
-  margin-left: 1rem;
+  margin-left: 1.6rem;
 }
 #portal-features {
-  margin-bottom: 1rem;
+  margin-bottom: 1.6rem;
 }
 
 #portal-ownerinfo {
@@ -452,19 +442,18 @@ legend {
 }
 
 #portal-ownerpic {
-  width: 80px;
-  margin-right: 1rem;
-  border-radius: 5px;
+  width: 8rem;
+  margin-right: 1.6rem;
+  border-radius: 0.5rem;
 }
 
 #portal-action {
-  margin: 1rem 0;
+  margin: 1.6rem 0;
 }
 
 #portal-rent-btn {
   background: var(--brandOrange);
   color: var(--modeColor);
-  font-size: 1rem;
 }
 
 #portal-rent-btn:hover {
@@ -472,10 +461,10 @@ legend {
 }
 
 #portal-close-btn {
-  width: 25px;
+  width: 2.5rem;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.6rem;
+  right: 1.6rem;
 }
 
 #portal-close-btn svg:hover {
@@ -493,7 +482,7 @@ legend {
 
   .filters {
     flex-flow: row wrap;
-    margin: 10px 10px;
+    margin: 1rem 1rem;
   }
 }
 @media (max-width: 500px) {
@@ -518,7 +507,7 @@ legend {
   }
 
   .filters li {
-    margin: 10px 5px;
+    margin: 1rem 0.5rem;
     position: initial;
   }
 
@@ -531,9 +520,9 @@ legend {
   }
 
   .filter_ext {
-    top: 180px;
+    top: 18rem;
     max-width: 90%;
-    margin-left: 20px;
+    margin-left: 2rem;
   }
 
   .filter_ext form label {
@@ -541,7 +530,7 @@ legend {
   }
 
   .radio_circles {
-    height: 15px;
+    height: 1.5rem;
   }
 
   legend {
@@ -550,22 +539,22 @@ legend {
 
   .f1 {
     font-size: 0.9rem;
-    padding: 5px 10px;
+    padding: 0.5rem 1rem;
   }
 
   #mins,
   #maxs {
     font-size: 0.9rem;
-    padding: 5px 5px;
+    padding: 0.5rem 0.5rem;
   }
 
   .price_dd {
     font-size: 0.9rem;
-    padding: 5px 5px;
+    padding: 0.5rem 0.5rem;
   }
   .space_type {
-    height: 15px;
-    width: 15px;
+    height: 1.5rem;
+    width: 1.5rem;
   }
 
   .home_item {
