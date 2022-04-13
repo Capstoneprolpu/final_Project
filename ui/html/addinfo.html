@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add rental info</title>
-    <link rel="icon" type="image/png" href="../../favicon.png" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="icon" type="image/png" href="/media/favicon.png" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link
       rel="stylesheet"
-      href="../css/add.css"
+      href="/css/add.css"
       <link
       rel="preconnect"
       href="https://fonts.googleapis.com"
@@ -38,7 +38,7 @@
             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
           /></svg
       ></label>
-      <a id="main_logo_header" class="dis_flex" href="../../index.html">
+      <a id="main_logo_header" class="dis_flex" href="/">
         <span class="logo"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,20 +67,20 @@
         <h1>Space Rental</h1>
       </a>
       <ul class="nav_side">
-        <li class="nav_item"><a href="./dashboard.html">DashBoard</a></li>
+        <li class="nav_item"><a href="/dashboard">DashBoard</a></li>
         <li class="nav_item"><a href="#">Help</a></li>
         <li class="nav_item">
-          <a id="sign_btn" href="../html/signup.html">Sign in</a>
+          <a id="sign_btn" href="/signout">Sign Out</a>
         </li>
       </ul>
     </div>
     <div>
       <div class="form_a">
         <h2>Enter Rental Info</h2>
-        <form>
+        <form action="/addinfovalidate" enctype="multipart/form-data" method="post">
           <div class="add_form">
             <label>Select rental type</label>
-            <select name="spaceType" class="select_input">
+            <select  class="select_input" name = "rentaltype">
               <option>Home</option>
               <option>Apartment</option>
               <option>Room</option>
@@ -88,7 +88,7 @@
             <div class="baths_beds">
               <div class="flex_col">
                 <label>Number of bedrooms</label>
-                <select name="NumberOfBedrooms" class="select_input">
+                <select  class="select_input" name="numberofbeds">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -99,7 +99,7 @@
               </div>
               <div class="flex_col">
                 <label>Number of bathrooms</label>
-                <select name="NumberOfBathrooms" class="select_input">
+                <select  class="select_input"  name="numberofbathrooms">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -134,9 +134,9 @@
           </div>
           <div class="add_form" style="visibility: hidden">
             <h2 class="address-label">Enter address</h2>
-            <input name="city" type="text" class="" placeholder="City" />
+            <input name="CityName" type="text" class="" placeholder="City" />
             <input
-              name="streetName"
+              name="streetname"
               type="text"
               class=""
               placeholder="Street Name"
@@ -148,12 +148,12 @@
               placeholder="Nearest Landmark"
             />
             <input
-              name="houseNumber"
+              name="houseno"  
               type="text"
               class=""
               placeholder="House/Building No."
             />
-            <input name="pinCode" type="text" class="" placeholder="Pin-Code" />
+            <input name="pincode" type="text" class="" placeholder="Pin-Code" />
             <div id="map-section">
               <input
                 name="latitude"
@@ -192,7 +192,7 @@
               <h3 class="add_img_txt">Maximum 4 images can be added</h3>
             </div>
             <input
-              name="pics"
+              name="images"
               id="pic_files"
               type="file"
               multiple
@@ -244,6 +244,6 @@
     <div id="form_warning">
       <h2 id="form_warning_message"></h2>
     </div>
-    <script src="../js/addinfo.js"></script>
+    <script src="/js/addinfo.js"></script>
   </body>
 </html>

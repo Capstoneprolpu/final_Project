@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Space Rental</title>
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="./ui/css/style.css" />
+    <link rel="icon" type="image/png" href="/media/favicon.png" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <div class="top_header">
@@ -27,24 +27,24 @@
           /></svg
       ></label>
       <ul class="nav_side">
-        <li class="nav_item"><a href="./ui/html/main.html">Buy</a></li>
-        <li class="nav_item"><a href="./ui/html/signup.html">Sell</a></li>
+        <li class="nav_item"><a href="/main">Buy</a></li>
+        <li class="nav_item"><a href="/dashboard">Sell</a></li>
         <li class="nav_item">
           <a id="man_dd">Manage</a>
           <span class="arrow_nav"></span>
           <div class="nav_dd">
             <ul>
               <li class="nav-sub-item">
-                <a href="./ui/html/dashboard.html">Manage your rentals</a>
+                <a href="/dashboard">Manage your rentals</a>
               </li>
               <li class="nav-sub-item">
-                <a href="./ui/html/addinfo.html">Add new rental</a>
+                <a href="/main">Add new rental</a>
               </li>
             </ul>
           </div>
         </li>
       </ul>
-      <a id="main_logo_header" class="dis_flex" href="./index.html">
+      <a id="main_logo_header" class="dis_flex" href="/">
         <span class="logo"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@
         <li class="nav_item"><a href="#">Advertise</a></li>
         <li class="nav_item"><a href="#">Help</a></li>
         <li class="nav_item">
-          <a id="sign_btn" href="./ui/html/signup.html">Sign in</a>
+          <a id="sign_btn" href="/signinpage">Sign in</a>
         </li>
       </ul>
     </div>
@@ -84,14 +84,14 @@
       <div class="image-filter"></div>
       <div class="search_block">
         <p id="search_toptext">Changes start here</p>
-        <form class="search_input" action="/city" method="get">
+        <form class="search_input" action="/main" method="get">
           <input
             id="main_search_bar"
             type="text"
             class="main_search"
             placeholder="Enter an address, neighborhood, city or ZIP code"
           />
-          <input type="submit" class="search_button" value="Search" />
+          <input type="submit" class="search_button" value="Search" name = "search" />
         </form>
       </div>
     </article>
@@ -102,25 +102,25 @@
 
     <div class="art_div">
       <article class="art_box">
-        <img class="art_img" src="./ui/media/Rent_a_home.png" />
+        <img class="art_img" src="/media/Rent_a_home.png" />
         <h2>Rent a place</h2>
         <p class="art_p">
           We’re creating a seamless online experience – from shopping on the
           largest rental network, to applying, to paying rent.
         </p>
         <button class="btn btn_a">
-          <a class="a_btn" href="./ui/html/main.html">Find rentals</a>
+          <a class="a_btn" href="/main">Find rentals</a>
         </button>
       </article>
       <article class="art_box">
-        <img class="art_img" src="./ui/media/Sell_a_home.png" />
+        <img class="art_img" src="/media/Sell_a_home.png" />
         <h2>Let out your place</h2>
         <p class="art_p">
           No matter what path you take to rent your home, we can help you
           navigate a successful sale.
         </p>
         <button class="btn btn_a">
-          <a class="a_btn" href="./ui/html/dashboard.html">Manage rentals</a>
+          <a class="a_btn" href="/dashboard">Manage rentals</a>
         </button>
       </article>
     </div>
@@ -405,7 +405,7 @@
         </svg>
       </div>
     </footer>
-    <script src="./ui/js/index.js"></script>
-    <script src="./ui/js/nav.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/nav.js"></script>
   </body>
 </html>

@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DashBoard</title>
-    <link rel="icon" type="image/png" href="../../favicon.png" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="icon" type="image/png" href="/media/favicon.png" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
   </head>
   <body>
     <div class="top_header">
-      <a id="main_logo_header" class="dis_flex" href="../../index.html">
+      <a id="main_logo_header" class="dis_flex" href="/">
         <span class="logo"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -56,11 +56,11 @@
           /></svg
       ></label>
       <ul class="nav_side">
-        <li class="nav_item"><a href="./../../index.html">Home</a></li>
+        <li class="nav_item"><a href="/">Home</a></li>
         <li class="nav_item"><a>Statistics</a></li>
         <li class="nav_item"><a>About us</a></li>
         <li class="nav_item">
-          <a id="sign_btn" href="../html/signup.html">Sign Out</a>
+          <a id="sign_btn" href="/signout">Sign Out</a>
         </li>
       </ul>
     </div>
@@ -69,7 +69,7 @@
         <div id="left_s">
           <div id="profile_side">
             <div id="profile_box">
-              <img src="../media/0.jpg" />
+              <img src="/media/0.jpg" />
               <div>
                 <h3>Username</h3>
                 <h3>emailofuser@some.com</h3>
@@ -94,7 +94,7 @@
               <form>
                 <div id="profile_top_info">
                   <div id="profile_main_left">
-                    <img src="../media/0.jpg" />
+                    <img src="/media/0.jpg" />
                     <div>
                       <p id="profile_username_main">username</p>
                       <button id="change_pass_btn">Change Password</button>
@@ -171,7 +171,7 @@
               ></span>
             </h3>
             <button id="add_new_l_btn" class="btn add_btn">
-              <a href="../html/addinfo.html"
+              <a href="/addinfo"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="var(--modeColor)"
@@ -191,8 +191,8 @@
             <div id="user_rentals" class="info_items">
               <div class="user_rentals_item">
                 <div class="user_rent_pics">
-                  <img src="../media/home1.jpg" />
-                  <img src="../media/home2.jpg" />
+                  <img src="/media/home1.jpg" />
+                  <img src="/media/home2.jpg" />
                 </div>
                 <div class="user_ren_in">
                   <div class="user_ren_info">
@@ -214,8 +214,8 @@
 
               <div class="user_rentals_item">
                 <div class="user_rent_pics">
-                  <img src="../media/home1.jpg" />
-                  <img src="../media/home2.jpg" />
+                  <img src="/media/home1.jpg" />
+                  <img src="/media/home2.jpg" />
                 </div>
                 <div class="user_ren_in">
                   <div class="user_ren_info">
@@ -256,7 +256,7 @@
               </h3>
               <div>
                 <button id="add_new_r_btn" class="btn add_btn">
-                  <a href="../html/main.html"
+                  <a href="/main"
                     ><svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="var(--modeColor)"
@@ -275,8 +275,8 @@
                 </button>
                 <div class="user_rentals_item">
                   <div class="user_rent_pics">
-                    <img src="../media/home1.jpg" />
-                    <img src="../media/home2.jpg" />
+                    <img src="/media/home1.jpg" />
+                    <img src="/media/home2.jpg" />
                   </div>
                   <div class="user_ren_in">
                     <div class="user_ren_info">
@@ -311,6 +311,14 @@
         </div>
       </div>
     </div>
-    <script src="../js/dashboard.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script>
+      fetch("http://localhost:8080/userdashboarddata")
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(err => {
+        console.error(err);
+      })
+    </script>
   </body>
 </html>
