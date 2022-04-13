@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search page</title>
-    <link rel="icon" type="image/png" href="../../favicon.png" />
+    <link rel="icon" type="image/png" href="/media/favicon.png" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="../css/search.css" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="/css/search.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <div class="top_header">
@@ -32,22 +32,22 @@
           /></svg
       ></label>
       <ul class="nav_side">
-        <li class="nav_item"><a href="./main.html">Buy</a></li>
-        <li class="nav_item"><a href="./signup.html">Sell</a></li>
+        <li class="nav_item"><a href="/main">Buy</a></li>
+        <li class="nav_item"><a href="/dashboard">Sell</a></li>
         <li class="nav_item">
           <a id="man_dd">Manage Rental</a>
           <span class="arrow_nav"></span>
           <div class="nav_dd">
             <ul>
               <li>
-                <a href="./dashboard.html">Manage your rentals</a>
+                <a href="/dashboard">Manage your rentals</a>
               </li>
-              <li><a href="./addinfo.html">Add new rental</a></li>
+              <li><a href="/main">Add new rental</a></li>
             </ul>
           </div>
         </li>
       </ul>
-      <a id="main_logo_header" class="dis_flex" href="../../index.html">
+      <a id="main_logo_header" class="dis_flex" href="/">
         <span class="logo"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@
         <li class="nav_item"><a>Advertise</a></li>
         <li class="nav_item"><a>Help</a></li>
         <li class="nav_item">
-          <a id="sign_btn" href="../html/signup.html">Sign in</a>
+          <a id="sign_btn" href="/signout">Sign Out</a>
         </li>
       </ul>
     </div>
@@ -312,7 +312,7 @@
       <div id="homelist">
         <h2>Rental Listings</h2>
         <div class="home_item">
-          <img src="../media/home1.jpg" class="home_img" />
+          <img src="/media/home1.jpg" class="home_img" />
           <article>
             <h2 id="price_r">₹2000/mo</h2>
             <ul>
@@ -324,7 +324,7 @@
           </article>
         </div>
         <div class="home_item">
-          <img src="../media/home2.jpg" class="home_img" />
+          <img src="/media/home2.jpg" class="home_img" />
           <article>
             <h2 id="price_r">₹1500/mo</h2>
             <ul>
@@ -336,7 +336,7 @@
           </article>
         </div>
         <div class="home_item">
-          <img src="../media/home3.jpg" class="home_img" />
+          <img src="/media/home3.jpg" class="home_img" />
           <article>
             <h2 id="price_r">₹3500/mo</h2>
             <ul>
@@ -348,7 +348,7 @@
           </article>
         </div>
         <div class="home_item">
-          <img src="../media/home4.jpg" class="home_img" />
+          <img src="/media/home4.jpg" class="home_img" />
           <article>
             <h2 id="price_r">₹900/mo</h2>
             <ul>
@@ -360,7 +360,7 @@
           </article>
         </div>
         <div class="home_item">
-          <img src="../media/home1.jpg" class="home_img" />
+          <img src="/media/home1.jpg" class="home_img" />
           <article>
             <h2 id="price_r">₹4000/mo</h2>
             <ul>
@@ -372,7 +372,7 @@
           </article>
         </div>
         <div class="home_item">
-          <img src="../media/home2.jpg" class="home_img" />
+          <img src="/media/home2.jpg" class="home_img" />
           <article>
             <h2 id="price_r">₹9000/mo</h2>
             <ul>
@@ -389,10 +389,10 @@
       <div id="main-portal-div">
         <div id="portal-left-side">
           <div id="portal-images">
-            <img class="portal-img active" src="../media/home1.jpg" />
-            <img class="portal-img" src="../media/home2.jpg" />
-            <img class="portal-img" src="../media/home3.jpg" />
-            <img class="portal-img" src="../media/home4.jpg" />
+            <img class="portal-img active" src="/media/home1.jpg" />
+            <img class="portal-img" src="/media/home2.jpg" />
+            <img class="portal-img" src="/media/home3.jpg" />
+            <img class="portal-img" src="/media/home4.jpg" />
             <a id="portal-img-left-arrow"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -427,7 +427,7 @@
         </div>
         <div id="portal-right-side">
           <div id="portal-top-header">
-            <a id="portal-logo" class="dis_flex" href="../../index.html">
+            <a id="portal-logo" class="dis_flex" href="/">
               <span class="logo"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -502,7 +502,7 @@
             </div>
             <h2>Owner Info</h2>
             <div id="portal-ownerinfo">
-              <img id="portal-ownerpic" src="../media/0.jpg" />
+              <img id="portal-ownerpic" src="/media/0.jpg" />
               <div>
                 <h3>Firstname Lastname</h3>
                 <p>emailofuser@user.com</p>
@@ -513,11 +513,19 @@
       </div>
     </div>
 
-    <script src="../js/main.js"></script>
-    <script src="../js/nav.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/nav.js"></script>
     <script
       async
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0roVlX7F2OFWaOm7INNVt2DBlhYP8uiY&libraries=places&callback=initMap"
     ></script>
+    <script>
+      fetch("http://localhost:8080/citiesdata")
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(err => {
+        console.error(err);
+      })
+    </script>
   </body>
 </html>

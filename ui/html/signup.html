@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign up</title>
-    <link rel="icon" type="image/png" href="../../favicon.png" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="icon" type="image/png" href="/media/favicon.png" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <div id="main_body">
       <div class="top_header">
-        <a id="main_logo_header" class="dis_flex" href="../../index.html">
+        <a id="main_logo_header" class="dis_flex" href="/">
           <span class="logo"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,9 +42,9 @@
       </div>
       <div class="form_a" id="form1">
         <h2 class="sign-in-header">Sign in</h2>
-        <form class="main_form" action="/login" method="post">
-          <input type="email" class="form_input" placeholder="E-mail address" />
-          <input type="password" class="form_input" placeholder="Password" />
+        <form class="main_form" action="/signin" method="post">
+          <input type="email" class="form_input" placeholder="E-mail address" name = "email"/>
+          <input type="password" class="form_input" placeholder="Password" name = "password"/>
           <p id="t_c">
             By signing in, you agree to the Space rental
             <a>Terms and Conditions</a> and <a>Privacy Statement</a>.
@@ -57,11 +57,11 @@
 
       <div class="form_a" id="form2" style="display: none">
         <h2 class="sign-up-header">Create an account</h2>
-        <form class="main_form" action="/signup" method="post">
-          <input type="email" class="form_input" placeholder="E-mail address" />
-          <input type="text" class="form_input" placeholder="First name" />
-          <input type="text" class="form_input" placeholder="Last name" />
-          <input type="password" class="form_input" placeholder="Password" />
+        <form class="main_form" action="/signupcheck" method="post">
+          <input type="email" class="form_input" placeholder="E-mail address" name="email"/>
+          <input type="text" class="form_input" placeholder="First name" name="firstname"/>
+          <input type="text" class="form_input" placeholder="Last name" name="lastname"/>
+          <input type="password" class="form_input" placeholder="Password" name="password"/>
           <p id="t_c">
             By creating an account, I agree to the Space rental
             <a>Terms and Conditions</a> and <a>Privacy Statement</a>.
@@ -224,6 +224,6 @@
         </div>
       </footer>
     </div>
-    <script src="../js/sign.js"></script>
+    <script src="/js/sign.js"></script>
   </body>
 </html>
