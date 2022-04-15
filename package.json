@@ -1,10 +1,11 @@
 {
-  "name": "spacerental",
+  "name": "space-rental",
   "version": "1.0.0",
-  "description": "application for renting space and buy space on rent.",
-  "main": "index.js",
+  "description": "Web app for renting & letting out spaces",
+  "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./script.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,18 @@
   "bugs": {
     "url": "https://github.com/Capstoneprolpu/final_Project/issues"
   },
-  "homepage": "https://github.com/Capstoneprolpu/final_Project#readme"
+  "homepage": "https://github.com/Capstoneprolpu/final_Project#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "formidable": "^2.0.1",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.0",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
+  }
 }
