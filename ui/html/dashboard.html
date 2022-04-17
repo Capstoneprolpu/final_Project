@@ -91,39 +91,51 @@
           <div class="right_s_item">
             <div class="top_block_space"></div>
             <div id="profile_form_edit">
-              <form>
+              <form action="/profileedit" method="post">
                 <div id="profile_top_info">
                   <div id="profile_main_left">
-                    <img src="../media/0.jpg" />
+                    <div id="profile_pic_div">
+                      <img src="../media/0.jpg" id="form_profile_pic" />
+                      <button id="change_profile_pic">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          class="bi bi-plus-lg"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
                     <div>
                       <p id="profile_username_main">username</p>
-                      <button id="change_pass_btn">Change Password</button>
+                      <p id="profile_email_main">useremail@jango.com</p>
                     </div>
                   </div>
                   <div id="profile_form_btns">
-                    <button id="pfbtn_left" type="reset">Cancel</button>
+                    <button id="pfbtn_left" type="reset">Reset</button>
                     <button id="pfbtn_right" type="submit">Save</button>
                   </div>
                 </div>
                 <div id="main_form_profile">
                   <div class="main_form_profile_item">
-                    <label for="form_username">Username</label>
+                    <label for="form_password">New Password</label>
                     <input
-                      type="text"
-                      placeholder="Username"
-                      id="form_username"
+                      type="password"
+                      placeholder="Password"
+                      id="form_password"
                     />
                   </div>
                   <div class="main_form_profile_item">
-                    <label for="form_profile_pic">Profile Photo</label>
-                    <input type="file" id="form_profile_pic" hidden />
-                    <div id="profile_pic_div">
-                      <div id="preview_pp"></div>
-                      <div id="preview_pp_btns">
-                        <button>Delete</button>
-                        <button>Update</button>
-                      </div>
-                    </div>
+                    <label for="form_con_password">Confirm Password</label>
+                    <input
+                      type="password"
+                      placeholder="Re-enter Password"
+                      id="form_con_password"
+                    />
                   </div>
                   <div class="main_form_profile_item">
                     <label for="form_firstname">First Name</label>
@@ -139,14 +151,6 @@
                       type="text"
                       placeholder="Last Name"
                       id="form_lastname"
-                    />
-                  </div>
-                  <div class="main_form_profile_item">
-                    <label for="form_email">E-mail</label>
-                    <input
-                      type="text"
-                      placeholder="emailofuser@emailservice.com"
-                      id="form_email"
                     />
                   </div>
                 </div>
