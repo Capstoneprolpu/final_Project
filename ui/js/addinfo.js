@@ -1,16 +1,3 @@
-//js for waiting loader
-const loader = document.getElementById("loader-bg");
-let loaderStatus = false;
-const toggleLoader = () => {
-  if (!loaderStatus) {
-    loader.style.display = "block";
-    loaderStatus = true;
-  } else {
-    loader.style.display = "none";
-    loaderStatus = false;
-  }
-};
-
 //js for form functionalities
 const formParts = document.querySelectorAll(".add_form");
 const toggleVisibility = (ins) => {

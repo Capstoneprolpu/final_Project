@@ -512,6 +512,7 @@
         </div>
       </div>
     </div>
+    <div id="loader-bg"><div class="loader"></div></div>
 
     <script src="/js/main.js"></script>
     <script src="/js/nav.js"></script>
@@ -521,11 +522,11 @@
     ></script>
     <script>
       fetch("http://localhost:8080/citiesdata")
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(err => {
-        console.error(err);
-      })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((err) => {
+          console.error(err);
+        });
     </script>
   </body>
 </html>

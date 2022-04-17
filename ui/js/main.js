@@ -56,6 +56,7 @@ const searchCityName = document.getElementById("city-name-input");
 
 searchCityBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  toggleLoader();
   const city = searchCityName.value.toLowerCase();
   fetch(`https://citylocate.herokuapp.com/${city}`, {
     method: "GET",
@@ -67,6 +68,7 @@ searchCityBtn.addEventListener("click", (e) => {
     .then((data) => {
       primaryLocation = data.data;
       initMap();
+      toggleLoader();
     })
     .catch((e) => console.log(e));
 });
