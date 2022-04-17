@@ -91,13 +91,24 @@
           <div class="right_s_item">
             <div class="top_block_space"></div>
             <div id="profile_form_edit">
-              <form action="/profileedit" method="post">
+              <form
+                id="profile_edit_form"
+                action="/profileEdit"
+                enctype="multipart/form-data"
+                method="post"
+                autocomplete="off"
+              >
                 <div id="profile_top_info">
                   <div id="profile_main_left">
-
                     <div id="profile_pic_div">
                       <img src="../media/0.jpg" id="form_profile_pic" />
-                      <button id="change_profile_pic">
+                      <input
+                        name="profilePicture"
+                        type="file"
+                        id="profile_pic_input"
+                        hidden
+                      />
+                      <label for="profile_pic_input" id="change_profile_pic">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="currentColor"
@@ -109,7 +120,7 @@
                             d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
                           />
                         </svg>
-                      </button>
+                      </label>
                     </div>
                     <div>
                       <p id="profile_username_main">username</p>
@@ -125,6 +136,7 @@
                   <div class="main_form_profile_item">
                     <label for="form_password">New Password</label>
                     <input
+                      name="password"
                       type="password"
                       placeholder="Password"
                       id="form_password"
@@ -141,6 +153,7 @@
                   <div class="main_form_profile_item">
                     <label for="form_firstname">First Name</label>
                     <input
+                      name="FirstName"
                       type="text"
                       placeholder="First Name"
                       id="form_firstname"
@@ -149,6 +162,7 @@
                   <div class="main_form_profile_item">
                     <label for="form_lastname">Last Name</label>
                     <input
+                      name="LastName"
                       type="text"
                       placeholder="Last Name"
                       id="form_lastname"
@@ -316,14 +330,15 @@
         </div>
       </div>
     </div>
+    <div id="loader-bg"><div class="loader"></div></div>
     <script src="/js/dashboard.js"></script>
-    <script>
+    <!-- <script>
       fetch("http://localhost:8080/userdashboarddata")
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(err => {
-        console.error(err);
-      })
-    </script>
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((err) => {
+          console.error(err);
+        });
+    </script> -->
   </body>
 </html>

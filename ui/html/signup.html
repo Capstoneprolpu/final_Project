@@ -43,8 +43,18 @@
       <div class="form_a" id="form1">
         <h2 class="sign-in-header">Sign in</h2>
         <form class="main_form" action="/signin" method="post">
-          <input type="email" class="form_input" placeholder="E-mail address" name = "email"/>
-          <input type="password" class="form_input" placeholder="Password" name = "password"/>
+          <input
+            type="email"
+            class="form_input"
+            placeholder="E-mail address"
+            name="email"
+          />
+          <input
+            type="password"
+            class="form_input"
+            placeholder="Password"
+            name="password"
+          />
           <p id="t_c">
             By signing in, you agree to the Space rental
             <a>Terms and Conditions</a> and <a>Privacy Statement</a>.
@@ -58,10 +68,30 @@
       <div class="form_a" id="form2" style="display: none">
         <h2 class="sign-up-header">Create an account</h2>
         <form class="main_form" action="/signupcheck" method="post">
-          <input type="email" class="form_input" placeholder="E-mail address" name="email"/>
-          <input type="text" class="form_input" placeholder="First name" name="firstname"/>
-          <input type="text" class="form_input" placeholder="Last name" name="lastname"/>
-          <input type="password" class="form_input" placeholder="Password" name="password"/>
+          <input
+            type="email"
+            class="form_input"
+            placeholder="E-mail address"
+            name="email"
+          />
+          <input
+            type="text"
+            class="form_input"
+            placeholder="First name"
+            name="firstname"
+          />
+          <input
+            type="text"
+            class="form_input"
+            placeholder="Last name"
+            name="lastname"
+          />
+          <input
+            type="password"
+            class="form_input"
+            placeholder="Password"
+            name="password"
+          />
           <p id="t_c">
             By creating an account, I agree to the Space rental
             <a>Terms and Conditions</a> and <a>Privacy Statement</a>.
@@ -224,6 +254,7 @@
         </div>
       </footer>
     </div>
+    <div id="loader-bg"><div class="loader"></div></div>
     <script src="/js/sign.js"></script>
   </body>
 </html>

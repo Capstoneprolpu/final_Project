@@ -381,7 +381,7 @@ legend {
   cursor: pointer;
 }
 .dot.dot-active {
-  background: var(--offWhite);
+  background: var(--brandSupport);
 }
 
 #portal-right-side {
