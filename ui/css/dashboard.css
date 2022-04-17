@@ -195,17 +195,6 @@
   margin: 3.6rem 0 0 2rem;
 }
 
-#change_pass_btn {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  background-color: var(--modeColor);
-}
-
-#change_pass_btn:hover {
-  background: var(--brandOrange);
-}
-
 #pfbtn_left {
   margin-right: 0.5rem;
   border-radius: 0.5rem;
@@ -235,6 +224,31 @@
   background: var(--brandOrange);
 }
 
+#profile_pic_div {
+  position: relative;
+}
+
+#change_profile_pic {
+  height: 25px;
+  width: 25px;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  position: absolute;
+  bottom: -16px;
+  right: 0px;
+  color: white;
+  background: var(--brandOrange);
+}
+
+#change_profile_pic:hover {
+  background: var(--brandOrangeDark);
+}
+
+#profile_form_edit form * {
+  font-size: 1.25rem;
+}
+
 #main_form_profile {
   display: grid;
   margin-left: 3rem;
@@ -259,26 +273,6 @@
   height: 60%;
   padding: 0.5rem 1rem;
   width: 50%;
-}
-
-.main_form_profile_item:nth-child(2) {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-#preview_pp_btns button {
-  background: transparent;
-  border: none;
-  color: var(--brandOrangeDark);
-  border: 2px solid var(--brandOrangeDark);
-  cursor: pointer;
-  font-weight: bolder;
-  padding: 0.5rem 1rem;
-  margin: 0 2rem 0 0;
-}
-
-#preview_pp_btns button:hover {
-  background: var(--brandOrangeLight);
 }
 
 .add_btn {

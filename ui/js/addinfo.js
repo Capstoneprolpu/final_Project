@@ -1,3 +1,17 @@
+//js for waiting loader
+const loader = document.getElementById("loader-bg");
+let loaderStatus = false;
+const toggleLoader = () => {
+  if (!loaderStatus) {
+    loader.style.display = "block";
+    loaderStatus = true;
+  } else {
+    loader.style.display = "none";
+    loaderStatus = false;
+  }
+};
+
+//js for form functionalities
 const formParts = document.querySelectorAll(".add_form");
 const toggleVisibility = (ins) => {
   formParts.forEach((formPart) => {
@@ -74,3 +88,111 @@ rempic.addEventListener("click", (e) => {
     noOfPics = 0;
   }
 });
+
+//portel js
+
+const openMapBtn = document.querySelector("#open-map");
+const portel = document.querySelector("#portel");
+const portelDiv = document.querySelector("#main-portel-div");
+const closePortelBtn = document.querySelector("#portel-close-btn");
+const portelSubmitBtn = document.querySelector("#portel-submit-btn");
+
+let portelStatus = false;
+
+function togglePortel() {
+  if (!portelStatus) {
+    portel.style.display = "block";
+    portelStatus = true;
+  } else {
+    portel.style.display = "none";
+    portelStatus = false;
+  }
+}
+
+const latitudeInput = document.getElementById("latitude-input");
+const longitudeInput = document.getElementById("longitude-input");
+
+const portelLatitudeInput = document.getElementById("portel-map-latitude");
+const portelLongitudeInput = document.getElementById("portel-map-longitude");
+
+const cityInput = document.getElementById("city-input");
+
+let primaryLocation = { lat: 24.8118, lng: 77.9196 };
+let zoom = 4;
+
+const updateMap = async () => {
+  let city = cityInput.value.toLowerCase();
+  if (city === "") {
+    togglePortel();
+    return;
+  }
+  toggleLoader();
+  fetch(`https://citylocate.herokuapp.com/${city}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((data) => data.json())
+    .then((data) => {
+      if (data.data) {
+        primaryLocation = data.data;
+        zoom = 11;
+      }
+      initMap();
+      toggleLoader();
+      togglePortel();
+    })
+    .catch((e) => console.log(e));
+};
+
+openMapBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  updateMap();
+});
+closePortelBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  togglePortel();
+});
+portelSubmitBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  togglePortel();
+});
+
+const updateLatLng = (lat, lng) => {
+  latitudeInput.value = lat;
+  longitudeInput.value = lng;
+  portelLatitudeInput.value = lat;
+  portelLongitudeInput.value = lng;
+};
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: primaryLocation,
+    zoom: zoom,
+  });
+  map.setOptions({ cursor: "crosshair" });
+
+  let infoWindow = new google.maps.InfoWindow({
+    content: "Click the map to get Lat/Lng!",
+    position: primaryLocation,
+  });
+
+  infoWindow.open(map);
+  // Configure the click listener.
+  map.addListener("click", (mapsMouseEvent) => {
+    // Close the current InfoWindow.
+    infoWindow.close();
+    const lat = mapsMouseEvent.latLng.toJSON().lat;
+    const lng = mapsMouseEvent.latLng.toJSON().lng;
+    updateLatLng(lat, lng);
+    // Create a new InfoWindow.
+    infoWindow = new google.maps.InfoWindow({
+      position: mapsMouseEvent.latLng,
+    });
+    infoWindow.setContent(
+      JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
+    );
+    infoWindow.open(map);
+  });
+}
