@@ -77,11 +77,14 @@
     <div>
       <div class="form_a">
         <h2>Enter Rental Info</h2>
-        <form action="/addinfovalidate" enctype="multipart/form-data" method="post">
-
+        <form
+          action="/addinfovalidate"
+          enctype="multipart/form-data"
+          method="post"
+        >
           <div class="add_form">
             <label>Select rental type</label>
-            <select  class="select_input" name = "rentaltype">
+            <select class="select_input" name="rentaltype">
               <option>Home</option>
               <option>Apartment</option>
               <option>Room</option>
@@ -89,7 +92,7 @@
             <div class="baths_beds">
               <div class="flex_col">
                 <label>Number of bedrooms</label>
-                <select  class="select_input" name="numberofbeds">
+                <select class="select_input" name="numberofbeds">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -100,7 +103,7 @@
               </div>
               <div class="flex_col">
                 <label>Number of bathrooms</label>
-                <select  class="select_input"  name="numberofbathrooms">
+                <select class="select_input" name="numberofbathrooms">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -143,7 +146,7 @@
               class=""
               placeholder="City"
             />
-            
+
             <input
               name="streetname"
               type="text"
@@ -157,7 +160,7 @@
               placeholder="Nearest Landmark"
             />
             <input
-              name="houseno"  
+              name="houseno"
               type="text"
               class=""
               placeholder="House/Building No."
@@ -285,7 +288,7 @@
     </div>
     <div id="loader-bg"><div class="loader"></div></div>
     <script src="../js/addinfo.js"></script>
-    <script src="/js/nav.js"></script>
+    <script src="/js/common.js"></script>
     <script
       async
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0roVlX7F2OFWaOm7INNVt2DBlhYP8uiY&libraries=places&callback=initMap"

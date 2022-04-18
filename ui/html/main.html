@@ -311,76 +311,16 @@
 
       <div id="homelist">
         <h2>Rental Listings</h2>
-        <div class="home_item">
-          <img src="/media/home1.jpg" class="home_img" />
+        <div class="home_item" style="display: none">
+          <img src="" class="home_img" />
           <article>
-            <h2 id="price_r">₹2000/mo</h2>
+            <h2 id="price_r"></h2>
             <ul>
-              <li>5 Beds</li>
-              <li>1 Bathroom</li>
-              <li>4200 sqft.</li>
+              <li></li>
+              <li></li>
+              <li></li>
             </ul>
-            <p>Near some place, somewhere</p>
-          </article>
-        </div>
-        <div class="home_item">
-          <img src="/media/home2.jpg" class="home_img" />
-          <article>
-            <h2 id="price_r">₹1500/mo</h2>
-            <ul>
-              <li>8 Beds</li>
-              <li>5 Bathroom</li>
-              <li>500 sqft.</li>
-            </ul>
-            <p>Near some place, somewhere</p>
-          </article>
-        </div>
-        <div class="home_item">
-          <img src="/media/home3.jpg" class="home_img" />
-          <article>
-            <h2 id="price_r">₹3500/mo</h2>
-            <ul>
-              <li>4 Beds</li>
-              <li>2 Bathroom</li>
-              <li>4100 sqft.</li>
-            </ul>
-            <p>Near some place, somewhere</p>
-          </article>
-        </div>
-        <div class="home_item">
-          <img src="/media/home4.jpg" class="home_img" />
-          <article>
-            <h2 id="price_r">₹900/mo</h2>
-            <ul>
-              <li>6 Beds</li>
-              <li>4 Bathroom</li>
-              <li>2400 sqft.</li>
-            </ul>
-            <p>Near some place, somewhere</p>
-          </article>
-        </div>
-        <div class="home_item">
-          <img src="/media/home1.jpg" class="home_img" />
-          <article>
-            <h2 id="price_r">₹4000/mo</h2>
-            <ul>
-              <li>3 Beds</li>
-              <li>2 Bathroom</li>
-              <li>4200 sqft.</li>
-            </ul>
-            <p>Near some place, somewhere</p>
-          </article>
-        </div>
-        <div class="home_item">
-          <img src="/media/home2.jpg" class="home_img" />
-          <article>
-            <h2 id="price_r">₹9000/mo</h2>
-            <ul>
-              <li>5 Beds</li>
-              <li>5 Bathroom</li>
-              <li>4400 sqft.</li>
-            </ul>
-            <p>Near some place, somewhere</p>
+            <p></p>
           </article>
         </div>
       </div>
@@ -520,13 +460,5 @@
       async
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0roVlX7F2OFWaOm7INNVt2DBlhYP8uiY&libraries=places&callback=initMap"
     ></script>
-    <script>
-      fetch("http://localhost:8080/citiesdata")
-        .then((response) => response.json())
-        .then((data) => console.log(data))
-        .catch((err) => {
-          console.error(err);
-        });
-    </script>
   </body>
 </html>

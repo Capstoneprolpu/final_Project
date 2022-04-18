@@ -18,6 +18,7 @@ dotenv.config();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.use(express.static(path.join(__dirname + "/ui")));
+app.use("/UserData", express.static(path.join(__dirname + "/UserData")));
 
 app.use(cookieParser());
 
@@ -110,7 +111,7 @@ const citySchema = mongoose.Schema({
     required: true,
     minLength: 1,
   },
-  StreeName: {
+  StreetName: {
     type: String,
     required: true,
     minLength: 1,
@@ -336,7 +337,8 @@ app.post("/addinfovalidate", function (req, res) {
       filearr.push(value);
     })
     .on("end", function () {
-      let npath = path.join(__dirname + `UserData/${data.email}`);
+      console.log(__dirname);
+      let npath = path.join(__dirname + `/UserData/${data.email}`);
       if (fs.existsSync(npath)) {
         for (let i of filearr) {
           fs.renameSync(
@@ -388,7 +390,7 @@ app.post("/addinfovalidate", function (req, res) {
         RentPrice: cityvalmap.get("price"),
         CityName: cityvalmap.get("CityName"),
         Landmark: cityvalmap.get("landmark"),
-        StreeName: cityvalmap.get("streetname"),
+        StreetName: cityvalmap.get("streetname"),
         HouseNumber: cityvalmap.get("houseno"),
         Pincode: cityvalmap.get("pincode"),
         Latitude: cityvalmap.get("latitude"),

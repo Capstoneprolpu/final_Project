@@ -12,6 +12,7 @@ legend {
 #map {
   width: 45%;
   border: 2px solid var(--offWhite);
+  height: 600px;
 }
 
 .filters {
