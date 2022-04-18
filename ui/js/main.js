@@ -356,3 +356,35 @@ dotElements.forEach((element, index) => {
     imageShow(activeImg);
   });
 });
+
+//js to handle the data of the city rental data and render it in the concerned div
+
+const listingCreate = (listingData) => {
+  const listingDiv = document
+    .getElementsByClassName("home_item")[0]
+    .cloneNode(true);
+  listingDiv.style.display = "block";
+  listingDiv.children[0].src = listingData.Image[0];
+  listingDiv.children[1].children[0].innerText = `₹${listingData.RentPrice}/mo`;
+  listingDiv.children[1].children[1].children[0].innerText = `${listingData.NumberOfBedrooms} Bedrooms`;
+  listingDiv.children[1].children[1].children[1].innerText = `${listingData.NumberOfBathrooms} Bathrooms`;
+  listingDiv.children[1].children[1].children[2].innerText = `${listingData.AreaSqft} sqft.`;
+  listingDiv.children[1].children[2].innerText = `${listingData.HouseNumber}, ${listingData.StreetName}, ${listingData.Landmark}, ${listingData.CityName}`;
+  return listingDiv;
+};
+
+const mainDivListings = document.getElementById("homelist");
+
+let listingArray = [];
+
+fetch("http://localhost:8080/citiesdata")
+  .then((response) => response.json())
+  .then((data) => {
+    listingArray = data;
+    listingArray.map((item, i) => {
+      mainDivListings.append(listingCreate(item));
+    });
+  })
+  .catch((err) => {
+    console.error(err);
+  });
