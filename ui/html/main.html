@@ -90,7 +90,7 @@
             <input
               type="text"
               id="city-name-input"
-              placeholder="Lucknow, IN"
+              placeholder="Enter City"
             /><button class="searchBtn" type="submit" id="city-search-btn">
               <svg
                 viewBox="0 0 32 32"
@@ -311,6 +311,7 @@
 
       <div id="homelist">
         <h2>Rental Listings</h2>
+        <p id="message-listing"></p>
         <div class="home_item" style="display: none">
           <img src="" class="home_img" />
           <article>
@@ -453,9 +454,10 @@
       </div>
     </div>
     <div id="loader-bg"><div class="loader"></div></div>
-
-    <script src="/js/main.js"></script>
     <script src="/js/nav.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/main.js"></script>
+
     <script
       async
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0roVlX7F2OFWaOm7INNVt2DBlhYP8uiY&libraries=places&callback=initMap"

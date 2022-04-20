@@ -1,32 +1,7 @@
 let map;
-let primaryLocation = { lat: 26.8467, lng: 80.9462 };
+let primaryLocation = { lat: 28.679, lng: 77.06971 };
 
-let locations = [
-  {
-    lat: 26.8467,
-    lng: 80.9462,
-  },
-  {
-    lat: 26.8227,
-    lng: 80.9432,
-  },
-  {
-    lat: 26.8787,
-    lng: 80.9242,
-  },
-  {
-    lat: 26.8497,
-    lng: 80.9162,
-  },
-  {
-    lat: 26.8307,
-    lng: 80.9962,
-  },
-  {
-    lat: 26.8,
-    lng: 80.9,
-  },
-];
+let locations = [];
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -51,13 +26,8 @@ function initMap() {
   });
 }
 
-const searchCityBtn = document.getElementById("city-search-btn");
-const searchCityName = document.getElementById("city-name-input");
-
-searchCityBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+function updateMapCity(city) {
   toggleLoader();
-  const city = searchCityName.value.toLowerCase();
   fetch(`https://citylocate.herokuapp.com/${city}`, {
     method: "GET",
     headers: {
@@ -71,7 +41,7 @@ searchCityBtn.addEventListener("click", (e) => {
       toggleLoader();
     })
     .catch((e) => console.log(e));
-});
+}
 
 //Code for filter buttons
 const filters = document.querySelectorAll(".filter_btn");
@@ -287,7 +257,6 @@ subrt.addEventListener("click", (e) => {
 
 //js to handle the portal
 
-const listingElements = document.querySelectorAll(".home_item");
 const portal = document.querySelector("#portal");
 const portalDiv = document.querySelector("#main-portal-div");
 const closePortalBtn = document.querySelector("#portal-close-btn");
@@ -303,12 +272,15 @@ function togglePortal() {
     portalStatus = false;
   }
 }
-
-listingElements.forEach((Element, index) => {
-  Element.addEventListener("click", () => {
-    togglePortal();
+const portelEvent = () => {
+  const listingElements = document.querySelectorAll(".home_item");
+  listingElements.forEach((Element, index) => {
+    Element.addEventListener("click", () => {
+      togglePortal();
+    });
   });
-});
+};
+
 closePortalBtn.addEventListener("click", () => {
   togglePortal();
 });
@@ -359,10 +331,14 @@ dotElements.forEach((element, index) => {
 
 //js to handle the data of the city rental data and render it in the concerned div
 
+const searchCityBtn = document.getElementById("city-search-btn");
+const searchCityName = document.getElementById("city-name-input");
+
 const listingCreate = (listingData) => {
   const listingDiv = document
     .getElementsByClassName("home_item")[0]
     .cloneNode(true);
+  listingDiv.classList.add("active-listing");
   listingDiv.style.display = "block";
   listingDiv.children[0].src = listingData.Image[0];
   listingDiv.children[1].children[0].innerText = `₹${listingData.RentPrice}/mo`;
@@ -374,17 +350,48 @@ const listingCreate = (listingData) => {
 };
 
 const mainDivListings = document.getElementById("homelist");
+const messageListing = document.getElementById("message-listing");
 
 let listingArray = [];
+handleListingData();
 
-fetch("http://localhost:8080/citiesdata")
-  .then((response) => response.json())
-  .then((data) => {
-    listingArray = data;
-    listingArray.map((item, i) => {
-      mainDivListings.append(listingCreate(item));
+function handleListingData() {
+  fetch("http://localhost:8080/citiesdata")
+    .then((response) => response.json())
+    .then((data) => {
+      const activeListing = document.getElementsByClassName("active-listing");
+      while (activeListing[0]) {
+        activeListing[0].remove();
+      }
+      if (data[0]) {
+        messageListing.innerText = "";
+        listingArray = data;
+        listingArray.map((item, i) => {
+          mainDivListings.append(listingCreate(item));
+          locations.push({ lat: +item.Latitude, lng: +item.Longitude });
+        });
+        updateMapCity(listingArray[0].CityName);
+        searchCityName.value = listingArray[0].CityName;
+        portelEvent();
+      } else {
+        searchCityName.value = "";
+        messageListing.innerText = "No Data from this city";
+      }
+    })
+    .catch((err) => {
+      console.error(err);
     });
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+}
+
+searchCityBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  const city = searchCityName.value.toLowerCase().split(" ");
+  let cityWithSpace = "";
+  if (city.length > 1) {
+    cityWithSpace = city[0] + "%20" + city[1];
+  } else {
+    cityWithSpace = city;
+  }
+  document.cookie = `city=${cityWithSpace};SameSite=Lax`;
+  handleListingData();
+});
