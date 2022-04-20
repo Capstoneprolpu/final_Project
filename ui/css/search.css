@@ -263,7 +263,6 @@ legend {
 
 #homelist h2 {
   width: 90%;
-  margin: auto;
 }
 
 #homelist > h2 {
@@ -271,6 +270,11 @@ legend {
   font-size: 2.5rem;
   width: 100%;
   margin-left: 1rem;
+}
+
+#message-listing {
+  margin: auto;
+  font-size: 4rem;
 }
 
 .radio_circles {

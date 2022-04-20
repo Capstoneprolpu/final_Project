@@ -227,6 +227,7 @@ ul {
 .search_input {
   width: 70%;
   margin: auto;
+  position: relative;
 }
 
 .main_search {
@@ -253,6 +254,18 @@ ul {
 
 .search_button:hover {
   background-color: var(--brandOrangeDark);
+}
+
+#message-search-result {
+  visibility: hidden;
+  background: var(--brandSupport);
+  width: 30rem;
+  position: absolute;
+  left: 18rem;
+  padding: 5px;
+  border-radius: 5px;
+  bottom: -5rem;
+  font-size: 2.5rem;
 }
 
 #main_quote {

@@ -200,6 +200,9 @@ app.post("/signin", urlencodedParser, function (req, res) {
       res.cookie("userdata", token, {
         httpOnly: false,
       });
+      res.cookie("city", "new delhi", {
+        httpOnly: false,
+      });
       res.status(200).sendFile(path.join(__dirname, "/ui/html/index.html"));
     });
   } else {
@@ -254,18 +257,28 @@ app.get("/main", function (req, res) {
   }
 });
 
-app.get("/citiesdata", function (req, res) {
-  citydata.find({}, function (err, result) {
+app.get("/searchcity/:city", async (req, res) => {
+  const status = await citydata.exists({ CityName: req.params.city });
+  if (status) {
+    res.cookie("city", req.params.city, {
+      httpOnly: false,
+    });
+    return res.json({ status: "City found" });
+  }
+  return res.json({ status: "No Listings in this city" });
+});
+
+app.get("/citiesdata/", function (req, res) {
+  citydata.find({ CityName: req.cookies.city }, function (err, result) {
     if (err) {
       console.log(err);
       return;
     }
     if (result.length == 0) {
       console.log("Empty DataBase");
-      return;
+      return res.json(result);
     }
     typeof result;
-    console.log(result);
     res.json(result);
     res.end();
   });
