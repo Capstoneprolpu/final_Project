@@ -9,6 +9,7 @@
   --black: rgb(61, 61, 61);
   --offWhite: rgba(61, 61, 61, 0.25);
   --modeColor: white;
+  --red: rgb(231, 76, 60);
   /* 
     Setting '1rem' to be equal to '10px'.
     (This is done to make the units be more predictable & used consistently.
@@ -506,6 +507,39 @@ footer {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.invalid-input {
+  border: 2px solid var(--red);
+}
+
+.user-entry-error {
+  color: var(--red);
+  font-size: 1.5rem;
+}
+
+.hide {
+  display: none;
+}
+
+input[type="submit"]:disabled {
+  background-color: var(--offWhite);
+}
+
+#passwd-constraints {
+  line-height: 2rem;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+#passwd-constraints > ul {
+  display: block;
+  list-style-type: disc;
+  margin-left: 2.75rem;
+}
+
+#passwd-constraints > ul > li {
+  font-size: 1.5rem;
 }
 
 @media (min-width: 850px) {
