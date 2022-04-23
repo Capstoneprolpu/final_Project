@@ -312,7 +312,7 @@
       <div id="homelist">
         <h2>Rental Listings</h2>
         <p id="message-listing"></p>
-        <div class="home_item" style="display: none">
+        <div class="home_item">
           <img src="" class="home_img" />
           <article>
             <h2 id="price_r"></h2>
@@ -414,11 +414,11 @@
             ></a>
           </div>
           <div id="portal-main-info">
-            <h2>₹2000/mo</h2>
+            <h2 id="portal-price">₹2000/mo</h2>
             <ul>
-              <li>5 Beds</li>
-              <li>5 Bathroom</li>
-              <li>4400 sqft.</li>
+              <li id="portal-bedrooms">5 Beds</li>
+              <li id="portal-bathrooms">5 Bathroom</li>
+              <li id="portal-area">4400 sqft.</li>
             </ul>
           </div>
           <div id="portal-action">
@@ -428,25 +428,18 @@
             <h2>More Info</h2>
             <div id="portal-features">
               <a id="portal-features-tog"><h3>Feature</h3></a>
-              <ul>
-                <li>Wi-fi</li>
-                <li>Swimming Pool</li>
-                <li>Gym in vicinity</li>
-              </ul>
+              <p id="portel-features"></p>
             </div>
             <div id="portal-address">
               <a id="portal-address-tog"><h3>Address</h3></a>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
-                veritatis, architecto laboriosam.
-              </p>
+              <p id="portel-address"></p>
             </div>
             <h2>Owner Info</h2>
             <div id="portal-ownerinfo">
               <img id="portal-ownerpic" src="/media/0.jpg" />
               <div>
-                <h3>Firstname Lastname</h3>
-                <p>emailofuser@user.com</p>
+                <h3 id="portel-owner-name">Firstname Lastname</h3>
+                <p id="portel-owner-email">emailofuser@user.com</p>
               </div>
             </div>
           </div>

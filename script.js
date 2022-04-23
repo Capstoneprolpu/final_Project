@@ -10,6 +10,7 @@ const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv");
 
 var bodyParser = require("body-parser");
+const { verify } = require("crypto");
 
 const app = express();
 
@@ -22,16 +23,15 @@ app.use("/UserData", express.static(path.join(__dirname + "/UserData")));
 
 app.use(cookieParser());
 
-var server = app.listen(process.env.PORT, () => {
-  console.log("Server is running.");
-});
-
 const dblink = `mongodb+srv://Ayush:B6pQIEJnN78zl74Z@cluster0.sbck0.mongodb.net/Users?retryWrites=true&w=majority`;
 
 mongoose
   .connect(dblink)
   .then(() => {
     console.log("Connected to database");
+    app.listen(process.env.PORT, () => {
+      console.log("Server is running.");
+    });
   })
   .catch((err) => {
     console.log("Error connecting to database");
@@ -73,6 +73,11 @@ const citySchema = mongoose.Schema({
     minLength: 1,
   },
   LastName: {
+    type: String,
+    required: true,
+    minLength: 1,
+  },
+  OwnerImage: {
     type: String,
     required: true,
     minLength: 1,
@@ -210,6 +215,11 @@ app.post("/signin", urlencodedParser, function (req, res) {
   }
 });
 
+app.get("/userinfo", function (req, res) {
+  const data = jwt.verify(req.cookies.userdata, process.env.SECRET_KEY);
+  res.status(200).json(data);
+});
+
 app.get("/signout", function (req, res) {
   if (validatetoken(req.cookies.userdata)) {
     res.clearCookie("userdata");
@@ -227,7 +237,7 @@ app.post("/signupcheck", urlencodedParser, function (req, res) {
       FirstName: info.firstname,
       LastName: info.lastname,
       Password: bcrypt.hashSync(info.password, 10),
-      UserImage: "/media/User_Profile_images/default.jpg",
+      UserImage: "/media/User_Profile_images/default.png",
     };
     userdata.create(user, (err, dbinfo) => {
       if (err) {
@@ -295,7 +305,6 @@ app.get("/dashboard", function (req, res) {
 app.get("/userdashboarddata", function (req, res) {
   let userobj = {};
   const data = jwt.verify(req.cookies.userdata, process.env.SECRET_KEY);
-  console.log(data);
   citydata.find({ Email: data.email }, function (err, info) {
     if (err) {
       console.log("Cant find user.");
@@ -395,6 +404,7 @@ app.post("/addinfovalidate", function (req, res) {
         Email: data.email,
         FirstName: data.firstname,
         LastName: data.lastname,
+        OwnerImage: data.image,
         HomeType: cityvalmap.get("rentaltype"),
         NumberOfBedrooms: cityvalmap.get("numberofbeds"),
         NumberOfBathrooms: cityvalmap.get("numberofbathrooms"),

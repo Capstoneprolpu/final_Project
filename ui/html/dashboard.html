@@ -69,10 +69,10 @@
         <div id="left_s">
           <div id="profile_side">
             <div id="profile_box">
-              <img src="/media/0.jpg" />
+              <img id="left-profile-pic" src="/media/0.jpg" />
               <div>
-                <h3>Username</h3>
-                <h3>emailofuser@some.com</h3>
+                <h3 id="main-left-user-name"></h3>
+                <h3 id="main-left-user-email"></h3>
               </div>
             </div>
           </div>
@@ -123,8 +123,8 @@
                       </label>
                     </div>
                     <div>
-                      <p id="profile_username_main">username</p>
-                      <p id="profile_email_main">useremail@jango.com</p>
+                      <p id="profile_username_main"></p>
+                      <p id="profile_email_main"></p>
                     </div>
                   </div>
                   <div id="profile_form_btns">
@@ -210,41 +210,18 @@
             <div id="user_rentals" class="info_items">
               <div class="user_rentals_item">
                 <div class="user_rent_pics">
-                  <img src="/media/home1.jpg" />
-                  <img src="/media/home2.jpg" />
+                  <img src="" />
+                  <img src="" />
                 </div>
                 <div class="user_ren_in">
                   <div class="user_ren_info">
-                    <h2>Room 1</h2>
+                    <h2></h2>
                     <ul class="room-feats">
-                      <li>₹2000/month</li>
-                      <li>500 sqft.</li>
-                      <li>4 beds</li>
-                      <li>Some street somewhere Some city, StateName</li>
-                      <li>Booked Until: 20 April 2022</li>
-                    </ul>
-                  </div>
-                  <div class="modify-ren-info">
-                    <button class="btn card_btn">Edit</button>
-                    <button class="btn card_btn">Delete</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="user_rentals_item">
-                <div class="user_rent_pics">
-                  <img src="/media/home1.jpg" />
-                  <img src="/media/home2.jpg" />
-                </div>
-                <div class="user_ren_in">
-                  <div class="user_ren_info">
-                    <h2>Room 2</h2>
-                    <ul class="room-feats">
-                      <li>₹2000/month</li>
-                      <li>500 sqft.</li>
-                      <li>4 beds</li>
-                      <li>Some street somewhere Some city, StateName</li>
-                      <li>Booked Until: 20 April 2022</li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
                     </ul>
                   </div>
                 </div>
@@ -292,24 +269,7 @@
                     <p>Add New Rental</p>
                   </a>
                 </button>
-                <div class="user_rentals_item">
-                  <div class="user_rent_pics">
-                    <img src="/media/home1.jpg" />
-                    <img src="/media/home2.jpg" />
-                  </div>
-                  <div class="user_ren_in">
-                    <div class="user_ren_info">
-                      <h2>Room 3</h2>
-                      <ul class="room-feats">
-                        <li>₹2000/month</li>
-                        <li>500 sqft.</li>
-                        <li>4 beds</li>
-                        <li>Some street somewhere Some city, StateName</li>
-                        <li>Booked Until: 20 April 2022</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                <div id="user_rentedLis_div"></div>
               </div>
             </div>
           </div>
@@ -333,13 +293,5 @@
     <div id="loader-bg"><div class="loader"></div></div>
     <script src="/js/dashboard.js"></script>
     <script src="/js/common.js"></script>
-    <script>
-      fetch("http://localhost:8080/userdashboarddata")
-        .then((response) => response.json())
-        .then((data) => console.log(data))
-        .catch((err) => {
-          console.error(err);
-        });
-    </script>
   </body>
 </html>
