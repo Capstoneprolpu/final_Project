@@ -510,7 +510,7 @@ footer {
 }
 
 .invalid-input {
-  border: 2px solid var(--red);
+  border: 2px solid var(--red) !important;
 }
 
 .user-entry-error {

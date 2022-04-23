@@ -1,3 +1,7 @@
+const NAME_PATTERN = /^[a-zA-Z]{3,25}$/;
+const PASSWD_PATTERN =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#$%&^@!])[a-zA-Z0-9#$%^&@!]{8,}$/;
+
 const mens = document.querySelectorAll(".right_s_item");
 const menuBtns = document.querySelectorAll(".toggle_right");
 
@@ -147,3 +151,105 @@ const updateListingsData = () => {
 };
 
 updateListingsData();
+
+const validateInput = (
+  inputType,
+  formSubmitBtn,
+  formInput,
+  inputPattern,
+  inputErrorElement,
+  inputConstraintsElement = ""
+) => {
+  const validate = (inputVal) => {
+    if (inputType === "confirm password") {
+      if (formInput.value === inputPattern.value) {
+        formSubmitBtn.removeAttribute("disabled");
+        formInput.classList.remove("invalid-input");
+        inputErrorElement.classList.add("hide");
+      } else {
+        formSubmitBtn.setAttribute("disabled", "");
+        formInput.classList.add("invalid-input");
+        inputErrorElement.innerText = `Passwords don't match !`;
+        inputErrorElement.classList.remove("hide");
+      }
+    } else {
+      if (inputPattern.test(inputVal) === false) {
+        formSubmitBtn.setAttribute("disabled", "");
+        formInput.classList.add("invalid-input");
+        inputErrorElement.innerText = `Please enter a valid ${inputType}`;
+        inputErrorElement.classList.remove("hide");
+        if (inputConstraintsElement !== "") {
+          inputConstraintsElement.classList.remove("hide");
+        }
+      } else {
+        formSubmitBtn.removeAttribute("disabled");
+        formInput.classList.remove("invalid-input");
+        inputErrorElement.classList.add("hide");
+        if (inputConstraintsElement !== "") {
+          inputConstraintsElement.classList.add("hide");
+        }
+      }
+    }
+  };
+
+  formInput.addEventListener("input", () => {
+    let formInputVal = formInput.value;
+    validate(formInputVal.trim());
+  });
+};
+
+const profileSaveBtn = document.querySelector("#pfbtn_right");
+
+const passwdInput = document.querySelector("#form_password");
+const passwdErrorElement = document.querySelector("#passwd-error");
+const passwdConstraintsElement = document.querySelector("#passwd-constraints");
+
+validateInput(
+  "password",
+  profileSaveBtn,
+  passwdInput,
+  PASSWD_PATTERN,
+  passwdErrorElement,
+  passwdConstraintsElement
+);
+
+const confPasswdInput = document.querySelector("#form_con_password");
+const confPasswdErrorElement = document.querySelector("#conf-passwd-error");
+
+validateInput(
+  "confirm password",
+  profileSaveBtn,
+  confPasswdInput,
+  passwdInput,
+  confPasswdErrorElement
+);
+
+const firstNameInput = document.querySelector('input[name="FirstName"]');
+const firstNameErrorElement = document.querySelector("#first-name-error");
+const firstNameConstraintsElement = document.querySelector(
+  "#first-name-constraints"
+);
+
+validateInput(
+  "first name",
+  profileSaveBtn,
+  firstNameInput,
+  NAME_PATTERN,
+  firstNameErrorElement,
+  firstNameConstraintsElement
+);
+
+const lastNameInput = document.querySelector('input[name="LastName"]');
+const lastNameErrorElement = document.querySelector("#last-name-error");
+const lastNameConstraintsElement = document.querySelector(
+  "#last-name-constraints"
+);
+
+validateInput(
+  "last name",
+  profileSaveBtn,
+  lastNameInput,
+  NAME_PATTERN,
+  lastNameErrorElement,
+  lastNameConstraintsElement
+);
