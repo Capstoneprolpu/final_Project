@@ -233,12 +233,18 @@ legend {
   transition-property: transform, background;
   transition-duration: 400ms;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 5px 0px;
 }
 
 .home_item:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   z-index: 1;
-  background-color: var(--brandOrangeLight);
+  background-color: var(--brandSupportLight);
+}
+
+.home_img {
+  height: 30rem;
+  object-fit: cover;
 }
 
 .home_item article {
@@ -273,8 +279,10 @@ legend {
 }
 
 #message-listing {
-  margin: auto;
   font-size: 4rem;
+  text-align: center;
+  width: 100%;
+  margin-top: -15%;
 }
 
 .radio_circles {
@@ -432,11 +440,6 @@ legend {
   padding-bottom: 4px;
 }
 
-#portal-features ul {
-  flex-flow: column nowrap;
-  list-style: disc;
-  margin-left: 1.6rem;
-}
 #portal-features {
   margin-bottom: 1.6rem;
 }

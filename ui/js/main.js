@@ -266,20 +266,14 @@ let portalStatus = false;
 function togglePortal() {
   if (!portalStatus) {
     portal.style.display = "block";
+    imageReset();
     portalStatus = true;
   } else {
     portal.style.display = "none";
+    imageReset();
     portalStatus = false;
   }
 }
-const portelEvent = () => {
-  const listingElements = document.querySelectorAll(".home_item");
-  listingElements.forEach((Element, index) => {
-    Element.addEventListener("click", () => {
-      togglePortal();
-    });
-  });
-};
 
 closePortalBtn.addEventListener("click", () => {
   togglePortal();
@@ -299,6 +293,14 @@ function imageHide(index) {
 }
 
 function imageShow(index) {
+  imgElements[activeImg].classList.add("active");
+  dotElements[activeImg].classList.add("dot-active");
+}
+
+function imageReset() {
+  imgElements[activeImg].classList.remove("active");
+  dotElements[activeImg].classList.remove("dot-active");
+  activeImg = 0;
   imgElements[activeImg].classList.add("active");
   dotElements[activeImg].classList.add("dot-active");
 }
@@ -329,15 +331,40 @@ dotElements.forEach((element, index) => {
   });
 });
 
+//portal handles data from listing clicked
+
+function updatePortal(data) {
+  imgElements.forEach((element, i) => {
+    element.src = data.Image[i];
+  });
+  document.getElementById("portal-price").innerText = `₹${data.RentPrice}/mo`;
+  document.getElementById(
+    "portal-bedrooms"
+  ).innerText = `${data.NumberOfBedrooms} Bedrooms`;
+  document.getElementById(
+    "portal-bathrooms"
+  ).innerText = `${data.NumberOfBathrooms} Bathrooms`;
+  document.getElementById("portal-area").innerText = `${data.AreaSqft} sqft.`;
+  document.getElementById("portel-features").innerText = `${data.RentalInfo}`;
+  document.getElementById(
+    "portel-address"
+  ).innerText = `${data.HouseNumber}, ${data.StreetName}, ${data.Landmark}, ${data.CityName} ${data.Pincode}`;
+  document.getElementById("portal-ownerpic").src = `${data.OwnerImage}`;
+  document.getElementById(
+    "portel-owner-name"
+  ).innerText = `${data.FirstName} ${data.LastName}`;
+  document.getElementById("portel-owner-email").innerText = `${data.Email}`;
+}
+
 //js to handle the data of the city rental data and render it in the concerned div
 
 const searchCityBtn = document.getElementById("city-search-btn");
 const searchCityName = document.getElementById("city-name-input");
+const tempListingEle = document.getElementsByClassName("home_item")[0];
+tempListingEle.style.display = "none";
 
 const listingCreate = (listingData) => {
-  const listingDiv = document
-    .getElementsByClassName("home_item")[0]
-    .cloneNode(true);
+  const listingDiv = tempListingEle.cloneNode(true);
   listingDiv.classList.add("active-listing");
   listingDiv.style.display = "block";
   listingDiv.children[0].src = listingData.Image[0];
@@ -346,6 +373,12 @@ const listingCreate = (listingData) => {
   listingDiv.children[1].children[1].children[1].innerText = `${listingData.NumberOfBathrooms} Bathrooms`;
   listingDiv.children[1].children[1].children[2].innerText = `${listingData.AreaSqft} sqft.`;
   listingDiv.children[1].children[2].innerText = `${listingData.HouseNumber}, ${listingData.StreetName}, ${listingData.Landmark}, ${listingData.CityName}`;
+
+  listingDiv.addEventListener("click", (event) => {
+    updatePortal(listingData);
+    togglePortal();
+  });
+
   return listingDiv;
 };
 
@@ -372,7 +405,6 @@ function handleListingData() {
         });
         updateMapCity(listingArray[0].CityName);
         searchCityName.value = listingArray[0].CityName;
-        portelEvent();
       } else {
         searchCityName.value = "";
         messageListing.innerText = "No Data from this city";
@@ -386,6 +418,9 @@ function handleListingData() {
 searchCityBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const city = searchCityName.value.toLowerCase().split(" ");
+  if (city === "") {
+    return;
+  }
   let cityWithSpace = "";
   if (city.length > 1) {
     cityWithSpace = city[0] + "%20" + city[1];
