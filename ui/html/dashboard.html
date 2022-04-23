@@ -215,29 +215,6 @@
                 </div>
                 <div class="user_ren_in">
                   <div class="user_ren_info">
-                    <h2>Room 1</h2>
-                    <ul class="room-feats">
-                      <li>₹2000/month</li>
-                      <li>500 sqft.</li>
-                      <li>4 beds</li>
-                      <li>Some street somewhere Some city, StateName</li>
-                      <li>Booked Until: 20 April 2022</li>
-                    </ul>
-                  </div>
-                  <div class="modify-ren-info">
-                    <button class="btn card_btn">Edit</button>
-                    <button class="btn card_btn">Delete</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="user_rentals_item">
-                <div class="user_rent_pics">
-                  <img src="/media/home1.jpg" />
-                  <img src="/media/home2.jpg" />
-                </div>
-                <div class="user_ren_in">
-                  <div class="user_ren_info">
                     <h2>Room 2</h2>
                     <ul class="room-feats">
                       <li>₹2000/month</li>
@@ -292,24 +269,7 @@
                     <p>Add New Rental</p>
                   </a>
                 </button>
-                <div class="user_rentals_item">
-                  <div class="user_rent_pics">
-                    <img src="/media/home1.jpg" />
-                    <img src="/media/home2.jpg" />
-                  </div>
-                  <div class="user_ren_in">
-                    <div class="user_ren_info">
-                      <h2>Room 3</h2>
-                      <ul class="room-feats">
-                        <li>₹2000/month</li>
-                        <li>500 sqft.</li>
-                        <li>4 beds</li>
-                        <li>Some street somewhere Some city, StateName</li>
-                        <li>Booked Until: 20 April 2022</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                <div id="user_rentedLis_div"></div>
               </div>
             </div>
           </div>
@@ -333,13 +293,5 @@
     <div id="loader-bg"><div class="loader"></div></div>
     <script src="/js/dashboard.js"></script>
     <script src="/js/common.js"></script>
-    <script>
-      fetch("http://localhost:8080/userdashboarddata")
-        .then((response) => response.json())
-        .then((data) => console.log(data))
-        .catch((err) => {
-          console.error(err);
-        });
-    </script>
   </body>
 </html>

@@ -46,3 +46,79 @@ document.getElementById("pfbtn_right").addEventListener("click", (event) => {
     document.getElementById("profile_edit_form").submit();
   }
 });
+
+//main user data update
+
+//to show listings of user
+
+const mainListingDiv = document.getElementById("user_rentals");
+const mainRentedDiv = document.getElementById("user_rentedLis_div");
+
+const tempListingElem = document.getElementsByClassName("user_rentals_item")[0];
+tempListingElem.style.display = "none";
+
+const listingEleCreate = (listingData, mode) => {
+  const listingDiv = tempListingElem.cloneNode(true);
+  listingDiv.style.display = "block";
+  listingDiv.children[0].children[0].src = listingData.Image[0];
+  listingDiv.children[0].children[1].src = listingData.Image[1];
+  listingDiv.children[1].children[0].children[0].innerText =
+    listingData.HomeType;
+  listingDiv.children[1].children[0].children[1].children[0].innerText = `₹${listingData.RentPrice}/month`;
+  listingDiv.children[1].children[0].children[1].children[1].innerText = `${listingData.AreaSqft} sqft.`;
+  listingDiv.children[1].children[0].children[1].children[2].innerText = `${listingData.NumberOfBedrooms} Bedrooms`;
+  listingDiv.children[1].children[0].children[1].children[3].innerText = `${listingData.NumberOfBathrooms} Bathrooms`;
+  listingDiv.children[1].children[0].children[1].children[4].innerText = `${listingData.HouseNumber}, ${listingData.StreetName}, ${listingData.Landmark}, ${listingData.CityName}`;
+
+  if (mode === true) {
+    listingDiv.children[2].children[1].addEventListener("click", (event) => {
+      event.preventDefault();
+      fetch(`/delete/${listingData._id}`)
+        .then((data) => data.json)
+        .then((data) => {
+          if (data.status === "deleted successful") {
+            listingDiv.remove();
+          }
+        })
+        .catch((err) => console.log(err));
+    });
+  } else {
+    listingDiv.children[2].children[1].innerText = "Remove";
+    listingDiv.children[2].children[1].addEventListener("click", (event) => {
+      event.preventDefault();
+      fetch(`/removetenant/${listingData._id}`)
+        .then((data) => data.json)
+        .then((data) => {
+          if (data.status === "removed successful") {
+            listingDiv.remove();
+          }
+        })
+        .catch((err) => console.log(err));
+    });
+  }
+
+  return listingDiv;
+};
+
+const updateListingsData = () => {
+  fetch("http://localhost:8080/userdashboarddata")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      if (data.owner[0]) {
+        data.owner.map((item, i) => {
+          mainListingDiv.append(listingEleCreate(item, true));
+        });
+      }
+      if (data.tenant[0]) {
+        data.tenant.map((item, i) => {
+          mainRentedDiv.append(listingEleCreate(item, false));
+        });
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
+
+updateListingsData();
