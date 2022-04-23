@@ -237,7 +237,7 @@ app.post("/signupcheck", urlencodedParser, function (req, res) {
       FirstName: info.firstname,
       LastName: info.lastname,
       Password: bcrypt.hashSync(info.password, 10),
-      UserImage: "/media/User_Profile_images/default.jpg",
+      UserImage: "/media/User_Profile_images/default.png",
     };
     userdata.create(user, (err, dbinfo) => {
       if (err) {
