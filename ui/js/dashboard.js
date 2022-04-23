@@ -34,6 +34,10 @@ picInput.addEventListener("change", (event) => {
 });
 
 //to handle form submission
+const formUserName = document.getElementById("profile_username_main");
+const formUserEmail = document.getElementById("profile_email_main");
+const formFirstName = document.getElementById("form_firstname");
+const formLastName = document.getElementById("form_lastname");
 
 document.getElementById("pfbtn_right").addEventListener("click", (event) => {
   event.preventDefault();
@@ -48,6 +52,28 @@ document.getElementById("pfbtn_right").addEventListener("click", (event) => {
 });
 
 //main user data update
+
+const userPic = document.getElementById("left-profile-pic");
+const userName = document.getElementById("main-left-user-name");
+const userEmail = document.getElementById("main-left-user-email");
+
+const updateUserInfo = () => {
+  fetch("/userinfo")
+    .then((data) => data.json())
+    .then((data) => {
+      userPic.src = data.image;
+      profilePicImg.src = data.image;
+      userName.innerText = `${data.firstname} ${data.lastname}`;
+      formUserName.innerText = `${data.firstname} ${data.lastname}`;
+      userEmail.innerText = data.email;
+      formUserEmail.innerText = data.email;
+      formFirstName.value = data.firstname;
+      formLastName.value = data.lastname;
+    })
+    .catch((err) => console.log(err));
+};
+
+updateUserInfo();
 
 //to show listings of user
 
@@ -101,10 +127,9 @@ const listingEleCreate = (listingData, mode) => {
 };
 
 const updateListingsData = () => {
-  fetch("http://localhost:8080/userdashboarddata")
+  fetch("/userdashboarddata")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.owner[0]) {
         data.owner.map((item, i) => {
           mainListingDiv.append(listingEleCreate(item, true));
