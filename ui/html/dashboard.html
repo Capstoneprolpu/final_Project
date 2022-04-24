@@ -142,6 +142,20 @@
                       id="form_password"
                     />
                   </div>
+                  <small
+                    class="user-entry-error hide"
+                    id="passwd-error"
+                  ></small>
+                  <small class="user-entry-error hide" id="passwd-constraints">
+                    * password should be at least 8 characters in length, & must
+                    contain atleast 1 of each -
+                    <ul>
+                      <li>lowercase alphabet,</li>
+                      <li>uppercase alphabet,</li>
+                      <li>number, &</li>
+                      <li>special character</li>
+                    </ul>
+                  </small>
                   <div class="main_form_profile_item">
                     <label for="form_con_password">Confirm Password</label>
                     <input
@@ -150,6 +164,9 @@
                       id="form_con_password"
                     />
                   </div>
+                  <small class="user-entry-error hide" id="conf-passwd-error">
+                  </small>
+
                   <div class="main_form_profile_item">
                     <label for="form_firstname">First Name</label>
                     <input
@@ -159,6 +176,16 @@
                       id="form_firstname"
                     />
                   </div>
+                  <small
+                    class="user-entry-error hide"
+                    id="first-name-error"
+                  ></small>
+                  <small
+                    class="user-entry-error hide"
+                    id="first-name-constraints"
+                  >
+                    * names should be atleast 3 characters in length
+                  </small>
                   <div class="main_form_profile_item">
                     <label for="form_lastname">Last Name</label>
                     <input
@@ -168,6 +195,16 @@
                       id="form_lastname"
                     />
                   </div>
+                  <small
+                    class="user-entry-error hide"
+                    id="last-name-error"
+                  ></small>
+                  <small
+                    class="user-entry-error hide"
+                    id="last-name-constraints"
+                  >
+                    * names should be atleast 3 characters in length
+                  </small>
                 </div>
               </form>
             </div>

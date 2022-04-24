@@ -215,6 +215,13 @@
   cursor: pointer;
 }
 
+#pfbtn_right:disabled,
+#pfbtn_right:disabled:hover {
+  background-color: var(--offWhite);
+  border-color: var(--offWhite);
+  color: white;
+}
+
 #pfbtn_right:hover {
   background: var(--brandOrangeDark);
   border: 2px solid var(--brandOrangeDark);
@@ -243,10 +250,6 @@
 
 #change_profile_pic:hover {
   background: var(--brandOrangeDark);
-}
-
-#profile_form_edit form * {
-  font-size: 1.25rem;
 }
 
 #main_form_profile {

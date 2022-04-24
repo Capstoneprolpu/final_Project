@@ -216,7 +216,7 @@ ul {
   text-align: center;
   padding: 10rem 0;
   position: relative;
-  top: -68vh;
+  top: -60vh;
 }
 
 #search_toptext {
@@ -523,7 +523,7 @@ footer {
 }
 
 .invalid-input {
-  border: 2px solid var(--red);
+  border: 2px solid var(--red) !important;
 }
 
 .user-entry-error {
