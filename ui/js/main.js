@@ -335,7 +335,11 @@ dotElements.forEach((element, index) => {
 
 function updatePortal(data) {
   imgElements.forEach((element, i) => {
-    element.src = data.Image[i];
+    if (i < data.Image.length) {
+      element.src = data.Image[i];
+    } else {
+      element.src = "/media/missing_image.png";
+    }
   });
   document.getElementById("portal-price").innerText = `₹${data.RentPrice}/mo`;
   document.getElementById(
