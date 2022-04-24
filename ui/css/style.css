@@ -175,6 +175,22 @@ ul {
   color: var(--brandSupport);
 }
 
+#user_nav {
+  display: none;
+  min-width: 15rem;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--modeColor);
+  border-radius: 3rem;
+}
+
+#left-profile-pic {
+  height: 5rem;
+  border-radius: 50%;
+  width: 5rem;
+  margin-right: 1rem;
+}
+
 .section-heading {
   font-family: "Lora", serif;
   font-size: 3rem;
@@ -438,15 +454,12 @@ footer {
   top: 5rem;
   left: -1rem;
   width: 20rem;
-  min-height: 10rem;
   cursor: default;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 0 3rem;
 }
 
 .nav_dd ul {
   flex-flow: column nowrap;
   align-items: flex-start;
-  min-height: 11rem;
   margin: 1rem;
 }
 

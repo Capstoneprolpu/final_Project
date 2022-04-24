@@ -306,6 +306,58 @@
   width: 2rem;
 }
 
+#requests-div {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.req_item {
+  height: 15rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 7px 0px;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.req_list {
+  display: flex;
+}
+
+.req_list > img {
+  width: 15rem;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.req_address {
+  border-right: 1px solid var(--offWhite);
+  margin-left: 1rem;
+}
+
+.req_address > p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.req_user {
+  display: flex;
+  margin: auto;
+}
+.req_user > img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.req_btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 @media (max-width: 1200px) {
   #user_rentals {
     grid-template-columns: 1fr 1fr;

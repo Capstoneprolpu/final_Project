@@ -216,8 +216,12 @@ app.post("/signin", urlencodedParser, function (req, res) {
 });
 
 app.get("/userinfo", function (req, res) {
-  const data = jwt.verify(req.cookies.userdata, process.env.SECRET_KEY);
-  res.status(200).json(data);
+  if (req.cookies.userdata) {
+    const data = jwt.verify(req.cookies.userdata, process.env.SECRET_KEY);
+    res.status(200).json(data);
+  } else {
+    res.status(200).json({ status: "no token was found" });
+  }
 });
 
 app.get("/signout", function (req, res) {
