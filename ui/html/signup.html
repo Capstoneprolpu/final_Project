@@ -49,12 +49,24 @@
             placeholder="E-mail address"
             name="email"
           />
+          <small class="user-entry-error hide" id="email-error"></small>
           <input
             type="password"
             class="form_input"
             placeholder="Password"
             name="password"
           />
+          <small class="user-entry-error hide" id="passwd-error"></small>
+          <small class="user-entry-error hide" id="passwd-constraints">
+            * password should be at least 8 characters in length,<br />& must
+            contain atleast 1 of these -
+            <ul>
+              <li>lowercase alphabet,</li>
+              <li>uppercase alphabet,</li>
+              <li>number, &</li>
+              <li>special character</li>
+            </ul>
+          </small>
           <p id="t_c">
             By signing in, you agree to the Space rental
             <a>Terms and Conditions</a> and <a>Privacy Statement</a>.
@@ -65,7 +77,7 @@
         <a class="toggle_page" id="toggle_page">Create one</a>
       </div>
 
-      <div class="form_a" id="form2" style="display: none">
+      <div class="form_a" id="form2">
         <h2 class="sign-up-header">Create an account</h2>
         <form class="main_form" action="/signupcheck" method="post">
           <input
@@ -74,26 +86,48 @@
             placeholder="E-mail address"
             name="email"
           />
+          <small class="user-entry-error hide" id="email-error"></small>
           <input
             type="text"
             class="form_input"
             placeholder="First name"
             name="firstname"
           />
+          <small class="user-entry-error hide" id="first-name-error"></small>
+          <small class="user-entry-error hide" id="first-name-constraints">
+            * names should be atleast 3 characters in length
+          </small>
+
           <input
             type="text"
             class="form_input"
             placeholder="Last name"
             name="lastname"
           />
+          <small class="user-entry-error hide" id="last-name-error"></small>
+          <small class="user-entry-error hide" id="last-name-constraints">
+            * names should be atleast 3 characters in length
+          </small>
+
           <input
             type="password"
             class="form_input"
             placeholder="Password"
             name="password"
           />
+          <small class="user-entry-error hide" id="passwd-error"></small>
+          <small class="user-entry-error hide" id="passwd-constraints">
+            * password should be at least 8 characters in length, & must contain
+            atleast 1 of these -
+            <ul>
+              <li>lowercase alphabet,</li>
+              <li>uppercase alphabet,</li>
+              <li>number, &</li>
+              <li>special character</li>
+            </ul>
+          </small>
           <p id="t_c">
-            By creating an account, I agree to the Space rental
+            By creating an account with us, you agree to the Space rental
             <a>Terms and Conditions</a> and <a>Privacy Statement</a>.
           </p>
           <input type="submit" class="form_btn" value="Continue" />
