@@ -158,7 +158,7 @@ const citydata = mongoose.model("citydata", citySchema, "citydata");
 const userdata = mongoose.model("userdata", userSchema, "userdata");
 
 app.get("/", function (req, res) {
-  res.status(200).sendFile(path.join(__dirname, "/ui/html/index.html"));
+  res.sendFile(path.join(__dirname, "/ui/html/index.html"));
 });
 
 app.get("/signinpage", function (req, res) {
@@ -189,12 +189,11 @@ app.post("/signin", urlencodedParser, function (req, res) {
       if (flag) {
         console.log("Passwrod valid");
       } else {
-        res.send("Password not valid.");
+        return res.send("Password not valid.");
       }
 
       let userval = {
         email: values.Email,
-        password: values.Password,
         image: values.UserImage,
         firstname: values.FirstName,
         lastname: values.LastName,
@@ -204,11 +203,13 @@ app.post("/signin", urlencodedParser, function (req, res) {
 
       res.cookie("userdata", token, {
         httpOnly: false,
+        expiresin: new Date(Date.now() + 1000 * 60 * 10),
       });
       res.cookie("city", "new delhi", {
         httpOnly: false,
+        expiresin: new Date(Date.now() + 1000 * 60 * 10),
       });
-      res.status(200).sendFile(path.join(__dirname, "/ui/html/index.html"));
+      res.sendFile(path.join(__dirname, "/ui/html/index.html"));
     });
   } else {
     res.send("Credentials not valid");
@@ -218,9 +219,9 @@ app.post("/signin", urlencodedParser, function (req, res) {
 app.get("/userinfo", function (req, res) {
   if (req.cookies.userdata) {
     const data = jwt.verify(req.cookies.userdata, process.env.SECRET_KEY);
-    res.status(200).json(data);
+    res.json(data);
   } else {
-    res.status(200).json({ status: "no token was found" });
+    res.json({ status: "no token was found" });
   }
 });
 
@@ -255,7 +256,7 @@ app.post("/signupcheck", urlencodedParser, function (req, res) {
       }
       console.log("New USER created.");
       console.log(dbinfo);
-      res.status(200).sendFile(path.join(__dirname, "/ui/html/signup.html"));
+      res.sendFile(path.join(__dirname, "/ui/html/signup.html"));
       return;
     });
   } else {
@@ -312,6 +313,7 @@ app.get("/dashboard", function (req, res) {
 app.get("/userdashboarddata", function (req, res) {
   let userobj = {};
   const data = jwt.verify(req.cookies.userdata, process.env.SECRET_KEY);
+  console.log(data);
   citydata.find({ Email: data.email }, function (err, info) {
     if (err) {
       console.log("Cant find user.");
@@ -345,9 +347,9 @@ app.get("/userdashboarddata", function (req, res) {
 
 app.get("/addinfo", function (req, res) {
   if (validatetoken(req.cookies.userdata)) {
-    res.sendFile(path.join(__dirname, "/ui/html/addinfo.html"));
+    return res.sendFile(path.join(__dirname, "/ui/html/addinfo.html"));
   } else {
-    res.sendFile(path.join(__dirname, "/ui/html/signup.html"));
+    return res.sendFile(path.join(__dirname, "/ui/html/signup.html"));
   }
 });
 
@@ -465,6 +467,111 @@ app.post("/addinfovalidate", function (req, res) {
 
         res.sendFile(path.join(__dirname + "/ui/html/dashboard.html"));
       });
+    });
+  formdata.parse(req);
+});
+
+app.post("/profileEdit", function (req, res) {
+  const userdatavalue = jwt.verify(
+    req.cookies.userdata,
+    process.env.SECRET_KEY
+  );
+  var formdata = new formidable.IncomingForm();
+  let data = {};
+  let imgpath;
+  formdata
+    .on("field", function (field, value) {
+      data[field] = value;
+    })
+    .on("file", function (file, value) {
+      imgpath = `./ui/media/User_Profile_images/${
+        userdatavalue.email + value.originalFilename
+      }`;
+      if (fs.existsSync(imgpath)) {
+        console.log("same image exists");
+      } else {
+        if (userdatavalue.image.split("/")[3].toString() == "default.png") {
+          console.log("Found default no need to remove");
+        } else {
+          fs.unlinkSync(`./ui${userdatavalue.image}`);
+        }
+        fs.renameSync(
+          value.filepath,
+          `./ui/media/User_Profile_images/${
+            userdatavalue.email + value.originalFilename
+          }`,
+          function (err) {
+            if (err) {
+              console.error(err);
+              return;
+            }
+          }
+        );
+      }
+      imgpath = `/media/User_Profile_images/${
+        userdatavalue.email + value.originalFilename
+      }`;
+    })
+    .on("end", function () {
+      console.log(data);
+      if (data.Password != data.Confirm_password) {
+        console.log("Password and confirm password do not match");
+        return res.send("Password and confirm password do not match");
+      }
+      userdata.updateOne(
+        { Email: userdatavalue.email },
+        {
+          UserImage: imgpath,
+          FirstName: data.FirstName,
+          LastName: data.LastName,
+          Password: bcrypt.hashSync(data.Password, 10),
+        },
+        function (err, dbdata) {
+          if (err) {
+            return res.send(err);
+          }
+          console.log("Data updated successfully.");
+          console.log(dbdata);
+
+          citydata.updateMany(
+            { Email: userdatavalue.email },
+            {
+              FirstName: data.FirstName,
+              LastName: data.LastName,
+              OwnerImage: imgpath,
+            },
+            function (err1, db1) {
+              if (err1) {
+                return res.send(err1);
+              }
+              console.log("Data updated in citydb");
+              console.log(db1);
+
+              res.clearCookie("userdata");
+
+              let userval = {
+                email: userdatavalue.email,
+                image: imgpath,
+                firstname: data.FirstName,
+                lastname: data.LastName,
+              };
+
+              console.log(userval);
+              const token2 = jwt.sign(userval, process.env.SECRET_KEY);
+
+              res.cookie("userdata", token2, {
+                httpOnly: false,
+                expiresin: new Date(Date.now() + 1000 * 60 * 10),
+              });
+
+              console.log("User data updated");
+              return res.sendFile(
+                path.join(__dirname, "/ui/html/dashboard.html")
+              );
+            }
+          );
+        }
+      );
     });
   formdata.parse(req);
 });
