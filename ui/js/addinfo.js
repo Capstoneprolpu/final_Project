@@ -147,10 +147,10 @@ portelSubmitBtn.addEventListener("click", (event) => {
 });
 
 const updateLatLng = (lat, lng) => {
-  latitudeInput.value = lat;
-  longitudeInput.value = lng;
-  portelLatitudeInput.value = lat;
-  portelLongitudeInput.value = lng;
+  latitudeInput.value = lat.toFixed(3);
+  longitudeInput.value = lng.toFixed(3);
+  portelLatitudeInput.value = lat.toFixed(3);
+  portelLongitudeInput.value = lng.toFixed(3);
 };
 
 function initMap() {

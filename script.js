@@ -203,11 +203,11 @@ app.post("/signin", urlencodedParser, function (req, res) {
 
       res.cookie("userdata", token, {
         httpOnly: false,
-        expiresin: new Date(Date.now() + 1000 * 60 * 10)
+        expiresin: new Date(Date.now() + 1000 * 60 * 10),
       });
       res.cookie("city", "new delhi", {
         httpOnly: false,
-        expiresin: new Date(Date.now() + 1000 * 60 * 10)
+        expiresin: new Date(Date.now() + 1000 * 60 * 10),
       });
       res.sendFile(path.join(__dirname, "/ui/html/index.html"));
     });
@@ -237,6 +237,9 @@ app.post("/signupcheck", urlencodedParser, function (req, res) {
   const info = req.body;
   console.log(info);
   if (checkdata(info)) {
+    if (!info.email || !info.firstname || !info.lastname || !info.password) {
+      return res.status(400).json({ status: "All fields were not present" });
+    }
     let user = {
       Email: info.email,
       FirstName: info.firstname,
@@ -357,6 +360,7 @@ app.post("/addinfovalidate", function (req, res) {
   var imgarr = [];
   let cityvalmap = new Map();
   let filearr = [];
+  let inputValid = true;
   formdata
     .on("field", function (field, value) {
       cityvalmap.set(field, value);
@@ -365,6 +369,27 @@ app.post("/addinfovalidate", function (req, res) {
       filearr.push(value);
     })
     .on("end", function () {
+      if (
+        !cityvalmap.get("rentaltype") ||
+        !cityvalmap.get("numberofbeds") ||
+        !cityvalmap.get("numberofbathrooms") ||
+        !cityvalmap.get("area") ||
+        !cityvalmap.get("info") ||
+        !cityvalmap.get("price") ||
+        !cityvalmap.get("CityName") ||
+        !cityvalmap.get("landmark") ||
+        !cityvalmap.get("streetname") ||
+        !cityvalmap.get("houseno") ||
+        !cityvalmap.get("pincode") ||
+        !cityvalmap.get("latitude") ||
+        !cityvalmap.get("longitude")
+      ) {
+        if (inputValid === true) {
+          res.status(400).json({ status: "All fields were not present" });
+        }
+        inputValid = false;
+        return;
+      }
       console.log(__dirname);
       let npath = path.join(__dirname + `/UserData/${data.email}`);
       if (fs.existsSync(npath)) {
@@ -446,27 +471,35 @@ app.post("/addinfovalidate", function (req, res) {
   formdata.parse(req);
 });
 
-app.post('/profileEdit',function(req, res) {
-  const userdatavalue = jwt.verify(req.cookies.userdata, process.env.SECRET_KEY);
+app.post("/profileEdit", function (req, res) {
+  const userdatavalue = jwt.verify(
+    req.cookies.userdata,
+    process.env.SECRET_KEY
+  );
   var formdata = new formidable.IncomingForm();
   let data = {};
   let imgpath;
-  formdata.on("field", function (field, value) {
+  formdata
+    .on("field", function (field, value) {
       data[field] = value;
     })
     .on("file", function (file, value) {
-      imgpath = `./ui/media/User_Profile_images/${userdatavalue.email + value.originalFilename}`;
-      if(fs.existsSync(imgpath)){
+      imgpath = `./ui/media/User_Profile_images/${
+        userdatavalue.email + value.originalFilename
+      }`;
+      if (fs.existsSync(imgpath)) {
         console.log("same image exists");
-      }else{
-        if(userdatavalue.image.split('/')[3].toString() == "default.png"){
+      } else {
+        if (userdatavalue.image.split("/")[3].toString() == "default.png") {
           console.log("Found default no need to remove");
-        }else{
+        } else {
           fs.unlinkSync(`./ui${userdatavalue.image}`);
         }
         fs.renameSync(
           value.filepath,
-          `./ui/media/User_Profile_images/${userdatavalue.email + value.originalFilename}`,
+          `./ui/media/User_Profile_images/${
+            userdatavalue.email + value.originalFilename
+          }`,
           function (err) {
             if (err) {
               console.error(err);
@@ -475,51 +508,76 @@ app.post('/profileEdit',function(req, res) {
           }
         );
       }
-      imgpath = `/media/User_Profile_images/${userdatavalue.email + value.originalFilename}`;
+      imgpath = `/media/User_Profile_images/${
+        userdatavalue.email + value.originalFilename
+      }`;
     })
     .on("end", function () {
       console.log(data);
-      if(data.Password != data.Confirm_password) {
+      if (data.Password != data.Confirm_password) {
         console.log("Password and confirm password do not match");
         return res.send("Password and confirm password do not match");
       }
-      userdata.updateOne({Email : userdatavalue.email},{UserImage : imgpath,FirstName : data.FirstName,LastName : data.LastName,Password : bcrypt.hashSync(data.Password,10)},function(err, dbdata) {
-        if(err){
-          return res.send(err);
-        }
-        console.log("Data updated successfully.");
-        console.log(dbdata);
-
-        citydata.updateMany({Email : userdatavalue.email},{FirstName : data.FirstName,LastName : data.LastName,OwnerImage : imgpath},function(err1, db1){
-          if(err1){
-            return res.send(err1);
+      userdata.updateOne(
+        { Email: userdatavalue.email },
+        {
+          UserImage: imgpath,
+          FirstName: data.FirstName,
+          LastName: data.LastName,
+          Password: bcrypt.hashSync(data.Password, 10),
+        },
+        function (err, dbdata) {
+          if (err) {
+            return res.send(err);
           }
-          console.log("Data updated in citydb");
-          console.log(db1);
+          console.log("Data updated successfully.");
+          console.log(dbdata);
 
-          res.clearCookie("userdata");
+          citydata.updateMany(
+            { Email: userdatavalue.email },
+            {
+              FirstName: data.FirstName,
+              LastName: data.LastName,
+              OwnerImage: imgpath,
+            },
+            function (err1, db1) {
+              if (err1) {
+                return res.send(err1);
+              }
+              console.log("Data updated in citydb");
+              console.log(db1);
 
-          let userval = {
-            email: userdatavalue.email,
-            image: imgpath,
-            firstname: data.FirstName,
-            lastname: data.LastName,
-          };
-          
-          console.log(userval);
-          const token2 = jwt.sign(userval, process.env.SECRET_KEY);
-    
-          res.cookie("userdata", token2, {
-            httpOnly: false,
-            expiresin: new Date(Date.now() + 1000 * 60 * 10)
-          });
+              res.clearCookie("userdata");
 
-          console.log("User data updated");
-          return res.sendFile(path.join(__dirname,"/ui/html/dashboard.html"));
-        });
-      });
+              let userval = {
+                email: userdatavalue.email,
+                image: imgpath,
+                firstname: data.FirstName,
+                lastname: data.LastName,
+              };
+
+              console.log(userval);
+              const token2 = jwt.sign(userval, process.env.SECRET_KEY);
+
+              res.cookie("userdata", token2, {
+                httpOnly: false,
+                expiresin: new Date(Date.now() + 1000 * 60 * 10),
+              });
+
+              console.log("User data updated");
+              return res.sendFile(
+                path.join(__dirname, "/ui/html/dashboard.html")
+              );
+            }
+          );
+        }
+      );
     });
-    formdata.parse(req);
+  formdata.parse(req);
+});
+
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname + "/ui/html/404.html"));
 });
 
 function validatetoken(cookiedata) {
@@ -549,7 +607,11 @@ function checkdata(info) {
     return false;
   }
 
-  if (info.password == "" || info.password.length < 8) {
+  if (
+    info.password == "" ||
+    info.password == undefined ||
+    info.password.length < 8
+  ) {
     console.log("Password not valid.");
     return false;
   }
