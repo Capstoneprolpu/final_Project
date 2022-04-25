@@ -1,0 +1,28 @@
+body {
+  background-color: var(--brandSupportLight);
+  text-align: center;
+}
+
+.not-found-img {
+  height: auto;
+  width: 30vw;
+  margin-top: 3vw;
+}
+
+.not-found-message {
+  color: var(--brandOrange);
+  font-family: "Lora", serif;
+  font-size: 2.25vw;
+  font-weight: 800;
+  margin-top: 2vw;
+}
+
+@media (max-width: 1000px) {
+  .not-found-img {
+    width: 50vw;
+  }
+  .not-found-message {
+    margin-top: 0;
+    font-size: 4.5vw;
+  }
+}
