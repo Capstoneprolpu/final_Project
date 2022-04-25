@@ -236,6 +236,9 @@ app.post("/signupcheck", urlencodedParser, function (req, res) {
   const info = req.body;
   console.log(info);
   if (checkdata(info)) {
+    if (!info.email || !info.firstname || !info.lastname || !info.password) {
+      return res.status(400).json({ status: "All fields were not present" });
+    }
     let user = {
       Email: info.email,
       FirstName: info.firstname,
@@ -355,6 +358,7 @@ app.post("/addinfovalidate", function (req, res) {
   var imgarr = [];
   let cityvalmap = new Map();
   let filearr = [];
+  let inputValid = true;
   formdata
     .on("field", function (field, value) {
       cityvalmap.set(field, value);
@@ -363,6 +367,27 @@ app.post("/addinfovalidate", function (req, res) {
       filearr.push(value);
     })
     .on("end", function () {
+      if (
+        !cityvalmap.get("rentaltype") ||
+        !cityvalmap.get("numberofbeds") ||
+        !cityvalmap.get("numberofbathrooms") ||
+        !cityvalmap.get("area") ||
+        !cityvalmap.get("info") ||
+        !cityvalmap.get("price") ||
+        !cityvalmap.get("CityName") ||
+        !cityvalmap.get("landmark") ||
+        !cityvalmap.get("streetname") ||
+        !cityvalmap.get("houseno") ||
+        !cityvalmap.get("pincode") ||
+        !cityvalmap.get("latitude") ||
+        !cityvalmap.get("longitude")
+      ) {
+        if (inputValid === true) {
+          res.status(400).json({ status: "All fields were not present" });
+        }
+        inputValid = false;
+        return;
+      }
       console.log(__dirname);
       let npath = path.join(__dirname + `/UserData/${data.email}`);
       if (fs.existsSync(npath)) {
@@ -444,6 +469,10 @@ app.post("/addinfovalidate", function (req, res) {
   formdata.parse(req);
 });
 
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname + "/ui/html/404.html"));
+});
+
 function validatetoken(cookiedata) {
   if (cookiedata == undefined) {
     return false;
@@ -471,7 +500,11 @@ function checkdata(info) {
     return false;
   }
 
-  if (info.password == "" || info.password.length < 8) {
+  if (
+    info.password == "" ||
+    info.password == undefined ||
+    info.password.length < 8
+  ) {
     console.log("Password not valid.");
     return false;
   }
