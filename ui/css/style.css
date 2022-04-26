@@ -355,6 +355,10 @@ footer {
   margin: 1rem;
 }
 
+.footer_nav_item a {
+  color: inherit;
+}
+
 .footer_nav_item:hover {
   text-decoration: underline;
 }
