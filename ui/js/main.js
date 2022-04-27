@@ -105,26 +105,25 @@ document.body.addEventListener("click", (event) => {
 
 //variables for filter values and "POST" function
 
-let listingType = "Rent";
-let numberofBedrooms = "any";
-let numberofBathrooms = "any";
-let minPrice = 0;
-let maxPrice = "any";
-let spaceType = ["Home", "Apartment", "Room"];
-
-const postData = {
-  listingType: listingType,
-  numberofBedrooms: numberofBedrooms,
-  numberofBathrooms: numberofBathrooms,
-  minPrice: minPrice,
-  maxPrice: maxPrice,
-  spaceType: spaceType,
-};
+let listingType = "default";
+let numberOfBedrooms = "default";
+let numberOfBathrooms = "default";
+let minPrice = "default";
+let maxPrice = "default";
+let spaceType = "default";
 
 const applyFilters = document.getElementById("apply-filters-btn");
 
 applyFilters.addEventListener("click", (event) => {
   event.preventDefault();
+  const postData = {
+    // listingType: listingType,
+    numberOfBedrooms: numberOfBedrooms,
+    numberOfBathrooms: numberOfBathrooms,
+    minPrice: minPrice,
+    maxPrice: maxPrice,
+    spaceType: spaceType,
+  };
   fetch("/filters", {
     method: "POST",
     mode: "same-origin",
@@ -135,8 +134,7 @@ applyFilters.addEventListener("click", (event) => {
   })
     .then((data) => data.json())
     .then((data) => {
-      console.log("We got something back!");
-      //here next functionalities will applied
+      UpdateListings(data);
     });
 });
 
@@ -162,7 +160,7 @@ btns.forEach((btn, btnIndex) => {
     btns[btnIndex].setAttribute("pressed", "true");
     btns[bds].setAttribute("pressed", "false");
     bds = btnIndex;
-    numberofBedrooms = bds;
+    numberOfBedrooms = bds;
     bb.textContent = `${bds}+ Bd, ${bds1}+ Ba`;
     bb.style.backgroundColor = "var(--brandSupport)";
   });
@@ -176,7 +174,7 @@ btns1.forEach((btn1, btn1Index) => {
     btn1.setAttribute("pressed", "true");
     btns1[bds1].setAttribute("pressed", "false");
     bds1 = btn1Index;
-    numberofBathrooms = bds1;
+    numberOfBathrooms = bds1;
     bb.textContent = `${bds}+ Bd, ${bds1}+ Ba`;
     bb.style.backgroundColor = "var(--brandSupport)";
   });
@@ -210,20 +208,27 @@ priceSe[1].addEventListener("click", (event) => {
 });
 
 sub.addEventListener("click", () => {
-  if (mins.value === "" && maxs.value === "") {
+  if (
+    (mins.value === "" || mins.value == "0") &&
+    (maxs.value === "" || maxs.value == "0")
+  ) {
     priceBtn.textContent = `Price`;
-  } else if (maxs.value === "") {
+    minPrice = +mins.value;
+    maxPrice = +maxs.value;
+  } else if (maxs.value === "" || maxs.value == "0") {
     priceBtn.textContent = `Rs${mins.value}+`;
-    minPrice = mins.value;
+    minPrice = +mins.value;
+    maxPrice = +maxs.value;
     priceBtn.style.backgroundColor = "var(--brandSupport)";
-  } else if (mins.value === "") {
+  } else if (mins.value === "" || mins.value == "0") {
     priceBtn.textContent = `Upto Rs${maxs.value}`;
-    maxPrice = maxs.value;
+    maxPrice = +maxs.value;
+    minPrice = +mins.value;
     priceBtn.style.backgroundColor = "var(--brandSupport)";
   } else {
     priceBtn.textContent = `Rs${mins.value} - Rs${maxs.value}`;
-    minPrice = mins.value;
-    maxPrice = maxs.value;
+    minPrice = +mins.value;
+    maxPrice = +maxs.value;
     priceBtn.style.backgroundColor = "var(--brandSupport)";
   }
 });
@@ -252,6 +257,10 @@ subrt.addEventListener("click", (e) => {
   if (count != 3) {
     sptybt.textContent = temp;
     sptybt.style.backgroundColor = "var(--brandSupport)";
+  }
+  if (count === 3 || count === 0) {
+    spaceType = [];
+    sptybt.textContent = "Space Type";
   }
 });
 
@@ -389,30 +398,35 @@ const listingCreate = (listingData) => {
 const mainDivListings = document.getElementById("homelist");
 const messageListing = document.getElementById("message-listing");
 
-let listingArray = [];
-handleListingData();
+handleIntialData();
 
-function handleListingData() {
+function UpdateListings(data) {
+  let listingArray = [];
+  locations = [];
+  const activeListing = document.getElementsByClassName("active-listing");
+  while (activeListing[0]) {
+    activeListing[0].remove();
+  }
+  if (data[0]) {
+    messageListing.innerText = "";
+    listingArray = data;
+    listingArray.map((item, i) => {
+      mainDivListings.append(listingCreate(item));
+      locations.push({ lat: +item.Latitude, lng: +item.Longitude });
+    });
+    updateMapCity(listingArray[0].CityName);
+    searchCityName.value = listingArray[0].CityName;
+  } else {
+    searchCityName.value = "";
+    messageListing.innerText = "No Listings found";
+  }
+}
+
+function handleIntialData() {
   fetch("/citiesdata")
     .then((response) => response.json())
     .then((data) => {
-      const activeListing = document.getElementsByClassName("active-listing");
-      while (activeListing[0]) {
-        activeListing[0].remove();
-      }
-      if (data[0]) {
-        messageListing.innerText = "";
-        listingArray = data;
-        listingArray.map((item, i) => {
-          mainDivListings.append(listingCreate(item));
-          locations.push({ lat: +item.Latitude, lng: +item.Longitude });
-        });
-        updateMapCity(listingArray[0].CityName);
-        searchCityName.value = listingArray[0].CityName;
-      } else {
-        searchCityName.value = "";
-        messageListing.innerText = "No Data from this city";
-      }
+      UpdateListings(data);
     })
     .catch((err) => {
       console.error(err);
@@ -432,5 +446,5 @@ searchCityBtn.addEventListener("click", (e) => {
     cityWithSpace = city;
   }
   document.cookie = `city=${cityWithSpace};SameSite=Lax`;
-  handleListingData();
+  handleIntialData();
 });
