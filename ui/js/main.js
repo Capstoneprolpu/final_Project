@@ -393,7 +393,7 @@ let listingArray = [];
 handleListingData();
 
 function handleListingData() {
-  fetch("http://localhost:8080/citiesdata")
+  fetch("/citiesdata")
     .then((response) => response.json())
     .then((data) => {
       const activeListing = document.getElementsByClassName("active-listing");
