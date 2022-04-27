@@ -14,7 +14,7 @@ searchBtn.addEventListener("click", (event) => {
     }, 3000);
     return;
   }
-  fetch(`http://localhost:8080/searchcity/${city}`, {
+  fetch(`/searchcity/${city}`, {
     method: "GET",
     mode: "same-origin",
   })

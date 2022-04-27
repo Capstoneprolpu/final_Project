@@ -302,6 +302,46 @@ app.get("/citiesdata/", function (req, res) {
   });
 });
 
+app.use(express.json());
+app.post("/filters", function (req, res) {
+  const filters = req.body;
+  let query = {};
+  for (const key in filters) {
+    if (filters[key] != "default" && filters[key] != 0) {
+      if (key === "minPrice") {
+        query.RentPrice = {};
+        query.RentPrice.$gt = filters[key];
+      }
+      if (key === "maxPrice") {
+        if (!query.RentPrice) {
+          query.RentPrice = {};
+        }
+        query.RentPrice.$lt = filters[key];
+      }
+      if (key === "numberOfBedrooms") {
+        query.NumberOfBedrooms = {};
+        query.NumberOfBedrooms.$gt = filters[key];
+      }
+      if (key === "numberOfBathrooms") {
+        query.NumberOfBathrooms = {};
+        query.NumberOfBathrooms.$gt = filters[key];
+      }
+      if (key === "spaceType") {
+        query.HomeType = filters[key];
+      }
+    }
+  }
+  query.CityName = req.cookies.city;
+
+  citydata.find(query, function (err, data) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    res.status(200).json(data);
+  });
+});
+
 app.get("/dashboard", function (req, res) {
   if (validatetoken(req.cookies.userdata)) {
     res.sendFile(path.join(__dirname, "/ui/html/dashboard.html"));
