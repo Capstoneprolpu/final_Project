@@ -1,0 +1,28 @@
+#autocomplete_list {
+  position: absolute;
+  top: 5rem;
+  width: 85%;
+  margin-left: 0.75rem;
+}
+#autocomplete_list > ul {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.autocomplete_item {
+  display: none;
+  padding: 1.5rem;
+  background: white;
+  text-align: left;
+  border-bottom: 2px solid var(--offWhite);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.autocomplete_item:hover {
+  background: var(--brandSupportLight);
+}
+
+.autocomplete_item.active {
+  display: block;
+}
