@@ -2,6 +2,33 @@
 const mainSearch = document.getElementById("main_search_bar");
 const searchBtn = document.getElementById("index-search-btn");
 const messageElement = document.getElementById("message-search-result");
+const mainAcDiv = document.getElementById("autocomplete_list");
+const mainAcItem = document.querySelectorAll(".autocomplete_item");
+
+const hideAllList = () => {
+  mainAcItem.forEach((element) => {
+    element.innerText = "";
+    element.style.display = "none";
+  });
+};
+
+mainSearch.addEventListener("input", () => {
+  hideAllList();
+  if (mainSearch.value.length > 0) {
+    fetch(`https://citylocate.herokuapp.com/autocomplete/${mainSearch.value}`)
+      .then((data) => data.json())
+      .then((data) => {
+        console.log(data.data);
+        for (let i = 0; i < data.data.length; i++) {
+          mainAcItem[i].innerText = data.data[i];
+          mainAcItem[i].style.display = "block";
+        }
+      });
+  }
+  if (mainSearch.value.length == 0) {
+    hideAllList();
+  }
+});
 
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault();
