@@ -5,6 +5,13 @@ const messageElement = document.getElementById("message-search-result");
 const mainAcDiv = document.getElementById("autocomplete_list");
 const mainAcItem = document.querySelectorAll(".autocomplete_item");
 
+mainAcItem.forEach((element, i) => {
+  element.addEventListener("click", (event) => {
+    mainSearch.value = mainAcItem[i].innerText;
+    hideAllList();
+  });
+});
+
 const hideAllList = () => {
   mainAcItem.forEach((element) => {
     element.innerText = "";
