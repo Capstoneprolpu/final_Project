@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../media/favicon.png" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/help.css" />
+    <title>Help</title>
+  </head>
+  <body>
+    <div class="top_header">
+      <input type="checkbox" id="toggle" checked /><label
+        for="toggle"
+        class="nav_toggle"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-list"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+          /></svg
+      ></label>
+      <ul class="nav_side">
+        <li class="nav_item"><a href="/main">Buy</a></li>
+        <li class="nav_item"><a href="/addinfo">Rent</a></li>
+        <li class="nav_item">
+          <a class="man_dd">Manage</a>
+          <span class="arrow_nav"></span>
+          <div class="nav_dd">
+            <ul>
+              <li class="nav-sub-item">
+                <a href="/dashboard">Manage your rentals</a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="/main">Add new rental</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <a id="main_logo_header" class="dis_flex" href="/">
+        <span class="logo"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 91.84 92.65"
+          >
+            <title>spacerentallogo</title>
+            <path
+              d="M20.73,0a22.44,22.44,0,0,0-9.16,1.84A17.35,17.35,0,0,0,4.74,7.07a17.7,17.7,0,0,0-3.13,
+              6.85A51.8,51.8,0,0,0,.66,25.2V41.73H41V25.2a51.8,51.8,0,0,0-1-11.28,17.7,17.7,0,0,0-3.13-6.85A17.35,17.35,0,
+              0,0,30,1.84,22.44,22.44,0,0,0,20.88,0h-.15Z"
+            />
+            <polygon
+              points="91.48 41.73 91.48 1.19 50.89 
+              41.73 91.48 41.73"
+            />
+            <polygon
+              points="27.8 51.7 27.8 79.49 13.14 79.49 13.14 51.7 0 51.7 0 81.75 
+              0 92.65 40.59 92.65 40.95 92.65 40.95 51.7 27.8 51.7"
+            />
+            <polygon
+              points="78.69 92.65 78.69 64.86 64.03 64.86 64.03 92.65 50.89 92.65 50.89 62.6 50.89 
+              51.7 91.48 51.7 91.83 51.7 91.83 92.65 78.69 92.65"
+            /></svg
+        ></span>
+        <h1>Space Rental</h1>
+      </a>
+      <ul class="nav_side">
+        <li class="nav_item"><a href="#">Help</a></li>
+        <li class="nav_item">
+          <a id="sign_btn" href="/signinpage">Sign in</a>
+          <span class="arrow_nav"></span>
+          <div id="user_nav" class="man_dd">
+            <img id="left-profile-pic" src="/media/0.jpg" />
+            <h3 id="nav-user-name"></h3>
+            <div id="nav_profile_dd" class="nav_dd">
+              <ul>
+                <li class="nav-sub-item"><a href="/signout">Sign Out</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <article id="main-content">
+      <header>
+        <h2>Got stuck ?</h2>
+        <p>
+          Firstly, we'd recommend you to go through our README available at our
+          <a
+            class="link"
+            target="_blank"
+            role="noopener noreferrer"
+            href="https://github.com/Capstoneprolpu/final_Project#readme"
+          >
+            GitHub
+          </a>
+        </p>
+        <p>
+          If you're facing any issues going through it, feel free to go through
+          this guide 😇
+        </p>
+        <h2>Have a look at these guides 👇</h2>
+      </header>
+      <main>
+        <ul class="guide-list">
+          <li id="get-rent-guide">
+            Renting Out Space on
+            <img class="inline-icon" src="../media/favicon.png" />
+          </li>
+          <li id="get-let-out-guide">
+            Letting Out Space on
+            <img class="inline-icon" src="../media/favicon.png" />
+          </li>
+        </ul>
+      </main>
+    </article>
+
+    <script src="../js/guide.js"></script>
+  </body>
+</html>
