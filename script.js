@@ -8,6 +8,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv");
+const crypto = require("crypto");
 
 var bodyParser = require("body-parser");
 const { verify } = require("crypto");
@@ -256,6 +257,9 @@ app.post("/signupcheck", urlencodedParser, function (req, res) {
       }
       console.log("New USER created.");
       console.log(dbinfo);
+      fs.mkdirSync(path.join(__dirname + `/UserData/${dbinfo.Email}`), {
+        recursive: true,
+      });
       res.sendFile(path.join(__dirname, "/ui/html/signup.html"));
       return;
     });
@@ -353,7 +357,7 @@ app.get("/dashboard", function (req, res) {
 app.get("/userdashboarddata", function (req, res) {
   let userobj = {};
   const data = jwt.verify(req.cookies.userdata, process.env.SECRET_KEY);
-  console.log(data);
+  //console.log(data);
   citydata.find({ Email: data.email }, function (err, info) {
     if (err) {
       console.log("Cant find user.");
@@ -372,12 +376,12 @@ app.get("/userdashboarddata", function (req, res) {
       }
       if (info1.length == 0) {
         console.log("userobj");
-        console.log(userobj);
+        //console.log(userobj);
         res.json(userobj);
         return;
       }
       console.log("userobj with tenant");
-      console.log(userobj);
+      //console.log(userobj);
       userobj.tenant = info1;
       res.json(userobj);
       return;
@@ -395,12 +399,12 @@ app.get("/addinfo", function (req, res) {
 
 app.post("/addinfovalidate", function (req, res) {
   const data = jwt.verify(req.cookies.userdata, process.env.SECRET_KEY);
-  console.log(data);
+  //console.log(data);
   var formdata = new formidable.IncomingForm();
+  formdata.uploadDir = path.join(__dirname + `/UserData/temp`);
   var imgarr = [];
   let cityvalmap = new Map();
   let filearr = [];
-  let inputValid = true;
   formdata
     .on("field", function (field, value) {
       cityvalmap.set(field, value);
@@ -409,6 +413,7 @@ app.post("/addinfovalidate", function (req, res) {
       filearr.push(value);
     })
     .on("end", function () {
+      console.log("end run");
       if (
         !cityvalmap.get("rentaltype") ||
         !cityvalmap.get("numberofbeds") ||
@@ -424,53 +429,30 @@ app.post("/addinfovalidate", function (req, res) {
         !cityvalmap.get("latitude") ||
         !cityvalmap.get("longitude")
       ) {
-        if (inputValid === true) {
-          res.status(400).json({ status: "All fields were not present" });
-        }
-        inputValid = false;
+        res.status(400).json({ status: "All fields were not present" });
         return;
       }
-      console.log(__dirname);
+      //console.log(__dirname);
       let npath = path.join(__dirname + `/UserData/${data.email}`);
-      if (fs.existsSync(npath)) {
-        for (let i of filearr) {
-          fs.renameSync(
-            i.filepath,
-            path.join(npath + `/${i.originalFilename}`),
-            function (err) {
-              if (err) {
-                console.error(err);
-                return;
-              }
+      for (let i of filearr) {
+        let name = crypto.randomBytes(15).toString("hex") + i.originalFilename;
+        fs.renameSync(
+          i.filepath,
+          path.join(npath + `/${name}`),
+          function (err) {
+            if (err) {
+              console.error(err);
+              return;
             }
-          );
-          let imgpath = `./UserData/${data.email}/${i.originalFilename}`;
-          imgarr.push(imgpath);
-        }
-        console.log(`Images uploaded successfully`);
-      } else {
-        fs.mkdirSync(npath, { recursive: true });
-        for (let i of filearr) {
-          fs.renameSync(
-            i.filepath,
-            path.join(npath + `/${i.originalFilename}`),
-            function (err) {
-              if (err) {
-                console.log(err);
-                return;
-              }
-            }
-          );
-          let imgpath = `./UserData/${data.email}/${i.originalFilename}`;
-          imgarr.push(imgpath);
-        }
-        console.log(imgarr);
-        console.log(
-          `${data.email} folder created and images uploaded successfully`
+          }
         );
+        let imgpath = `./UserData/${data.email}/${name}`;
+        imgarr.push(imgpath);
       }
+      console.log(`Images uploaded successfully`);
+
       console.log(imgarr);
-      console.log(cityvalmap);
+      //console.log(cityvalmap);
       let cityobj = {
         Email: data.email,
         FirstName: data.firstname,
@@ -494,7 +476,7 @@ app.post("/addinfovalidate", function (req, res) {
         Image: imgarr,
       };
 
-      console.log(cityobj);
+      //console.log(cityobj);
 
       citydata.create(cityobj, (err, dbinfo) => {
         if (err) {
@@ -503,7 +485,7 @@ app.post("/addinfovalidate", function (req, res) {
           return;
         }
         console.log("City data created successfully");
-        console.log(dbinfo);
+        //console.log(dbinfo);
 
         res.sendFile(path.join(__dirname + "/ui/html/dashboard.html"));
       });
