@@ -384,6 +384,15 @@ footer {
   text-decoration: underline;
 }
 
+.selected-footer-item {
+  text-decoration: underline;
+}
+
+.selected-footer-item:hover,
+.selected-footer-item a:hover {
+  cursor: default;
+}
+
 .socials {
   text-align: center;
   margin-bottom: 4rem;
