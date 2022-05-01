@@ -22,6 +22,10 @@ body h2 {
   height: auto;
 }
 
+#main-content {
+  min-height: 700px;
+}
+
 .guide-list {
   display: block;
   width: max-content;
