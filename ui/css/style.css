@@ -186,6 +186,16 @@ ul {
   color: var(--brandSupport);
 }
 
+.selected-nav-item {
+  text-decoration: underline;
+}
+
+.selected-nav-item:hover,
+.selected-nav-item a:hover {
+  color: var(--brandOrange);
+  cursor: default;
+}
+
 #user_nav {
   display: none;
   min-width: 15rem;
@@ -470,6 +480,7 @@ footer {
   left: -1rem;
   width: 20rem;
   cursor: default;
+  text-align: left;
 }
 
 .nav_dd ul {
