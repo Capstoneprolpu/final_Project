@@ -47,6 +47,7 @@
 .team-member > img {
   width: 15rem;
   height: auto;
+  border-radius: 50%;
 }
 
 .team-member-name {
