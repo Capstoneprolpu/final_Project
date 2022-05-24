@@ -1,0 +1,79 @@
+body {
+  text-align: center;
+}
+
+body > article {
+  width: 80rem;
+  margin: 0 auto;
+}
+
+body h2 {
+  font-family: "Lora", serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.inline-icon {
+  width: 1em;
+  height: auto;
+}
+
+#main-content {
+  min-height: 700px;
+}
+
+.guide-list {
+  display: block;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.guide-list li {
+  width: max-content;
+  margin: 3rem;
+  padding: 1rem 2rem;
+  border: 2px solid var(--brandOrange);
+  border-radius: 5px;
+}
+
+.guide-list li:hover {
+  cursor: pointer;
+  background-color: var(--brandOrangeLight);
+}
+
+.guide-steps {
+  text-align: left;
+}
+
+.guide-steps p {
+  margin: 2rem 0 3rem 0;
+}
+
+code {
+  background-color: var(--offWhite);
+  border-radius: 5px;
+  padding: 0 5px;
+  font-family: monospace;
+}
+
+.guide-image {
+  width: 50rem;
+}
+
+aside {
+  position: absolute;
+}
+
+.back-btn-img {
+  width: 5rem;
+  transition: transform 400ms;
+}
+
+.back-btn-img:hover {
+  cursor: pointer;
+  transform: translateX(-2rem);
+}

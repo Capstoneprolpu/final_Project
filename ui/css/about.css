@@ -1,0 +1,93 @@
+.main-content {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main-content > article {
+  margin: 5rem 0;
+}
+
+.title {
+  font-size: 3rem;
+  font-family: "Lora", serif;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.content {
+  font-size: 2rem;
+}
+
+.team-members {
+  display: block;
+}
+
+.team-member {
+  padding: 2rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.team-member:nth-of-type(2n + 1) {
+  background-color: var(--brandSupportLight);
+  justify-content: left;
+  transform: translateX(-10rem);
+}
+
+.team-member:nth-of-type(2n) {
+  background-color: var(--brandOrangeLight);
+  flex-direction: row-reverse;
+  justify-content: right;
+  transform: translateX(10rem);
+}
+
+.team-member > img {
+  width: 15rem;
+  height: auto;
+  border-radius: 50%;
+}
+
+.team-member-name {
+  font-family: "Lora", serif;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.member-socials {
+  margin-top: 1rem;
+  display: flex;
+  column-gap: 2rem;
+  justify-content: center;
+}
+
+.member-socials a {
+  color: var(--black);
+  transition: transform 250ms;
+}
+
+.member-socials a:hover {
+  transform: scale(2);
+}
+
+.fav-quote {
+  font-family: "Lora", serif;
+  font-weight: 600;
+  text-align: left;
+  width: 50rem;
+}
+
+.team-member:nth-of-type(2n + 1) .fav-quote {
+  margin-left: 3rem;
+}
+
+.team-member:nth-of-type(2n) .fav-quote {
+  margin-right: 3rem;
+}
+
+.quote-credit {
+  font-size: 1.5rem;
+  margin-left: 2rem;
+}

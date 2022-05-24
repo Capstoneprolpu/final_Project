@@ -4,21 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add rental info</title>
-    <link rel="icon" type="image/png" href="/media/favicon.png" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type="image/png" href="../media/favicon.png" />
     <link
       rel="stylesheet"
-      href="/css/add.css"
-      <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/about.css" />
+    <title>About Us</title>
   </head>
   <body>
     <div class="top_header">
@@ -40,7 +33,7 @@
       ></label>
       <ul class="nav_side">
         <li class="nav_item"><a href="/main">Buy</a></li>
-        <li class="nav_item selected-nav-item"><a href="/addinfo">Rent</a></li>
+        <li class="nav_item"><a href="/addinfo">Rent</a></li>
       </ul>
       <a id="main_logo_header" class="dis_flex" href="/">
         <span class="logo"
@@ -100,228 +93,155 @@
         </li>
       </ul>
     </div>
-    <div>
-      <div class="form_a">
-        <h2>Enter Rental Info</h2>
-        <form
-          action="/addinfovalidate"
-          enctype="multipart/form-data"
-          method="post"
-        >
-          <div class="add_form">
-            <label>Select rental type</label>
-            <select class="select_input" name="rentaltype">
-              <option>Home</option>
-              <option>Apartment</option>
-              <option>Room</option>
-            </select>
-            <div class="baths_beds">
-              <div class="flex_col">
-                <label>Number of bedrooms</label>
-                <select class="select_input" name="numberofbeds">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>5+</option>
-                </select>
-              </div>
-              <div class="flex_col">
-                <label>Number of bathrooms</label>
-                <select class="select_input" name="numberofbathrooms">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>5+</option>
-                </select>
-              </div>
-            </div>
-            <label>Area of the space</label>
-            <input
-              name="area"
-              type="number"
-              class=""
-              placeholder="Area in sqft"
-            />
-            <label>More Information about the rental</label>
-            <textarea
-              name="info"
-              type="text"
-              class=""
-              placeholder="More Info"
-            ></textarea>
-            <label>Rent Price estimate</label>
-            <input
-              name="price"
-              type="number"
-              class=""
-              placeholder="Rent price in Rupees"
-            />
-            <button class="form_for" value="Continue">Continue</button>
-          </div>
-          <div class="add_form" style="visibility: hidden">
-            <h2 class="address-label">Enter address</h2>
 
-            <input
-              id="city-input"
-              name="CityName"
-              type="text"
-              class=""
-              placeholder="City"
-            />
+    <section class="main-content">
+      <article>
+        <header class="title">Welcome to Space Rental</header>
+        <main class="content">
+          Created as a prototype for Capstone Project by '22 graduating batch of
+          Lovely Professional University, Space Rental targets to be an
+          innovative real estate advertising solution for homeowners, &
+          landlords. We offer listings for rental spaces in India. Trying to
+          streamline this whole experience making it enjoyable at the same time
+          is our ultimate goal.
+        </main>
+      </article>
 
-            <input
-              name="streetname"
-              type="text"
-              class=""
-              placeholder="Street Name"
-            />
-            <input
-              name="landmark"
-              type="text"
-              class=""
-              placeholder="Nearest Landmark"
-            />
-            <input
-              name="houseno"
-              type="text"
-              class=""
-              placeholder="House/Building No."
-            />
-            <input
-              name="pincode"
-              type="number"
-              class=""
-              placeholder="Pin-Code"
-            />
-            <div id="map-section">
-              <input
-                name="latitude"
-                id="latitude-input"
-                type="number"
-                step="0.001"
-                class=""
-                placeholder="Latitude"
+      <article>
+        <header class="title">Our Vision</header>
+        <main class="content">
+          Providing trustworthy user experiences is what we strive to achieve.
+        </main>
+      </article>
+
+      <article>
+        <header class="title">Our Mission</header>
+        <main class="content">
+          To be the first choice for our consumers in their journey of
+          discovering, renting, & selling a home. We do that with an excellent
+          team of passionate people.
+        </main>
+      </article>
+
+      <article>
+        <header class="title">Who are we ?</header>
+        <main>
+          <ul class="team-members">
+            <li class="team-member">
+              <img
+                src="../media/team-member-images/Ayush.jpeg"
+                alt="ayush-dp"
               />
-              <input
-                name="longitude"
-                id="longitude-input"
-                type="number"
-                step="0.001"
-                class=""
-                placeholder="Longitude"
+              <div class="member-details">
+                <p class="team-member-name">Ayush&nbsp;Gupta</p>
+                <div class="member-socials">
+                  <a
+                    target="_blank"
+                    role="noopener noreferrer"
+                    href="https://github.com/AyushGupta7007"
+                    ><i class="bi bi-github"></i
+                  ></a>
+                </div>
+              </div>
+              <p class="fav-quote">
+                “A friend is someone who knows all about you and still loves
+                you.”
+                <br />
+                <small class="quote-credit"> ― Elbert Hubbard </small>
+              </p>
+            </li>
+            <li class="team-member">
+              <img
+                src="../media/team-member-images/Gagan.jpeg"
+                alt="ayush-dp"
               />
-              <button id="open-map">Find in Map</button>
-            </div>
-
-            <button class="form_for" value="Continue">Continue</button>
-            <button class="form_bac">
-              <i
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  class="bi bi-arrow-left"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
-                  /></svg
-              ></i>
-            </button>
-          </div>
-          <div class="add_form" style="visibility: hidden">
-            <div id="previews">
-              <h2 class="add_img_txt">Add images here</h2>
-              <h3 class="add_img_txt">Maximum 4 images can be added</h3>
-            </div>
-            <input
-              name="images"
-              id="pic_files"
-              type="file"
-              multiple
-              accept="image/*"
-              class=""
-              hidden
-            />
-            <div id="pic_btns">
-              <label id="add_btn" for="pic_files"
-                ><i
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    class="bi bi-plus-circle"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-                    />
-                    <path
-                      d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
-                    /></svg></i
-                >&nbsp;Add images</label
-              >
-              <button id="remove_pics" class="btn">Remove all</button>
-            </div>
-
-            <button class="form_btn" type="submit" value="Submit">
-              Submit
-            </button>
-            <button class="form_bac">
-              <i
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  class="bi bi-arrow-left"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
-                  /></svg
-              ></i>
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div id="form_warning">
-      <h2 id="form_warning_message"></h2>
-    </div>
-    <div id="portel">
-      <div id="main-portel-div">
-        <a id="portel-close-btn"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            class="bi bi-x-lg"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"
-            />
-            <path
-              fill-rule="evenodd"
-              d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"
-            /></svg
-        ></a>
-        <div id="map"></div>
-        <div id="map-click-info">
-          <label for="portel-map-latitude">Latitude</label>
-          <input id="portel-map-latitude" type="text" />
-          <label for="portel-map-longitude">Longitude</label>
-          <input id="portel-map-longitude" type="text" />
-          <button id="portel-submit-btn">Submit</button>
-        </div>
-      </div>
-    </div>
+              <div class="member-details">
+                <p class="team-member-name">Gaganjot&nbsp;Singh</p>
+                <div class="member-socials">
+                  <a
+                    target="_blank"
+                    role="noopener noreferrer"
+                    href="https://www.linkedin.com/in/gaganjot-singh-35a738184/"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a
+                    target="_blank"
+                    role="noopener noreferrer"
+                    href="https://github.com/gaganjot99"
+                    ><i class="bi bi-github"></i
+                  ></a>
+                </div>
+              </div>
+              <p class="fav-quote">
+                “Two things are infinite: the universe and human stupidity; and
+                I'm not sure about the universe.”
+                <br />
+                <small class="quote-credit"> ― Albert Einstein </small>
+              </p>
+            </li>
+            <li class="team-member">
+              <img
+                src="../media/team-member-images/Sandeep.jpeg"
+                alt="ayush-dp"
+              />
+              <div class="member-details">
+                <p class="team-member-name">Sandeep&nbsp;Nandi</p>
+                <div class="member-socials">
+                  <a
+                    target="_blank"
+                    role="noopener noreferrer"
+                    href="https://www.linkedin.com/in/sandeep-nandi-3ab848192/"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a
+                    target="_blank"
+                    role="noopener noreferrer"
+                    href="https://github.com/sandeep14313"
+                    ><i class="bi bi-github"></i
+                  ></a>
+                </div>
+              </div>
+              <p class="fav-quote">
+                “Be the change that you wish to see in the world.”
+                <br />
+                <small class="quote-credit"> ― Mahatma Gandhi </small>
+              </p>
+            </li>
+            <li class="team-member">
+              <img
+                src="../media/team-member-images/Shivam.jpeg"
+                alt="ayush-dp"
+              />
+              <div class="member-details">
+                <p class="team-member-name">Shivam&nbsp;Tewari</p>
+                <div class="member-socials">
+                  <a
+                    target="_blank"
+                    role="noopener noreferrer"
+                    href="https://www.linkedin.com/in/shivam-tewari-9286b1171/"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a
+                    target="_blank"
+                    role="noopener noreferrer"
+                    href="https://github.com/ShiviPro"
+                    ><i class="bi bi-github"></i
+                  ></a>
+                </div>
+              </div>
+              <p class="fav-quote">
+                “Be yourself; everyone else is already taken.”
+                <br />
+                <small class="quote-credit"> ― Oscar Wilde </small>
+              </p>
+            </li>
+          </ul>
+        </main>
+      </article>
+    </section>
     <footer>
       <ul class="footer_nav">
-        <li class="footer_nav_item">
+        <li class="footer_nav_item selected-footer-item">
           <a href="../html/about.html">About</a>
         </li>
         <li class="footer_nav_item">
@@ -619,13 +539,6 @@
         </svg>
       </div>
     </footer>
-    <div id="loader-bg"><div class="loader"></div></div>
-    <script src="/js/addinfo.js"></script>
     <script src="/js/nav.js"></script>
-    <script src="/js/common.js"></script>
-    <script
-      async
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0roVlX7F2OFWaOm7INNVt2DBlhYP8uiY&libraries=places&callback=initMap"
-    ></script>
   </body>
 </html>
