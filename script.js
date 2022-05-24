@@ -154,12 +154,138 @@ const citySchema = mongoose.Schema({
   ],
 });
 
+const requestSchema = mongoose.Schema({
+  Listing: {
+    type: String,
+    required: true,
+  },
+  ListingId: {
+    type: mongoose.ObjectId,
+    required: true,
+  },
+  Address: {
+    type: String,
+    required: true,
+  },
+  Image: {
+    type: String,
+  },
+  Owner: {
+    type: String,
+    required: true,
+  },
+  OwnerFirstName: {
+    type: String,
+    required: true,
+    minLength: 1,
+  },
+  OwnerLastName: {
+    type: String,
+    required: true,
+    minLength: 1,
+  },
+  OwnerImage: {
+    type: String,
+    required: true,
+    minLength: 1,
+  },
+  Tenant: {
+    type: String,
+    required: true,
+  },
+  TenantFirstName: {
+    type: String,
+    required: true,
+    minLength: 1,
+  },
+  TenantLastName: {
+    type: String,
+    required: true,
+    minLength: 1,
+  },
+  TenantImage: {
+    type: String,
+    required: true,
+    minLength: 1,
+  },
+
+  Status: {
+    type: String,
+    required: true,
+  },
+});
+
 const citydata = mongoose.model("citydata", citySchema, "citydata");
 
 const userdata = mongoose.model("userdata", userSchema, "userdata");
 
+const requestdata = mongoose.model("requestdata", requestSchema, "requestdata");
+
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "/ui/html/index.html"));
+});
+app.use(express.json());
+app.post("/requestadd", function (req, res) {
+  //console.log(req.body);
+  const options = {
+    upsert: true,
+    new: true,
+    setDefaultsOnInsert: true,
+  };
+  requestdata.findOneAndUpdate(
+    req.body,
+    req.body,
+    options,
+    function (err, info) {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      //console.log(info);
+      return res.json({ status: "successfull" });
+    }
+  );
+});
+
+app.get("/rejectreq/:id", (req, res) => {
+  requestdata.findOneAndUpdate(
+    { _id: req.params.id },
+    { Status: "Rejected" },
+    {},
+    function (err, info) {
+      if (err) {
+        console.log(err);
+        return res.status(500).json({ status: "failure" });
+      }
+      return res.json({ status: "successfull" });
+    }
+  );
+});
+
+app.get("/acceptreq/:id", (req, res) => {
+  requestdata.findOneAndUpdate(
+    { _id: req.params.id },
+    { Status: "Accepted" },
+    {},
+    function (err, info) {
+      if (err) {
+        console.log(err);
+        return res.status(500).json({ status: "failure" });
+      }
+      citydata.findOneAndUpdate(
+        { _id: info.ListingId },
+        { Status: true, Tenant: info.Tenant },
+        {},
+        function (err, info) {
+          if (err) {
+            console.log(err);
+            return res.status(500).json({ status: "failure" });
+          }
+          return res.json({ status: "successfull" });
+        }
+      );
+    }
+  );
 });
 
 app.get("/signinpage", function (req, res) {
@@ -291,22 +417,24 @@ app.get("/searchcity/:city", async (req, res) => {
 });
 
 app.get("/citiesdata/", function (req, res) {
-  citydata.find({ CityName: req.cookies.city }, function (err, result) {
-    if (err) {
-      console.log(err);
-      return;
+  citydata.find(
+    { CityName: req.cookies.city, Status: false },
+    function (err, result) {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      if (result.length == 0) {
+        console.log("Empty DataBase");
+        return res.json(result);
+      }
+      typeof result;
+      res.json(result);
+      res.end();
     }
-    if (result.length == 0) {
-      console.log("Empty DataBase");
-      return res.json(result);
-    }
-    typeof result;
-    res.json(result);
-    res.end();
-  });
+  );
 });
 
-app.use(express.json());
 app.post("/filters", function (req, res) {
   const filters = req.body;
   let query = {};
@@ -363,10 +491,6 @@ app.get("/userdashboarddata", function (req, res) {
       console.log("Cant find user.");
       return;
     }
-    if (info.length == 0) {
-      console.log("No data with the user.");
-      return;
-    }
     userobj.owner = info;
 
     citydata.find({ Tenant: data.email }, function (err1, info1) {
@@ -374,17 +498,28 @@ app.get("/userdashboarddata", function (req, res) {
         console.log(err1);
         return;
       }
-      if (info1.length == 0) {
-        console.log("userobj");
-        //console.log(userobj);
-        res.json(userobj);
-        return;
-      }
-      console.log("userobj with tenant");
+      //console.log("userobj with tenant");
       //console.log(userobj);
       userobj.tenant = info1;
-      res.json(userobj);
-      return;
+
+      requestdata.find({ Tenant: data.email }, function (err, info) {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        userobj.requestsSent = info;
+        requestdata.find(
+          { Owner: data.email, Status: "Pending" },
+          function (err, info) {
+            if (err) {
+              console.log(err);
+              return;
+            }
+            userobj.requestsReceived = info;
+            return res.json(userobj);
+          }
+        );
+      });
     });
   });
 });
