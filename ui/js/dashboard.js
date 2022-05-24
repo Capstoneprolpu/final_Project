@@ -103,10 +103,10 @@ const listingEleCreate = (listingData, mode) => {
   if (mode === true) {
     listingDiv.children[2].children[1].addEventListener("click", (event) => {
       event.preventDefault();
-      fetch(`/delete/${listingData._id}`)
-        .then((data) => data.json)
+      fetch(`/deletelisting/${listingData._id}`)
+        .then((data) => data.json())
         .then((data) => {
-          if (data.status === "deleted successful") {
+          if (data.status === "successfull") {
             listingDiv.remove();
           }
         })
@@ -117,9 +117,9 @@ const listingEleCreate = (listingData, mode) => {
     listingDiv.children[2].children[1].addEventListener("click", (event) => {
       event.preventDefault();
       fetch(`/removetenant/${listingData._id}`)
-        .then((data) => data.json)
+        .then((data) => data.json())
         .then((data) => {
-          if (data.status === "removed successful") {
+          if (data.status === "successfull") {
             listingDiv.remove();
           }
         })

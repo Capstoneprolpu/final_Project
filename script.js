@@ -288,6 +288,33 @@ app.get("/acceptreq/:id", (req, res) => {
   );
 });
 
+app.get("/deletelisting/:id", (req, res) => {
+  citydata.deleteOne({ _id: req.params.id }, function (err, info) {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ status: "failed" });
+    }
+    console.log("A listing got deleted");
+    return res.json({ status: "successfull" });
+  });
+});
+
+app.get("/removetenant/:id", (req, res) => {
+  citydata.findOneAndUpdate(
+    { _id: req.params.id },
+    { Tenant: "", Status: false },
+    {},
+    function (err, info) {
+      if (err) {
+        console.log(err);
+        return res.status(500).json({ status: "failed" });
+      }
+      console.log("tenant was removed");
+      return res.json({ status: "successfull" });
+    }
+  );
+});
+
 app.get("/signinpage", function (req, res) {
   if (validatetoken(req.cookies.userdata)) {
     res.sendFile(path.join(__dirname, "/ui/html/dashboard.html"));
