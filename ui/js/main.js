@@ -342,6 +342,8 @@ dotElements.forEach((element, index) => {
 
 //portal handles data from listing clicked
 
+let requestBody = {};
+
 function updatePortal(data) {
   imgElements.forEach((element, i) => {
     if (i < data.Image.length) {
@@ -367,7 +369,44 @@ function updatePortal(data) {
     "portel-owner-name"
   ).innerText = `${data.FirstName} ${data.LastName}`;
   document.getElementById("portel-owner-email").innerText = `${data.Email}`;
+  document.getElementById("portal-rent-btn").classList.remove("sent-btn");
+  document.getElementById("portal-rent-btn").innerText = "Request Owner";
+  console.log(user);
+  requestBody = {
+    Listing: data.HomeType,
+    ListingId: data._id,
+    Address: `${data.HouseNumber}, ${data.StreetName}, ${data.Landmark}, ${data.CityName} ${data.Pincode}`,
+    Image: data.Image[0],
+    Owner: data.Email,
+    OwnerFirstName: data.FirstName,
+    OwnerLastName: data.LastName,
+    OwnerImage: data.OwnerImage,
+    Tenant: user.email,
+    TenantFirstName: user.firstName,
+    TenantLastName: user.lastName,
+    TenantImage: user.Image,
+    Status: "Pending",
+  };
 }
+
+document.getElementById("portal-rent-btn").addEventListener("click", (e) => {
+  e.preventDefault();
+  fetch("/requestadd", {
+    method: "POST",
+    mode: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestBody),
+  })
+    .then((data) => data.json())
+    .then((data) => {
+      if (data.status == "successfull") {
+        document.getElementById("portal-rent-btn").classList.add("sent-btn");
+        document.getElementById("portal-rent-btn").innerText = "Request Sent";
+      }
+    });
+});
 
 //js to handle the data of the city rental data and render it in the concerned div
 

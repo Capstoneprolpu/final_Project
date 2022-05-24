@@ -358,6 +358,18 @@
   align-items: center;
 }
 
+#sent-req-div {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.req_status {
+  font-size: 2.5rem;
+  border: 1px solid var(--offWhite);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
 @media (max-width: 1200px) {
   #user_rentals {
     grid-template-columns: 1fr 1fr;

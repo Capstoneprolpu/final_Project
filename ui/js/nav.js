@@ -3,6 +3,7 @@ var man_btn = document.querySelectorAll(".man_dd");
 var nav_dd = document.getElementsByClassName("nav_dd");
 var arrowfils = document.getElementsByClassName("arrow_nav");
 var stat1 = false;
+let user = {};
 
 if (man_btn[0]) {
   man_btn.forEach((ele, i) => {
@@ -49,6 +50,12 @@ if (userDiv) {
         userDiv.children[1].innerText = data.firstname;
         signBtn.style.display = "none";
         userDiv.style.display = "flex";
+        user = {
+          firstName: data.firstname,
+          lastName: data.lastname,
+          Image: data.image,
+          email: data.email,
+        };
       }
     })
     .catch((err) => console.log(err));

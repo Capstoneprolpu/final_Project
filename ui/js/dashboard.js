@@ -130,6 +130,77 @@ const listingEleCreate = (listingData, mode) => {
   return listingDiv;
 };
 
+const mainRequestDiv = document.getElementById("requests-div");
+const sentRequestDiv = document.getElementById("sent-req-div");
+
+const tempRequestElem = document.getElementsByClassName("req_item")[0];
+tempRequestElem.style.display = "none";
+
+const requestEleCreate = (requestData, mode) => {
+  const RequestDiv = tempRequestElem.cloneNode(true);
+  RequestDiv.style.display = "grid";
+  RequestDiv.children[0].children[0].src = requestData.Image;
+  RequestDiv.children[0].children[1].children[0].innerText =
+    requestData.Listing;
+  RequestDiv.children[0].children[1].children[1].innerText =
+    requestData.Address;
+
+  if (mode === true) {
+    RequestDiv.children[1].children[0].src = requestData.TenantImage;
+    RequestDiv.children[1].children[1].children[0].innerText = `${requestData.TenantFirstName} ${requestData.TenantLastName}`;
+    RequestDiv.children[1].children[1].children[1].innerText =
+      requestData.Tenant;
+    RequestDiv.children[2].children[0].addEventListener("click", (event) => {
+      event.preventDefault();
+      fetch(`/acceptreq/${requestData._id}`)
+        .then((data) => data.json())
+        .then((data) => {
+          console.log(data.status);
+          if (data.status === "successfull") {
+            RequestDiv.remove();
+          }
+        })
+        .catch((err) => console.log(err));
+    });
+    RequestDiv.children[2].children[1].addEventListener("click", (event) => {
+      event.preventDefault();
+      fetch(`/rejectreq/${requestData._id}`)
+        .then((data) => data.json())
+        .then((data) => {
+          if (data.status === "successfull") {
+            RequestDiv.remove();
+          }
+        })
+        .catch((err) => console.log(err));
+    });
+  } else {
+    RequestDiv.children[1].children[0].src = requestData.OwnerImage;
+    RequestDiv.children[1].children[1].children[0].innerText = `${requestData.OwnerFirstName} ${requestData.OwnerLastName}`;
+    RequestDiv.children[1].children[1].children[1].innerText =
+      requestData.Owner;
+
+    RequestDiv.children[2].children[0].remove();
+    RequestDiv.children[2].children[0].remove();
+    RequestDiv.children[2].children[0].innerText = "Status:";
+    RequestDiv.children[2].children[1].innerText = requestData.Status;
+    switch (requestData.Status) {
+      case "Pending":
+        RequestDiv.children[2].children[1].style.color = "var(--brandSupport)";
+        break;
+      case "Accepted":
+        RequestDiv.children[2].children[1].style.color = "var(--green)";
+        break;
+      case "Rejected":
+        RequestDiv.children[2].children[1].style.color = "var(--red)";
+        break;
+      default:
+        RequestDiv.children[2].children[1].style.color = "var(--black)";
+    }
+  }
+
+  return RequestDiv;
+};
+
 const updateListingsData = () => {
   fetch("/userdashboarddata")
     .then((response) => response.json())
@@ -142,6 +213,16 @@ const updateListingsData = () => {
       if (data.tenant[0]) {
         data.tenant.map((item, i) => {
           mainRentedDiv.append(listingEleCreate(item, false));
+        });
+      }
+      if (data.requestsReceived[0]) {
+        data.requestsReceived.map((item, i) => {
+          mainRequestDiv.append(requestEleCreate(item, true));
+        });
+      }
+      if (data.requestsSent[0]) {
+        data.requestsSent.map((item, i) => {
+          sentRequestDiv.append(requestEleCreate(item, false));
         });
       }
     })
