@@ -10,6 +10,7 @@
   --offWhite: rgba(61, 61, 61, 0.25);
   --modeColor: white;
   --red: rgb(231, 76, 60);
+  --green: rgb(3, 170, 0);
   /* 
     Setting '1rem' to be equal to '10px'.
     (This is done to make the units be more predictable & used consistently.
@@ -328,7 +329,6 @@ ul {
   background: var(--modeColor);
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 7px 0px;
-  height: 59vh;
   margin: 1rem;
   max-width: 40rem;
   min-width: 30rem;

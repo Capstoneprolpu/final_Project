@@ -219,7 +219,7 @@ legend {
 #homelist {
   display: flex;
   flex-flow: row wrap;
-  max-width: 55%;
+  width: 55%;
   overflow-y: auto;
   height: calc(89vh - 5.7rem);
   border-top: 1px solid var(--offWhite);
@@ -466,6 +466,12 @@ legend {
 
 #portal-rent-btn:hover {
   background: var(--brandOrangeDark);
+}
+
+#portal-rent-btn.sent-btn {
+  background: var(--modeColor);
+  color: var(--black);
+  border-color: var(--offWhite);
 }
 
 #portal-close-btn {
